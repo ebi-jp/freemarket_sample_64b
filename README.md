@@ -14,15 +14,14 @@
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |dirth_day|integer|null: false|
-|phone|integer|null: false|
+|phone_number|integer|null: false|
 ### Association
 - has_many :items
 - has_many :credits
 - has_many :snses
 - has_many :addresses
+- has_many :images
 - has_many :items, through: :comments
-- has_many :items, through: :histories
-- has_many :items, through: :images
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -32,23 +31,23 @@
 |city|string|null: false|
 |address|string|null: false|
 |building|string|null: false|
-|phone|integer||
+|phone_number|integer||
 ### Association
 - belongs_to :user
 
 ## snsesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|sns_name|string|null: false|
-|sns_token|string|null: false|
+|name|string|null: false|
+|token|string|null: false|
 ### Association
 - belongs_to :user
 
 ## creditsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|credit_name|string|null: false|
-|card_namber|integer|null: false|
+|name|string|null: false|
+|card_number|integer|null: false|
 |pin_namber|integer|null: false|
 ### Association
 - belongs_to :user
@@ -56,42 +55,32 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_name|string|null: false|
-|item_price|string|null: false|
+|name|string|null: false|
+|price|string|null: false|
 |user_id|references|null: false,foreign_key: true|
+|buyer_id|references|null: false,foreign_key: true|
 |category_id|references|null: false,foreign_key: true|
 |brand_id|references|null: false,foreign_key: true|
-|item_size|string||
-|item_status|string|null: false|
+|size|string||
+|status|string|null: false|
 |send_burden|string|null: false|
 |send_plan|string|null: false|
 |delivery_source|string|null: false|
 |send_day|string|null: false|
-|item_description|text|null: false|
+|description|text|null: false|
 ### Association
 - belongs_to :brand
 - belongs_to :category
+- has_many :images
 - has_many :users
 - has_many :users, through: :comments
-- has_many :users, through: :histories
-- has_many :users, through: :images
+
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false,foreign_key: true|
 |item_id|references|null: false,foreign_key: true|
-### Association
-- belongs_to :item
-- belongs_to :user
-
-## historiesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false,foreign_key: true|
-|item_id|references|null: false,foreign_key: true|
-|item_price|string|null: false|
-|sell_at|timestamps||
 ### Association
 - belongs_to :item
 - belongs_to :user
@@ -117,17 +106,17 @@
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand_name|string||
+|name|string||
 |brand-group_id|references|null: false,foreign_key: true|
 ### Association
 - has_many :items
-- has_many :brand-groups
-- has_many :brand-groups, through: :brands_brand-groups
+- has_many :brandgroups
+- has_many :brandgroups, through: :brands_brandgroups
 
-## brand-groupsテーブル
+## brandgroupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string||
+|name|string||
 ### Association
 - has_many :brands
-- has_many :brands, through: :brands_brand-groups
+- has_many :brands, through: :brands_brandgroups
