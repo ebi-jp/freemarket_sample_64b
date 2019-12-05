@@ -17,11 +17,12 @@
 |phone|integer|null: false|
 ### Association
 - has_many :items
-- has_many :images
 - has_many :credits
 - has_many :snses
 - has_many :addresses
 - has_many :items, through: :comments
+- has_many :items, through: :histories
+- has_many :items, through: :images
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -52,16 +53,6 @@
 ### Association
 - belongs_to :user
 
-## imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image_name|string||
-|post_id|references|null: false,foreign_key: true|
-|user_id|references|null: false,foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :item
-
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -78,17 +69,39 @@
 |send_day|string|null: false|
 |item_description|text|null: false|
 ### Association
-- has_many :images
-- belongs_to :user
 - belongs_to :brand
 - belongs_to :category
+- has_many :users
 - has_many :users, through: :comments
+- has_many :users, through: :histories
+- has_many :users, through: :images
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false,foreign_key: true|
 |item_id|references|null: false,foreign_key: true|
+### Association
+- belongs_to :item
+- belongs_to :user
+
+## historiesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false,foreign_key: true|
+|item_id|references|null: false,foreign_key: true|
+|item_price|string|null: false|
+|sell_at|timestamps||
+### Association
+- belongs_to :item
+- belongs_to :user
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image_name|string||
+|post_id|references|null: false,foreign_key: true|
+|user_id|references|null: false,foreign_key: true|
 ### Association
 - belongs_to :item
 - belongs_to :user
