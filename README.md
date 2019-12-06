@@ -97,8 +97,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|parent_id|references|null: false,foreign_key: true|
 ### Association
 - has_many :items
+- has_many :child, class_name: "Category", foreign_key: "parent_id"
+- belongs_to :parent, class_name: "Category"
 
 ## brandsテーブル
 |Column|Type|Options|
