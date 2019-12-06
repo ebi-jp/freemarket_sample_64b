@@ -1,0 +1,596 @@
+.wrapper {
+  height: 100%;
+  background: #f5f5f5;
+ }
+ 
+
+  .m-header {
+    background: #f5f5f5;
+    height: 128px;
+    text-align: center;
+    h1 {
+      padding: 40px 0 0;
+    }
+      .mercarilogo {
+        width: 185px;
+        height: 49px;
+      }
+  }
+    .registration-main {
+      background: #f5f5f5;
+      .main-content {
+        width: 700px;
+        margin: 0 auto;
+        background:#fff;
+        line-height: 1.5;
+      h2 {
+        font-size: 22px;
+        line-height: 1.4;
+      }
+      &__head {
+        padding: 32px 16px;
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      .inner-content {
+        padding: 64px;
+        border-top: 1px solid #f5f5f5;
+      }
+      .l-main-content {
+        max-width: 320px;
+        margin: 0 auto;
+        a {
+          text-decoration: none;
+        }
+        .btn-default {
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+        }
+        .btn-mail {
+          position: relative;
+          background: #eee;
+          color: #000;
+          .icon-mail {
+            top: 25%;
+            left: 16px;
+            position: absolute;
+            font-size: 20px;
+            color: #ccc;
+          }
+        }
+        .btn-mail:hover {
+          background:  #f5f5f5;
+        }
+        .btn-sns-facebook {
+          margin: 16px 0 0;
+          background: #385185;
+          color: #fff;
+        }
+        .btn-sns-google {
+          margin: 16px 0 0;
+          border: #979797 solid 1px;
+          color: #333;
+        }
+        .btn-sns {
+          position: relative;
+          .icon-sns {
+            top: 25%;
+            left: 16px;
+            position: absolute;
+            font-size: 26px;
+          }
+        }
+      }
+    }
+  }
+
+  .m-footer {
+    background: #f5f5f5;
+    box-sizing: border-box;
+    height: 250px;
+    margin: 0 auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    padding: 40px 0;
+    text-align: center;
+    nav ol, nav ul {
+      list-style: none;
+    }
+      .clearfix {
+        li {
+          display: inline-block;
+          margin: 0 0 0 16px;
+          a{
+            font-size: 12px;
+            color: #333;
+            text-decoration: none;
+            width: 80px;
+            height: 65px;
+            margin: 40px auto 0;
+            }
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+        .mercarilogo {
+          padding-top: 40px;
+        }
+  }
+//-----------------------------------------------
+
+
+//--------------会員情報入力ページ(濱田)--------------------------------------
+  .wrapper-member-info {
+    height: 100%;
+    background: #f5f5f5;
+  }
+  
+  
+    .signup-page-header {
+      height: 128px;
+      text-align: center;
+      .personal-entry__header {
+        display: inline-block;
+        a {
+          width: 185px;
+          height: 49px;
+          line-height: 49px;
+          img {
+            margin: 40px 0 0;
+            width: 185px;
+            height: 49px;
+          }  
+        }
+      }
+    .progress-bar {
+      display: inline-block;
+      vertical-align: top;
+      padding: 40px 0 0 44px;
+      border: 0;
+      .clearfix {
+        li {
+          margin: 0 40px 0 0;
+          position: relative;
+          z-index: 1;
+          display: inline-block;
+          min-width: 40px;
+          // margin: 0 5% 0 0;
+          font-size: 12px;
+          color: #888;
+        &.active {
+          font-weight: 600;
+          color: #ea352d;
+          //↑acitveの文字を赤くする
+        }
+        
+        &.through {
+          .progress-status:after{
+            &:last-of-type
+            {
+            content: none;
+            }
+          }
+        }
+          .progress-status {
+            width: 12px;
+            height: 12px;
+            margin: 8px auto 0;
+            background: #ccc;
+            border-radius: 50%;
+            &::before {
+              right: 50%;
+            }
+            &::after
+            {
+              left: 50%;
+            }
+            &::before, &::after{
+              position: absolute;
+              bottom: 5px;
+              z-index: -1;
+              // display: inline;
+              content: '';
+              width: 100%;
+              height: 2px;
+              background: #ccc;
+            }
+          }
+        }
+      }
+    }
+    // throughの丸点
+    .progress-bar li.through .progress-status {
+      background: #ea352d;
+    }
+    // activeの丸点
+    .progress-bar li.active .progress-status {
+      background: #ea352d;
+    }
+    // throughの左の線
+    .progress-bar li.through .progress-status:before {
+      background: #ea352d;
+    }
+    // throughの左の線
+    .progress-bar li.through .progress-status:after {
+      background: #ea352d;
+    }
+    // activeの左の線
+    .progress-bar li.active .progress-status:before {
+      background: #ea352d;
+    }
+    .progress-bar li:last-child .progress-status:after {
+      background:#f5f5f5;
+    }
+    .progress-bar li:first-child .progress-status:before {
+      background:#f5f5f5;
+    } 
+  }
+  
+
+  .info-main {
+  .info-content {
+    background: #fff;
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    &__head {
+      padding: 24px 8px;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .info-inner.registration-form {
+      padding: 40px 16px;
+      border-top: 1px solid;
+      color: #f5f5f5;
+      .main-content {
+        max-width: 320px;
+        margin: 0 auto;
+        .form-group {
+          margin: 40px 0 0;
+          label {
+            color: #333;
+            font-weight: 600;
+          }
+          .form-require, .form-arbitrary, .message-is-seller, .news-private {
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            background: #ea352d;
+          }
+          .input-default {
+            width: 90%;
+            margin: 8px 0 0;
+            // height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+          
+          .sub-head {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+          }
+          .l-single-text {
+            color: #333;
+          }
+          .verification-text {
+            margin: 8px 0 0;
+            font-size: 14px; 
+            color: #333;
+          }
+          .birthday-select-wrap {
+            .select-wrap {
+              width: 76px;
+              display: inline-block;
+              margin: 8px 0 0;
+            }
+            select {
+              width: 100%;
+            }
+            .select-default {
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+              -webkit-appearance: none;
+              width: 120px;
+            }
+            .angle-down {
+              font-size: 25px;
+              color: gray;
+              position:relative;
+              bottom: 36px;
+              left: 85px;
+            }
+            .ymd {
+              position: relative;
+              color: #333;
+              bottom: 36px;
+              font-size: inherit;
+            }
+          }
+        }
+        .form-info-text {
+          color: #888;
+        }
+        .text-center {
+          color: #333;
+          text-align: center;
+          background: #fff;
+          a {
+            color: #0099e8;
+            text-decoration: none;
+          }
+        }
+        .btn-red {
+          margin: 40px 0 0;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+        }
+        .verification-text {
+          margin: 8px 0 0;
+          font-size: 14px; 
+          color: #333;
+        }
+        .btn-default {
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+        }
+        .text-right {
+          text-align: right;
+          a {
+          font-size: 14px;
+          color: #0099e8;
+          text-decoration: none;
+          }
+          .angle-right {
+            color: #0099e8;
+            font-weight: bold;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+  
+    .completion-content {
+      padding: 40px 16px;
+      border-top: 1px solid;
+      color: #f5f5f5;
+      p {
+        color: #333;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .btn-default {
+        margin: 0 auto;
+        display: block;
+        width: 80%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+      }
+    }
+    .btn-red {
+      margin: 40px 0;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+    }
+  }
+
+//-----------------------------------------------
+  .info-main-completion {
+    height: calc( 100vh - 380px);
+    .info-content {
+      background: #fff;
+      width: 700px;
+      margin: 0 auto;
+      &__head {
+        padding: 24px 8px;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.5;
+        text-align: center;
+      }
+      .info-inner.registration-form {
+        padding: 40px 16px;
+        border-top: 1px solid;
+        color: #f5f5f5;
+        .main-content {
+          max-width: 320px;
+          margin: 0 auto;
+          .form-group {
+            margin: 40px 0 0;
+            label {
+              color: #333;
+              font-weight: 600;
+            }
+            .form-require, .form-arbitrary, .message-is-seller, .news-private {
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+              background: #ea352d;
+            }
+            .input-default {
+              width: 90%;
+              margin: 8px 0 0;
+              // height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+            .sub-head {
+              font-weight: bold;
+              font-size: 18px;
+              color: #333;
+            }
+            .l-single-text {
+              color: #333;
+            }
+            .verification-text {
+              margin: 8px 0 0;
+              font-size: 14px; 
+              color: #333;
+            }
+            .birthday-select-wrap {
+              .select-wrap {
+                width: 76px;
+                display: inline-block;
+                margin: 8px 0 0;
+              }
+              select {
+                width: 100%;
+              }
+              .select-default {
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+                -webkit-appearance: none;
+              }
+              .angle-down {
+                font-size: 25px;
+                color: gray;
+                position:relative;
+                bottom: 36px;
+                left: 50px;
+              }
+              .ymd {
+                position: relative;
+                color: #333;
+                bottom: 36px;
+                font-size: inherit;
+              }
+            }
+          }
+          .form-info-text {
+            color: #888;
+          }
+          .text-center {
+            color: #333;
+            text-align: center;
+            background: #fff;
+            a {
+              color: #0099e8;
+              text-decoration: none;
+            }
+          }
+          .btn-red {
+            margin: 40px 0 0;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+          }
+          .verification-text {
+            margin: 8px 0 0;
+            font-size: 14px; 
+            color: #333;
+          }
+          .btn-default {
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+          }
+          .text-right {
+            text-align: right;
+            a {
+            font-size: 14px;
+            color: #0099e8;
+            text-decoration: none;
+            }
+            .angle-right {
+              color: #0099e8;
+              font-weight: bold;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    
+      .completion-content {
+        padding: 40px 16px;
+        border-top: 1px solid;
+        color: #f5f5f5;
+        p {
+          color: #333;
+          text-align: center;
+          margin-bottom: 40px;
+        }
+        .btn-default {
+          margin: 0 auto;
+          display: block;
+          width: 80%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+        }
+      }
+      .btn-red {
+        margin: 40px 0 0;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+      }
+    }
