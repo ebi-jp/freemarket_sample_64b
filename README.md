@@ -19,7 +19,7 @@
 - has_many :credits, dependent: :destroy
 - has_many :snses, dependent: :destroy
 - has_many :addresses, dependent: :destroy
-- has_many :items, through: :comments, dependent: :destroy
+- has_many :items, through: :comments
 - has_many :comments, dependent: :destroy
 
 ## addressesテーブル
@@ -47,6 +47,7 @@
 ## creditsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|references|null: false,foreign_key: true|
 |name|string|null: false|
 |card_number|integer|null: false|
 |pin_number|integer|null: false|
@@ -73,7 +74,7 @@
 - belongs_to :brand
 - belongs_to :category
 - has_many :images
-- has_many :users, through: :comments, dependent: :destroy
+- has_many :users, through: :comments
 - has_many :comments, dependent: :destroy
 
 ## commentsテーブル
@@ -100,8 +101,8 @@
 |parent_id|references|null: false,foreign_key: true|
 ### Association
 - has_many :items
-- has_many :child, class_name: "Category", foreign_key: "parent_id"
-- belongs_to :parent, class_name: "Category"
+- belongs_to :parent, class_name: "Categories", foreign_key: :"parent_id"
+- has_many :children, class_name: "Categories", foreign_key: :"parent_id"
 
 ## brandsテーブル
 |Column|Type|Options|
