@@ -20,7 +20,6 @@
 - has_many :credits
 - has_many :snses
 - has_many :addresses
-- has_many :images
 - has_many :items, through: :comments
 
 ## addressesテーブル
@@ -57,7 +56,7 @@
 |------|----|-------|
 |name|string|null: false|
 |price|string|null: false|
-|user_id|references|null: false,foreign_key: true|
+|seller_id|references|null: false,foreign_key: true|
 |buyer_id|references|null: false,foreign_key: true|
 |category_id|references|null: false,foreign_key: true|
 |brand_id|references|null: false,foreign_key: true|
@@ -75,7 +74,6 @@
 - has_many :users
 - has_many :users, through: :comments
 
-
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -88,12 +86,10 @@
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image_name|string||
-|post_id|references|null: false,foreign_key: true|
-|user_id|references|null: false,foreign_key: true|
+|name|string||
+|item_id|references|null: false,foreign_key: true|
 ### Association
 - belongs_to :item
-- belongs_to :user
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -107,7 +103,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string||
-|brand-group_id|references|null: false,foreign_key: true|
+|brandgroup_id|references|null: false,foreign_key: true|
 ### Association
 - has_many :items
 - has_many :brandgroups
