@@ -1,0 +1,112 @@
+.container {
+  background-color: white;
+  box-shadow: rgba(0,0,0,0.18) 0px 2px 4px;
+  position: relative;
+  z-index: 3;
+  .header {
+    height: 100px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 8px 0 0;
+    .header-top {
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      &__logo {
+        width: 134px;
+      }
+      &__search__form {
+        position: relative;
+        width: 100%;
+        margin-left: 45px;
+
+       }
+      &__search__input {
+        background-color: rgb(245, 245, 245);
+        font-size: 16px;
+        height: 40px;
+        line-height: 1.4em;
+        position: relative;
+        width: 100%;
+        -webkit-appearance: none;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(204, 204, 204);
+        border-image: initial;
+        border-radius: 4px;
+        outline: none;
+        padding: 0px 50px 0px 10px;
+      }
+      .icon-search {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+      }
+            }
+          }
+        }
+        .header-lists {
+          display: flex;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          margin-top: 8px;
+            &__left {
+              display: flex;
+              margin-left: -3px;
+              vertical-align: baseline;
+              margin: 0px;
+              .lists-menu__categories {
+              padding: 0px 11px 0px 0px;
+              display: block;
+              font-size: 14px;
+              font-family: "Arial","游ゴシック体","YuGothic";
+              font-weight: 600;
+              line-height: 36px;
+              white-space: nowrap;
+              text-decoration: none;
+                }
+              .lists-menu__brands {
+              display: block;
+              font-size: 14px;
+              font-family: "Arial","游ゴシック体","YuGothic";
+              font-weight: 600;
+              line-height: 36px;
+              white-space: nowrap;
+                }
+            }
+            &__right {
+              display: flex;
+              .lists-menu__sighin{
+              color: #ffffff;
+              padding: 0px 10px;
+              background-color: #ea352d;
+              font-size: 14px;
+              font-family: "Arial","游ゴシック体","YuGothic";
+              font-weight: 600;
+              line-height: 36px;
+              white-space: nowrap;
+              border-radius: 4px;
+              text-align: center;
+              }
+              .lists-menu__sighup{
+              padding: 0px 10px;
+              color: #0095ee;
+              background-color: #fff;
+              display: block;
+              font-size: 14px;
+              font-family: "Arial","游ゴシック体","YuGothic";
+              font-weight: 600;
+              line-height: 36px;
+              white-space: nowrap;
+              border-radius: 4px;
+              text-align: center;
+              }              
+            }
+          }
