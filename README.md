@@ -16,11 +16,11 @@
 |dirth_day|integer|null: false|
 |phone_number|integer|null: false|
 ### Association
-- has_many :items
 - has_many :credits, dependent: :destroy
 - has_many :snses, dependent: :destroy
 - has_many :addresses, dependent: :destroy
 - has_many :items, through: :comments, dependent: :destroy
+- has_many :comments, dependent: :destroy
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -73,8 +73,8 @@
 - belongs_to :brand
 - belongs_to :category
 - has_many :images
-- has_many :users
 - has_many :users, through: :comments, dependent: :destroy
+- has_many :comments, dependent: :destroy
 
 ## commentsテーブル
 |Column|Type|Options|
