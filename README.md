@@ -25,6 +25,7 @@
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|references|null: false,foreign_key: true|
 |postal_code|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -37,6 +38,7 @@
 ## snsesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|references|null: false,foreign_key: true|
 |name|string|null: false|
 |token|string|null: false|
 ### Association
@@ -47,7 +49,7 @@
 |------|----|-------|
 |name|string|null: false|
 |card_number|integer|null: false|
-|pin_namber|integer|null: false|
+|pin_number|integer|null: false|
 ### Association
 - belongs_to :user
 
@@ -94,8 +96,7 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category_name|string|null: false|
-|item_id|references|null: false,foreign_key: true|
+|name|string|null: false|
 ### Association
 - has_many :items
 
@@ -103,16 +104,5 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string||
-|brandgroup_id|references|null: false,foreign_key: true|
 ### Association
 - has_many :items
-- has_many :brandgroups
-- has_many :brandgroups, through: :brands_brandgroups
-
-## brandgroupsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string||
-### Association
-- has_many :brands
-- has_many :brands, through: :brands_brandgroups
