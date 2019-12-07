@@ -1,139 +1,10 @@
-.wrapper {
-  height: 100%;
-  background: #f5f5f5;
- }
- 
-
-  .m-header {
-    background: #f5f5f5;
-    height: 128px;
-    text-align: center;
-    h1 {
-      padding: 40px 0 0;
-    }
-      .mercarilogo {
-        width: 185px;
-        height: 49px;
-      }
-  }
-    .registration-main {
-      background: #f5f5f5;
-      .main-content {
-        width: 700px;
-        margin: 0 auto;
-        background:#fff;
-        line-height: 1.5;
-      h2 {
-        font-size: 22px;
-        line-height: 1.4;
-      }
-      &__head {
-        padding: 32px 16px;
-        font-size: 22px;
-        line-height: 1.5;
-        text-align: center;
-      }
-      .inner-content {
-        padding: 64px;
-        border-top: 1px solid #f5f5f5;
-      }
-      .l-main-content {
-        max-width: 320px;
-        margin: 0 auto;
-        a {
-          text-decoration: none;
-        }
-        .btn-default {
-          display: block;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          border: 1px solid transparent;
-          -webkit-transition: all ease-out .3s;
-          transition: all ease-out .3s;
-          cursor: pointer;
-          text-align: center;
-        }
-        .btn-mail {
-          position: relative;
-          background: #eee;
-          color: #000;
-          .icon-mail {
-            top: 25%;
-            left: 16px;
-            position: absolute;
-            font-size: 20px;
-            color: #ccc;
-          }
-        }
-        .btn-mail:hover {
-          background:  #f5f5f5;
-        }
-        .btn-sns-facebook {
-          margin: 16px 0 0;
-          background: #385185;
-          color: #fff;
-        }
-        .btn-sns-google {
-          margin: 16px 0 0;
-          border: #979797 solid 1px;
-          color: #333;
-        }
-        .btn-sns {
-          position: relative;
-          .icon-sns {
-            top: 25%;
-            left: 16px;
-            position: absolute;
-            font-size: 26px;
-          }
-        }
-      }
-    }
-  }
-
-  .m-footer {
-    background: #f5f5f5;
-    box-sizing: border-box;
-    height: 250px;
-    margin: 0 auto;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    padding: 40px 0;
-    text-align: center;
-    nav ol, nav ul {
-      list-style: none;
-    }
-      .clearfix {
-        li {
-          display: inline-block;
-          margin: 0 0 0 16px;
-          a{
-            font-size: 12px;
-            color: #333;
-            text-decoration: none;
-            width: 80px;
-            height: 65px;
-            margin: 40px auto 0;
-            }
-          a:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-        .mercarilogo {
-          padding-top: 40px;
-        }
-  }
-//-----------------------------------------------
 
 
-//--------------会員情報入力ページ(濱田)--------------------------------------
+//--------------会員情報入力ページ(海老原)--------------------------------------
   .wrapper-member-info {
     height: 100%;
     background: #f5f5f5;
+    
   }
   
   
@@ -237,360 +108,171 @@
     } 
   }
   
+// -------------------------------------------------------------------------
 
-  .info-main {
-  .info-content {
-    background: #fff;
-    width: 700px;
-    height: 100%;
+.info-content{
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  &__head{
+    font-size: 22px;
+    padding: 32px;
+    text-align: center;
+    line-height: 1.5;
+    border-bottom: #ccc inset thin;
+  }
+  .field.main-content2{
+    text-align:center;
     margin: 0 auto;
-    &__head {
-      padding: 24px 8px;
-      font-size: 22px;
-      font-weight: bold;
-      line-height: 1.5;
-      text-align: center;
-    }
-    .info-inner.registration-form {
-      padding: 40px 16px;
-      border-top: 1px solid;
-      color: #f5f5f5;
-      .main-content {
-        max-width: 320px;
-        margin: 0 auto;
-        .form-group {
-          margin: 40px 0 0;
-          label {
-            color: #333;
-            font-weight: 600;
-          }
-          .form-require, .form-arbitrary, .message-is-seller, .news-private {
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #fff;
-            font-size: 12px;
-            vertical-align: top;
-            background: #ea352d;
-          }
-          .input-default {
-            width: 90%;
-            margin: 8px 0 0;
-            // height: 48px;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-            font-size: 16px;
-          }
-          
-          .sub-head {
-            font-weight: bold;
-            font-size: 18px;
-            color: #333;
-          }
-          .l-single-text {
-            color: #333;
-          }
-          .verification-text {
-            margin: 8px 0 0;
-            font-size: 14px; 
-            color: #333;
-          }
-          .birthday-select-wrap {
-            .select-wrap {
-              width: 76px;
-              display: inline-block;
-              margin: 8px 0 0;
-            }
-            select {
-              width: 100%;
-            }
-            .select-default {
-              position: relative;
-              z-index: 2;
-              height: 48px;
-              padding: 0 16px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              background: 0;
-              font-size: 16px;
-              line-height: 1.5;
-              cursor: pointer;
-              -webkit-appearance: none;
-              width: 120px;
-            }
-            .angle-down {
-              font-size: 25px;
-              color: gray;
-              position:relative;
-              bottom: 36px;
-              left: 85px;
-            }
-            .ymd {
-              position: relative;
-              color: #333;
-              bottom: 36px;
-              font-size: inherit;
-            }
-          }
-        }
-        .form-info-text {
-          color: #888;
-        }
-        .text-center {
-          color: #333;
-          text-align: center;
-          background: #fff;
-          a {
-            color: #0099e8;
-            text-decoration: none;
-          }
-        }
-        .btn-red {
-          margin: 40px 0 0;
-          background: #ea352d;
-          border: 1px solid #ea352d;
-          color: #fff;
-        }
-        .verification-text {
-          margin: 8px 0 0;
-          font-size: 14px; 
-          color: #333;
-        }
-        .btn-default {
-          display: block;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          border: 1px solid transparent;
-          -webkit-transition: all ease-out .3s;
-          transition: all ease-out .3s;
-          cursor: pointer;
-          text-align: center;
-        }
-        .text-right {
-          text-align: right;
-          a {
-          font-size: 14px;
-          color: #0099e8;
-          text-decoration: none;
-          }
-          .angle-right {
-            color: #0099e8;
-            font-weight: bold;
-            font-size: 20px;
-          }
-        }
-      }
-    }
-  }
-  
-    .completion-content {
-      padding: 40px 16px;
-      border-top: 1px solid;
-      color: #f5f5f5;
-      p {
-        color: #333;
-        text-align: center;
-        margin-bottom: 40px;
-      }
-      .btn-default {
-        margin: 0 auto;
-        display: block;
-        width: 80%;
-        line-height: 48px;
-        font-size: 14px;
-        border: 1px solid transparent;
-        -webkit-transition: all ease-out .3s;
-        transition: all ease-out .3s;
-        cursor: pointer;
-        text-align: center;
-      }
-    }
-    .btn-red {
-      margin: 40px 0;
-      background: #ea352d;
-      border: 1px solid #ea352d;
-      color: #fff;
-    }
-  }
-
-//-----------------------------------------------
-  .info-main-completion {
-    height: calc( 100vh - 380px);
-    .info-content {
-      background: #fff;
-      width: 700px;
-      margin: 0 auto;
-      &__head {
-        padding: 24px 8px;
-        font-size: 22px;
-        font-weight: bold;
-        line-height: 1.5;
-        text-align: center;
-      }
-      .info-inner.registration-form {
-        padding: 40px 16px;
-        border-top: 1px solid;
-        color: #f5f5f5;
-        .main-content {
-          max-width: 320px;
-          margin: 0 auto;
-          .form-group {
-            margin: 40px 0 0;
-            label {
-              color: #333;
-              font-weight: 600;
-            }
-            .form-require, .form-arbitrary, .message-is-seller, .news-private {
-              margin: 0 0 0 8px;
-              padding: 2px 4px;
-              border-radius: 2px;
-              color: #fff;
-              font-size: 12px;
-              vertical-align: top;
-              background: #ea352d;
-            }
-            .input-default {
-              width: 90%;
-              margin: 8px 0 0;
-              // height: 48px;
-              padding: 10px 16px 8px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              background: #fff;
-              line-height: 1.5;
-              font-size: 16px;
-            }
-            .sub-head {
-              font-weight: bold;
-              font-size: 18px;
-              color: #333;
-            }
-            .l-single-text {
-              color: #333;
-            }
-            .verification-text {
-              margin: 8px 0 0;
-              font-size: 14px; 
-              color: #333;
-            }
-            .birthday-select-wrap {
-              .select-wrap {
-                width: 76px;
-                display: inline-block;
-                margin: 8px 0 0;
-              }
-              select {
-                width: 100%;
-              }
-              .select-default {
-                position: relative;
-                z-index: 2;
-                height: 48px;
-                padding: 0 16px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                background: 0;
-                font-size: 16px;
-                line-height: 1.5;
-                cursor: pointer;
-                -webkit-appearance: none;
-              }
-              .angle-down {
-                font-size: 25px;
-                color: gray;
-                position:relative;
-                bottom: 36px;
-                left: 50px;
-              }
-              .ymd {
-                position: relative;
-                color: #333;
-                bottom: 36px;
-                font-size: inherit;
-              }
-            }
-          }
-          .form-info-text {
-            color: #888;
-          }
-          .text-center {
-            color: #333;
-            text-align: center;
-            background: #fff;
-            a {
-              color: #0099e8;
-              text-decoration: none;
-            }
-          }
-          .btn-red {
-            margin: 40px 0 0;
-            background: #ea352d;
-            border: 1px solid #ea352d;
-            color: #fff;
-          }
-          .verification-text {
-            margin: 8px 0 0;
-            font-size: 14px; 
-            color: #333;
-          }
-          .btn-default {
-            display: block;
-            width: 100%;
-            line-height: 48px;
-            font-size: 14px;
-            border: 1px solid transparent;
-            -webkit-transition: all ease-out .3s;
-            transition: all ease-out .3s;
-            cursor: pointer;
-            text-align: center;
-          }
-          .text-right {
-            text-align: right;
-            a {
-            font-size: 14px;
-            color: #0099e8;
-            text-decoration: none;
-            }
-            .angle-right {
-              color: #0099e8;
-              font-weight: bold;
-              font-size: 20px;
-            }
-          }
-        }
-      }
-    }
-    
-      .completion-content {
-        padding: 40px 16px;
-        border-top: 1px solid;
-        color: #f5f5f5;
-        p {
-          color: #333;
-          text-align: center;
-          margin-bottom: 40px;
-        }
-        .btn-default {
-          margin: 0 auto;
-          display: block;
-          width: 80%;
-          line-height: 48px;
-          font-size: 14px;
-          border: 1px solid transparent;
-          -webkit-transition: all ease-out .3s;
-          transition: all ease-out .3s;
-          cursor: pointer;
-          text-align: center;
-        }
-      }
-      .btn-red {
-        margin: 40px 0 0;
-        background: #ea352d;
-        border: 1px solid #ea352d;
+    .form-group{
+      margin-top:30px;
+      .form-require{
+        background-color: #ea352d;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
         color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+      }
+      .input-default{
+        height: 30px;
+        width: 300px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+      .login-input-text{
+        height: 30px;
+        width: 300px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+      .l-single-text{
+        width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
       }
     }
+  }
+}
+
+.aaa{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+.form-group__name{
+display: flex;
+}
+.login-input-text-content{
+  height: 30px;
+  width: 145px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  display:inline-block;
+}
+.form-group label {
+  font-weight: 600;
+  
+}
+
+
+
+
+.form-group__birth{
+  margin-top: 30px;
+
+  .form-require{
+    background-color: #ea352d;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+    }
+}
+
+.form-info-text{
+  font-size:14px;
+  margin-top: 30px;
+  width: 330px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ccc;
+}
+
+.actions{
+
+}
+.btn-red{
+  background-color: #ea352d;
+  color: #fff;
+  line-height: 60px;
+  width: 350px;
+  margin-top:30px;
+}
+
+.div select{
+  height: 50px;
+  width: 70px;
+  background-color: white;
+}
+
+
+.login-input-text-content-right{
+  height: 30px;
+  width: 130px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  display:inline-block;
+  margin-top: 24px;
+}
+
+.login-input-text-content-left{
+  height: 30px;
+  width: 130px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  display:inline-block;
+  margin-right: 5px;
+}
+
+.info{
+  color: #888;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.checkbox{
+  margin-top: 10px;
+}
+
+.links{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
