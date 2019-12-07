@@ -1,10 +1,12 @@
 .item-box-container {
   margin: 40px auto 0;
   padding: 24px 40px 40px;
+  background-color: white;
 }
 
 .l-single-container {
   width: 700px;
+  background-color: white;
 }
 
 .item-name {
@@ -273,6 +275,7 @@ ul, ol {
   margin: 24px auto;
   padding: 32px 0 24px;
   width: 700px;
+  background-color: white;
 }
 
 .fa-facebook-square {font-size: 50px;}
@@ -306,6 +309,7 @@ ul, ol {
   float: left;
   height: 330px;
   margin-bottom: 50px;
+  background-color: white;
 }
 
 .related-item-column .items-box:nth-child(3n) {
@@ -365,6 +369,13 @@ ul, ol {
   padding: 16px 0;
   white-space: normal;
 }
+.bread-crumbs {
+  border-top: 1px solid #eee;
+}
+
+.pos-bottom {
+  border-top: 1px solid #eee;
+}
 
 .fa-facebook-square{
   color: #385185;
@@ -381,3 +392,7 @@ ul, ol {
 .fa-pinterest-square{
   color: #aa262a;
 }
+
+// .default-container {
+//   background-color: #F2F2F2;
+// }
