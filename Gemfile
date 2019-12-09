@@ -36,7 +36,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
   gem 'byebug', platform: :mri
 end
 
@@ -53,7 +57,12 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'font-awesome-sass'
-
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
+gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 group :production do
   gem 'unicorn', '5.4.1'

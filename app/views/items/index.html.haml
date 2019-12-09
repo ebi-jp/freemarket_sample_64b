@@ -1,9 +1,269 @@
-= render 'shared/header'
-
-= render 'shared/header-slides'
-
-= render 'shared/contents'
-
-= render 'shared/footer-picture'
-
-= render 'shared/footer'
+%section.item-box-container.l-single-container
+  %h1.item-name COACH  スエード  バッグ
+  %p.item-wording
+    『COACH  スエード  バッグ』は、187回の取引実績を持つ
+    = link_to 'niwa  本気で断捨離中！'
+    さんから出品されました。
+    = link_to 'コーチ'
+    （
+    = link_to 'ショルダーバッグ/レディース'
+    ）の商品で、兵庫県から1~2日で発送されます。
+  .item-main-content.clearfix
+    .item-photo
+      .carousel.loaded.drag
+        .stage-outer
+          .stage{style: "left: -300px; width: 2400px;"}
+            .item{style: "width: 300px;"}
+              .item-inner
+                = image_tag 'goods_main.jpeg', size: "300x300", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
+            .item.active{style: "width: 300px;"}
+              .item-inner
+                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
+            .item{style: "width: 300px;"}
+              .item-inner
+                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
+            .item{style: "width: 300px;"}
+              .item-inner
+                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
+            .item{style: "width: 300px;"}
+              .item-inner
+                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
+            .item{style: "width: 300px;"}
+              .tem-inner
+                = image_tag 'bag_sub2.jpeg', size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
+            .item{style: "width: 300px;"}
+              .item-inner
+                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
+            .item{style: "width: 300px;"}
+              .item-inner
+                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
+            .item{style: "width: 300px;"}  
+              .item-inner
+                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
+    %table.item-detail-table
+      %tbody
+        %tr
+          %th 出品者
+          %td
+            = link_to 'niwa  本気で断捨離中！'
+            %div
+              .item-user-ratings
+                %i.far.fa-grin-beam
+                %span 187
+              .item-user-ratings
+                %i.far.fa-meh
+                %span 2
+              .item-user-ratings
+                %i.far.fa-frown
+                %span 0
+        %tr
+          %th カテゴリー
+          %td            
+            %div 
+            = link_to 'レディース'
+            %div 
+            = link_to class:"item-detail-table-sub-category" do
+              = icon('fas', 'angle-right')
+              バッグ
+            %div
+            = link_to class:"item-detail-table-sub-category" do
+              = icon('fas', 'angle-right')
+              ショルダーバッグ
+        %tr
+          %th ブランド
+          %td
+            %div
+              = link_to 'コーチ'
+        %tr
+          %th 商品の状態
+          %td 目立った傷や汚れなし
+        %tr
+          %th 配送料の負担
+          %td 送料込み(出品者負担)
+        %tr
+          %th 配送の方法
+          %td らくらくメルカリ便
+        %tr
+          %th 配送元地域
+          %td
+            = link_to '兵庫県'
+        %tr
+          %th 発送日の目安
+          %td 1~2日で発送
+  .item-price-box.text-center
+    %span.item-price.bold ¥14,800
+    %span.item-tax (税込)
+    %span.item-shipping-fee 送料込み
+  
+    .item-buy-btn
+      購入画面に進む
+  .item-description.f14
+    %p.item-description__inner
+      COACHのスエードのショルダーバッグです。
+      
+      十数年前にCOACH神戸店にて購入しました。
+      
+      特に気になるダメージはないかと思います。
+      
+      スエードですので、高級感があります。ショルダー部分が3段階に長さ調整できるようになっています。
+      
+      付属品  箱 保存袋  スエードのお手入れキット(袋にはシミがあります)
+      
+      中古品としてご理解頂ける方に。
+      
+  .item-button-container.clearfix
+    .item-button-left
+      .item-button.item-button-like
+        %i.far.fa-heart
+        %span いいね!
+        %span{"data-num" => "like"} 1
+      .item-button.item-button-report
+        %i.far.fa-flag
+        %span 不適切な商品の報告
+    .item-button-right
+      %i.fas.fa-key
+      %span あんしん・あんぜんへの取り組み
+.item-detail-message
+  .message-container
+    %ul.nav-item-link-prev-next
+      %li.nav-item-link-prev
+        = link_to class: "nav-item-link-prev" do
+          = icon('fas', 'angle-left')
+          リトルツインスターズ   パスケース❗️新品未使用❗️
+      %li.nav-item-link-next
+        = link_to class: "nav-item-link-next" do        
+          LOVE SONGS
+          = icon('fas', 'angle-right')
+.item-social-media-box
+  .text-center
+    .fb-save.fb_iframe_widget{"fb-xfbml-state": "rendered"}
+      %span{style: "vertical-align: top; width: 0px; height: 0px; overflow: hidden;"}
+        %iframe{allow: "encrypted-media", allowfullscreen: "true", allowtransparency: "true", frameborder: "0", height: "1000px", name: "f39b5d30536793c", scrolling: "no", src: "", style: "border: none; visibility: visible; width: 0px; height: 0px;", title: "fb:save Facebook Social Plugin", width: "1000px"}
+  %ul.social-media-box
+    %li
+      .share-btn
+        = icon('fab', 'facebook-square')
+    %li
+      .share-btn
+        = icon('fab', 'twitter-square')
+    %li
+      .social-hidden-item
+        = icon('fab', 'line')
+    %li
+      .share-btn
+        = icon('fab', 'pinterest-square')
+.items-in-user-profile
+  %section.items-box-container.clearfix.related-item-column.items-in-user-profile
+    %h2.items-box-head
+      = link_to "niwa 本気で断捨離中！さんのその他の出品"
+    .items-box-content.clearfix
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "ワンオク　ボディバッグ"
+        .items-box-body
+          %h3.items-box-name.font-2 ワンオク　ボディバッグ
+          .items-box-num
+            .items-box-price.font-5 ¥8,500
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "MY FIRST STORY CDセット売り"
+        .items-box-body
+          %h3.items-box-name.font-2 MY FIRST STORY CDセット売り
+          .items-box-num
+            .items-box-price.font-5 ¥4,500
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "マイケルコース　2wayバック"
+        .items-box-body
+          %h3.items-box-name.font-2 マイケルコース　2wayバック
+          .items-box-num
+            .items-box-price.font-5 ¥8,000
+            .font-2
+              %i.far.fa-heart
+              %span 5
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "ディッキーズ　ハーフパンツ"
+        .items-box-body
+          %h3.items-box-name.font-2 ディッキーズ　ハーフパンツ
+          .items-box-num
+            .items-box-price.font-5 ¥2,000
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "Acid Black Cherry カチューシャ"
+        .items-box-body
+          %h3.items-box-name.font-2 Acid Black Cherry カチューシャ
+          .items-box-num
+            .items-box-price.font-5 ¥900
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "ワンオク　トートバック"
+        .items-box-body
+          %h3.items-box-name.font-2 ワンオク　トートバック
+          .items-box-num
+            .items-box-price.font-5 ¥1,500
+            .font-2
+              %i.far.fa-heart
+              %span 1
+  %section.items-box-container.clearfix.related-item-column
+    %h2.items-box-head
+      = link_to "コーチのショルダーバッグ その他の商品"  
+    .items-box-content.clearfix
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "ショルダーバッグ  お値下げ"
+        .items-box-body
+          %h3.items-box-name.font-2 ショルダーバッグ  お値下げ
+          .items-box-num
+            .items-box-price.font-5 ¥3,000
+            .font-2
+              %i.far.fa-heart
+              %span 3
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "コーチ　花柄　ショルダーバッグ"
+        .items-box-body
+          %h3.items-box-name.font-2 コーチ　花柄　ショルダーバッグ
+          .items-box-num
+            .items-box-price.font-5 ¥6,500
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "美品 オールドコーチ 9790 ターンロック 斜め掛けショルダーバッグ G311"
+        .items-box-body
+          %h3.items-box-name.font-2 美品 オールドコーチ 9790 ターンロック 斜め掛けショルダーバッグ G311
+          .items-box-num
+            .items-box-price.font-5 ¥16,900
+            .font-2
+              %i.far.fa-heart
+              %span 12
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "USA製 オールドコーチ　 Canteen　牛革レザー　ポシェット　ネイビー"
+        .items-box-body
+          %h3.items-box-name.font-2 USA製 オールドコーチ　 Canteen　牛革レザー　ポシェット　ネイビー
+          .items-box-num
+            .items-box-price.font-5 ¥10,000
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "最終値下げ☆新品 COACH チャーりキャリーオール ハンドバッグ ショルダー"
+        .items-box-body
+          %h3.items-box-name.font-2 最終値下げ☆新品 COACH チャーりキャリーオール ハンドバッグ ショルダー
+          .items-box-num
+            .items-box-price.font-5 ¥17,000
+            .font-2
+              %i.far.fa-heart
+              %span 11
+      %section.items-box
+        %figure.items-box-photo
+          = image_tag 'bag_sub.jpeg', size: "220x220", class: "lazyloaded", alt: "⭐️美品⭐️コーチ　バック"
+        .items-box-body
+          %h3.items-box-name.font-2 ⭐️美品⭐️コーチ　バック
+          .items-box-num
+            .items-box-price.font-5 ¥8,900
+%nav.bread-crumbs.pos-bottom
+  %ul
+    %li{itemscope: "", itemtype: ""}
+      %span{itemprop: "title"} 
+      = link_to "メルカリ"
+      %i.fas.fa-angle-right
+        コーチ　2way ハンドバッグ
