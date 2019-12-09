@@ -1,0 +1,204 @@
+.single-main {
+  display: block;
+  height: 837px;
+}
+
+.l-single-container {
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  height: 855px;
+}
+
+.buy-head {
+  font-size: 22px;
+  padding: 32px;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: bold;
+}
+
+.buy-content {
+  padding: 32px 16px;
+  border-top: 1px solid #f5f5f5;
+  &__inner {
+  max-width: 343px;
+  margin: 0 auto;
+  width: 343px;
+  height: 80px;
+  }
+}
+
+.buy-content:first-of-type {
+  margin: 0;
+}
+
+.buy-item {
+  text-align: center;
+  &__image {
+  height: 80px;
+  width: 80px;
+  min-width: 80px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  float: left;
+  }
+  &__box {
+  height: 80px;
+  width: 280px;
+  }
+  &__detail {
+  width: 193px;
+  height: 80px;
+  float: right;
+  margin-left: 0px;
+  }
+  &__name {
+  width: 230px;
+  text-align: left;
+  font-size: 13px;
+  margin-left: 10px;
+  }
+  &__container {
+  height: 855px;
+  }
+}
+
+.buy-item:last-of-type {
+  padding-bottom: 48px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+.bold {
+  font-weight: 540;
+  font-size: 13px;
+  margin-left: 10px;
+  text-align: left;
+  font-weight: bolder;
+}
+
+.buy-price-cell {
+  display: table-cell;
+  padding: 0;
+  text-align: right;
+  width: 150px;
+  font-size: 25px;
+}
+
+.buy-price-cell:first-child {
+  text-align: left;
+  font-size: 18px;
+}
+
+.buy-accordion {
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+.buy-not-have-point {
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+.accordion-parent{
+  padding-top: 20px;
+}
+
+.checkbox-default {
+  padding-left: 10px;
+}
+
+.buy-use-point {
+  padding-left: 10px;
+}
+
+.buy-user-info {
+  padding: 32px 0;
+  height: 185px;
+  &__fix {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  }
+  &__text {
+  padding-top: 6px;
+  font-size: 14px;
+  }
+  &__adress {
+  height: 155px;
+  padding-left: 0px;
+  }
+  &__purchase {
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 40px;
+  }
+}
+
+.buy-content:first-of-type {
+  margin: 0;
+}
+
+.fa-cc-jcb {
+  margin-top: 7px;
+}
+
+.clearfix {
+  height: 21px;
+}
+
+.l-left {
+  float: left;
+}
+
+.l-right {
+  float: right;
+  font-size: 14px;
+}
+
+.buy-form p {
+  line-height: 1.5;
+  text-align: left;
+}
+
+.buy-card-logo {
+  text-align: left;
+  margin-left: 0px;
+  margin-top: 6px
+}
+
+.btn-default {
+  width: 343px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  line-height: 48px;
+}
+
+.btn-red {
+  width: 343px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  text-align: center;
+}
+
+.checkbox-default .icon-check {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+}
