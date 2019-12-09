@@ -2,5 +2,10 @@
 @import "./messages";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
+@import "./items";
+@import "mixins/mixin";
+@import "modules/header";
+@import "modules/contents";
+@import "modules/footer";
 @import "./user";
 @import "./product_detail/index.scss";
