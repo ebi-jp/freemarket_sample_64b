@@ -126,12 +126,19 @@
   transition: all ease-out .3s;
 }
 
+// .item-description {
+//   padding: 32px 0 0;
+// }
+
+// .item-description-inner {
+//   line-height: 1.7;
+// }
+
 .item-description {
   padding: 32px 0 0;
-}
-
-.item-description-inner {
-  line-height: 1.7;
+  &__inner {
+    line-height: 1.7;
+  }
 }
 
 .item-button-container span {
