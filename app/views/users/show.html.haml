@@ -3,118 +3,118 @@
     .content
       %section.chapter-container
         %h2.chapter-head プロフィール
-        %form{:action => "https://www.mercari.com/jp/mypage/profile/", :method => "POST"}
-          %input{:name => "__csrf_value", :type => "hidden", :value => "ff03575aa5012898b47020d66569fc42d70abf5a0655aa9e316d21f12b65dbb999be5ef29f553e0acbd5d943c7810430ce42b6727c171eb4c628d5d68b4c91927"}/
+        %form{action: "https://www.mercari.com/jp/mypage/profile/", method: "POST"}
+          %input{name: "__csrf_value", type: "hidden", value: "ff03575aa5012898b47020d66569fc42d70abf5a0655aa9e316d21f12b65dbb999be5ef29f553e0acbd5d943c7810430ce42b6727c171eb4c628d5d68b4c91927"}/
         .setting-profile-icon
           %figure.user-icon
             = image_tag '//static.mercdn.net/images/member_photo_noimage_thumb.png', alt: '', height: '60', width: '60', class: 'user-icon'
-            %input.input-default{:name => "nickname", :placeholder => "例)AYA☆セール中", :type => "text", :value => "sato"}/
+            %input.input-default{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: "sato"}/
         .setting-profile-content
-          %textarea.textarea-default{:name => "introduction", :placeholder => "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
-          %input{:name => "after_save_callback", :type => "hidden", :value => "https://www.mercari.com/jp/mypage/profile/"}/
-          %button.btn-default.btn-red{:type => "submit"} 変更する
+          %textarea.textarea-default{name: "introduction", placeholder: ""}
+          %input{name: "after_save_callback", type: "hidden", value: "https://www.mercari.com/jp/mypage/profile/"}/
+          %button.btn-default.btn-red{type: "submit"} 変更する
     
     .side
       %nav.mypage-nav
         %ul.mypage-nav-list
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/"}
+            .mypage-nav-list-item{href: "/jp/mypage/"}
               マイページ
               %i.fas.fa-chevron-right
 
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/notification/"}
+            .mypage-nav-list-item{href: "/jp/mypage/notification/"}
               お知らせ
               %span.mypage-nav-number
                 3
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/todo/"}
+            .mypage-nav-list-item{href: "/jp/mypage/todo/"}
               やることリスト
               %span.mypage-nav-number
                 2
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/like/history/"}
+            .mypage-nav-list-item{href: "/jp/mypage/like/history/"}
               いいね！一覧
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/sell/"}
+            .mypage-nav-list-item{href: "/jp/sell/"}
               出品する
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/listings/listing/"}
+            .mypage-nav-list-item{href: "/jp/mypage/listings/listing/"}
               出品した商品 - 出品中
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/listings/in_progress/"}
+            .mypage-nav-list-item{href: "/jp/mypage/listings/in_progress/"}
               出品した商品 - 取引中
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/listings/completed/"}
+            .mypage-nav-list-item{href: "/jp/mypage/listings/completed/"}
               出品した商品 - 売却済み
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/purchase/"}
+            .mypage-nav-list-item{href: "/jp/mypage/purchase/"}
               購入した商品 - 取引中
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/purchased/"}
+            .mypage-nav-list-item{href: "/jp/mypage/purchased/"}
               購入した商品 - 過去の取引
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/news/"}
+            .mypage-nav-list-item{href: "/jp/mypage/news/"}
               ニュース一覧
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/review/history/"}
+            .mypage-nav-list-item{href: "/jp/mypage/review/history/"}
               評価一覧
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/help_center/"}
+            .mypage-nav-list-item{href: "/jp/help_center/"}
               ガイド
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/support/"}
+            .mypage-nav-list-item{href: "/jp/mypage/support/"}
               お問い合わせ
               %i.fas.fa-chevron-right
         %h3.mypage-nav-head メルペイ
         %ul.mypage-nav-list
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/sales/"}
+            .mypage-nav-list-item{href: "/jp/mypage/sales/"}
               残高・振込申請
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/point/"}
+            .mypage-nav-list-item{href: "/jp/mypage/point/"}
               ポイント
               %i.fas.fa-chevron-right
         %h3.mypage-nav-head 設定
         %ul.mypage-nav-list
           %li
-            .mypage-nav-list-item.active{:href => "/jp/mypage/profile/"}
+            .mypage-nav-list-item.active{href:"/jp/mypage/profile/"}
               プロフィール
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/deliver_address/"}
+            .mypage-nav-list-item{href: "/jp/mypage/deliver_address/"}
               発送元・お届け先住所変更
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/card/"}
+            .mypage-nav-list-item{href: "/jp/mypage/card/"}
               支払い方法
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/email_password/"}
+            .mypage-nav-list-item{href: "/jp/mypage/email_password/"}
               メール/パスワード
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/identification/"}
+            .mypage-nav-list-item{href: "/jp/mypage/identification/"}
               本人情報
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/mypage/sms_confirmation/"}
+            .mypage-nav-list-item{href: "/jp/mypage/sms_confirmation/"}
               電話番号の確認
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{:href => "/jp/logout/"}
+            .mypage-nav-list-item{href: "/jp/logout/"}
               ログアウト
               %i.fas.fa-chevron-right
