@@ -2,10 +2,14 @@
 @import "font-awesome-sprockets";
 @import "./font-awesome";
 @import "./items";
+@import "./user";
+@import "./product_detail/index.scss";
+@import "./purchase/index.scss";
 @import "mixins/mixin";
 @import "modules/header";
 @import "modules/contents";
 @import "modules/footer";
 @import "./user";
 @import "./product_detail/index.scss";
-@import "modules/show"
+@import "modules/show";
+@import "modules/footer";

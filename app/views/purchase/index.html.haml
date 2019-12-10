@@ -1,0 +1,90 @@
+%main.single-main
+  %section.l-single-container.buy-item-container
+    %h2.l-single-head.buy-head 購入内容の確認
+    %section.buy-content.buy-item
+      .buy-content__inner
+        .buy-item__box
+          %h3.buy-item__image
+            = image_tag 'goods_main.jpeg', size: "80x60", class: "lazyloaded", alt: "", opacity: 1;
+          .buy-item__detail
+            %p.buy-item__name ナノユニバース　ボディバッグ
+            %p.buy-price-ja.bold
+              %span ¥1,600
+              %span.item-shipping-fee （税込）送料込み
+    %section.buy-content.buy-item
+      .buy-content__inner
+        %form.buy-form{action: "", method: "POST", novalidate: "novalidate"}
+          %ul.buy-price-table
+            %li.buy-price-row.buy-you-pay.bold
+              .buy-price-cell.buy-price-cell-label 支払い金額
+              .buy-price-cell
+                %span{"data-buy-pay" => "1600", style: "margin-left: 110px;"} ¥1,600
+          %ul.buy-accordion.buy-not-have-point
+            %li.accordion-parent
+              .checkbox-default.buy-use-point
+                %input{disabled: "disabled", type: "checkbox", style: "width: 18px; height: 16px;"}/
+                %label ポイントを使用 (所持ポイント: P0)
+          %section.buy-content.buy-user-info{"data-buy" => "pay-method"}
+            .buy-content__inner__pay
+              .clearfix
+                %h3.l-left 支払い方法
+                .l-right.buy-user-info__fix
+                  %span
+                    = link_to '変更する'
+              %p.buy-user-info__text
+                クレジットカード
+                %br/
+                ************1017
+                %br/
+                有効期限 01 / 24
+              %figure.buy-card-logo
+                %i.fab.fa-cc-jcb.fa-lg
+              %p
+          %section.buy-content.buy-user-info__adress
+            .buy-content__inner
+              .clearfix
+                %h3.l-left 配送先
+                .l-right.buy-user-info__fix
+                  %span
+                    = link_to '変更する'
+              %address.buy-user-info__text
+                %p
+                  〒123-4567
+                  %br/
+                  愛知県 名古屋市中区
+                  緑町8-90
+                  %br/
+                  山田 太郎
+          %input{name: "seller_id", type: "hidden", value: "608676199"}/
+          %input{name: "payment_fee", type: "hidden", value: "0"}/
+          %input{name: "payment_amount", type: "hidden", value: "1600"}/
+          %input{name: "price", type: "hidden", value: "1600"}/
+          %input{name: "category_id", type: "hidden", value: "357"}/
+          %input{name: "item_condition", type: "hidden", value: "4"}/
+          %input{name: "shipping_payer", type: "hidden", value: "2"}/
+          %input{name: "shipping_method", type: "hidden", value: "14"}/
+          %input{name: "shipping_duration", type: "hidden", value: "1"}/
+          %input{name: "shipping_class", type: "hidden", value: "0"}/
+          %input{name: "zip_code1", type: "hidden", value: "457"}/
+          %input{name: "zip_code2", type: "hidden", value: "0043"}/
+          %input{name: "paid_method", type: "hidden", value: "card"}/
+          %input{name: "checksum", type: "hidden", value: "30825cf204beb518d38b9ab7d4144b82"}/
+          %input{name: "payment_card_sequence_no", type: "hidden", value: "PVHKhAVmsQ9Pt1DuaVYxYucc"}/
+          %input{name: "payment_use_last_card_base64", type: "hidden", value: "eWVz"}/
+          %input{name: "item_name_base64", type: "hidden", value: "44OK44OO44Om44OL44OQ44O844K544CA44Oc44OH44Kj44OQ44OD44Kw"}/
+          %input{name: "description_base64", type: "hidden", value: "44OK44OO44Om44OL44OQ44O844K544Gu44Oc44OH44Kj44OQ44OD44Kw44Gn44GZ44CCCuWkmuWwkeOBruS9v+eUqOaEn+OBr+OBguOCiuOBvuOBmeOBjOOAgeOBvuOBoOOBvuOBoOWVj+mhjOOBquOBj+OBiuS9v+OBhOmgguOBkeOBvuOBmeOAgg=="}/
+          %input{name: "brand_name_base64", type: "hidden", value: "ODY3"}/
+          %input{name: "shipping_from_area_base64", type: "hidden", value: "Mzk="}/
+          %input{name: "family_name_base64", type: "hidden", value: "5bGx55Sw"}/
+          %input{name: "first_name_base64", type: "hidden", value: "57WQ576O"}/
+          %input{name: "family_name_kana_base64", type: "hidden", value: "44Ok44Oe44OA"}/
+          %input{name: "first_name_kana_base64", type: "hidden", value: "44Om44Of"}/
+          %input{name: "prefecture_base64", type: "hidden", value: "5oSb55+l55yM"}/
+          %input{name: "city_base64", type: "hidden", value: "5ZCN5Y+k5bGL5biC5Y2X5Yy6"}/
+          %input{name: "address1_base64", type: "hidden", value: "5oi46YOo55S6Mi00Nw=="}/
+          %input{name: "address2_base64", type: "hidden", value: ""}/
+          %input{name: "telephone_base64", type: "hidden", value: "MDkwMjU1NDI5Nzc="}/
+          %input{name: "__csrf_value", type: "hidden", value: "873ef06a35c5194d9e0242bc2050cd238496f6eb8b132489a822d2453c526abf999ae6d840df39d2efdefbfa17f1d9495493a88c4c1741593f5917d98bd4ed47e"}/
+          %section.buy-content.buy-user-info__purchase
+            %button.btn-default.btn-red.bold{type: "submit"} 購入する
+      %section
