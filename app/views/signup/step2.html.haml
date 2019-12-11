@@ -1,15 +1,41 @@
-= form_for @user, url: step3_signup_index_path, method: :get do |f|
-  .field.main-content-phone
-    .form-group-phone
-      %label{for: "phone_number"} 携帯電話の番号
-      %span.form-require 必須
-      .field_input
-        = f.phone_field :phone_number,placeholder: "携帯電話の番号を入力", type:"phone_number", class:"login-input-phone_number"
-        .form-info_phone_number
-          本人確認のため、携帯電話のSMS(SMS(ショートメッセージサービス)を利用して認証を行います。
-        .form-group
+.wrapper-member-info
+  .personal-entry
+    .signup-page-header
+      %header.personal-entry__header
+        = link_to root_path do
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1204800476", class: "mercarilogo"
+      %nav.progress-bar
+        %ol.clearfix
+          %li.active
+            会員情報
+            .progress-status
+          %li.active
+            電話番号認証 
+            .progress-status
+          %li
+            お届け先住所入力
+            .progress-status
+          %li
+            支払い方法
+            .progress-status
+          %li
+            完了
+            .progress-status
+  .info-main
+    .info-content
+      %h2.info-content__head 電話番号の確認
+      = form_for @user, url: step3_signup_index_path, method: :get do |f|
+        .field.main-content2
           .form-group
-          .actions
-            = f.submit "SMSを送信する", class: "btn-red" 
-          .submit-info_phone_number
-            ＊電話番号は本人確認や不正利用防止のために利用します。他のユーザーユーザーに公開されることはありません。
+            %label{for: "phone_number"} 携帯電話の番号
+            %span.form-require 必須
+            .field_input
+              = f.phone_field :phone_number,placeholder: "携帯電話の番号を入力", type:"phone_number", class:"login-input-phone_number"
+              .form-info_phone_number
+                本人確認のため、携帯電話のSMS(SMS(ショートメッセージサービス)を利用して認証を行います。
+              .form-group
+                .form-group
+                .actions
+                  = f.submit "SMSを送信する", class: "btn-red" 
+                .submit-info_phone_number
+                  ＊電話番号は本人確認や不正利用防止のために利用します。他のユーザーユーザーに公開されることはありません。

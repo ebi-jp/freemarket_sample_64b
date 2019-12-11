@@ -21,9 +21,21 @@ class SignupController < ApplicationController
     @user = User.new
   end
 
-  # def step4
-  #   session[:]
-  # end
+  def step4
+    session[:postal_code] = user_params[:postal_code]
+    session[:city] = user_params[:city]
+    session[:address] = user_params[:address]
+    session[:building] = user_params[:building]
+    session[:phone_number] = user_params[:phone_number]
+
+   @user = User.new
+  end
+
+  def done
+    sign_in User.find(session[:id]) unless user_signed_in?
+  end
+
+
   def create
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
@@ -33,6 +45,12 @@ class SignupController < ApplicationController
       first_name: session[:first_name], 
       family_name_kana: session[:family_name_kana], 
       first_name_kana: session[:first_name_kana], 
+      phone_number: session[:phone_number],
+      postal_code: session[:postal_code],
+      city: session[:city],
+      address: session[:address],
+      building: session[:building],
+      phone_number: session[:phone_number],
     )
     if @user.save
       # ログインするための情報を保管
@@ -56,6 +74,12 @@ class SignupController < ApplicationController
       :first_name, 
       :family_name_kana, 
       :first_name_kana, 
+      :phone_number,
+      :postal_code,
+      :city,
+      :address,
+      :building,
+      :phone_number,
     )
   end
 end
