@@ -1,7 +1,7 @@
 .container
   .header
     .header-top
-      %header-top__logo
+      .header-top__logo
         = image_tag "logo_red.svg", width: "134", height: "36"
       %form.header-top__search__form{action: ""}
         %input.header-top__search__input{name: "keyword",placeholder: "何かお探しですか？",type: "search",value: ""}
@@ -19,7 +19,7 @@
             -# %svg.lists-menu__icon
             ブランドから探す
       %ul.header-lists__right
-        %li.lists-menu__sighin
-          .lists-menu__sighin_btn{href: ""} 新規会員登録
-        %li.lists-menu__sighup
-          .list-menu__sighup_btn{href: ""} ログイン
+        %li.lists-menu__signin
+          .lists-menu__signin__btn{href: ""} 新規会員登録
+        %li.lists-menu__signup
+          .lists-menu__signup__btn{href: ""} ログイン
