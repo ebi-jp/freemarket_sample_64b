@@ -1,0 +1,15 @@
+= form_for @user, url: step3_signup_index_path, method: :get, html: {class: 'second-wrapper__box'} do |f|
+  .field.main-content-phone
+    .form-group-phone
+      %label{for: "phone_number"} 携帯電話の番号
+      %span.form-require 必須
+      .field_input
+        = f.phone_number_field :phone_number,placeholder: "携帯電話の番号を入力", type:"phone_number", class:"login-input-phone_number"
+        .form-info_phone_number
+          本人確認のため、携帯電話のSMS(SMS(ショートメッセージサービス)を利用して認証を行います。
+        .form-group
+          .form-group
+          .actions
+            = f.submit "SMSを送信する", class: "btn-red" 
+          .submit-info_phone_number
+            ＊電話番号は本人確認や不正利用防止のために利用します。他のユーザーユーザーに公開されることはありません。
