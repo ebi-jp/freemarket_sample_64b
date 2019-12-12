@@ -21,10 +21,8 @@ ActiveRecord::Schema.define(version: 20191211111056) do
     t.integer  "phone_number"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "user_id_id"
     t.integer  "user_id"
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
-    t.index ["user_id_id"], name: "index_addresses_on_user_id_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
