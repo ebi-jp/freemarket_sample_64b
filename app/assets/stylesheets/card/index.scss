@@ -15,6 +15,8 @@
   margin: 0 8px;
   font-size: 9px;
   color: #888;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .bread-crumbs ul {
@@ -36,6 +38,7 @@
 
 .bread-crumbs li:last-child {
   font-weight: 600;
+  color: black;
 }
 
 .bread-crumbs a {
@@ -73,10 +76,7 @@ i[class^='icon-'], i[class*='icon-'] {
 .l-chapter-head {
   font-size: 24px;
   padding: 8px 24px;
-  font-weight: 700;
-}
-
-.l-chapter-head {
+  font-weight: 550;
   border-bottom: 1px solid #f5f5f5;
   text-align: center;
 }
