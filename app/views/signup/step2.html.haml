@@ -24,7 +24,7 @@
   .info-main
     .info-content
       %h2.info-content__head 電話番号の確認
-      = form_for @user, url: signup_index_path,method: :post do |f|
+      = form_for @user, url: step3_signup_index_path,method: :get do |f|
         .field.main-content2
           .form-group
             %label{for: "phone_number"} 携帯電話の番号
