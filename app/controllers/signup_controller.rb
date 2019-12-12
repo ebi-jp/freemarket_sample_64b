@@ -20,7 +20,7 @@ class SignupController < ApplicationController
     # step2で入力された値をsessionに保存
     session[:phone_number] = user_params[:phone_number]
     @user = User.new
-    @user.build_address
+    # @user.build_address
   end
 
   def step4

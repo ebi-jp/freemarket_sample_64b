@@ -30,7 +30,7 @@
             %label{for:"card_number"} カード番号
             %span.form-require 必須
             .field-input
-              = f.text_field_tag "number", "", class: "input-default", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+              = f.text_field "number", "", class: "input-default", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
               %br
               %label 有効期限
               %select#exp_month{name: "exp_month", type: "text"}
