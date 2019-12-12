@@ -2,11 +2,13 @@
   margin: 40px auto 0;
   padding: 24px 40px 40px;
   background-color: white;
+  height: 1004px;
 }
 
 .l-single-container {
   width: 700px;
   background-color: white;
+  height: 1004px;
 }
 
 .item-name {
@@ -174,6 +176,7 @@
   height: 20px;
   width: 230px;
   cursor : pointer;
+  color: #0099e8;
 }
 
 .item-button-container{
@@ -193,6 +196,8 @@
 .item-detail-message {
   width: 700px;
   margin: 8px auto;
+  height: 50px;
+  margin-top: 23px;
 }
 
 .nav-item-link-prev {
@@ -249,10 +254,6 @@ ul, ol {
   font-size: 0;
 }
 
-ul, ol {
-  list-style: none;
-}
-
 .social-media-box li {
   display: inline-block;
   margin: 0 8px 8px 0;
@@ -269,6 +270,7 @@ ul, ol {
   padding: 32px 0 24px;
   width: 700px;
   background-color: white;
+  text-align: center;
 }
 
 .fa-facebook-square {font-size: 50px; cursor : pointer;}
@@ -278,8 +280,8 @@ ul, ol {
 
 
 .items-in-user-profile {
-    width: 700px;
-    margin: 0 auto;
+  width: 700px;
+  margin: 0 auto;
 }
 
 .items-box-head {
