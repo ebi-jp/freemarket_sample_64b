@@ -44,14 +44,17 @@ class SignupController < ApplicationController
       family_name: session[:family_name], 
       first_name: session[:first_name], 
       family_name_kana: session[:family_name_kana], 
-      first_name_kana: session[:first_name_kana], 
-      phone_number: session[:phone_number],
-      postal_code: session[:postal_code],
-      city: session[:city],
-      address: session[:address],
-      building: session[:building],
-      phone_number: session[:phone_number],
+      first_name_kana: user_params[:first_name_kana], 
+      phone_number: user_params[:phone_number]
+      # phone_number: session[:phone_number],
+      # postal_code: session[:postal_code],
+      # city: session[:city],
+      # address: session[:address],
+      # building: session[:building],
+      # phone_number: session[:phone_number],
+      # prefecture: session[:prefecture],
     )
+    binding.pry
     if @user.save
       # ログインするための情報を保管
       session[:id] = @user.id
@@ -80,6 +83,7 @@ class SignupController < ApplicationController
       :address,
       :building,
       :phone_number,
+      address_attributes: [:postal_code, :city,:address,:buildeing,:phone_number,:prefecture]
     )
   end
 end

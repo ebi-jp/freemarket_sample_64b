@@ -24,7 +24,7 @@
   .info-main
     .info-content
       %h2.info-content__head 支払い方法
-      = form_for @user, url: signup_index_path, method: :post, html: {class: 'forth-main-wrapper__box'} do |f|
+      = form_for @user, url: signup_index_path, method: :get, html: {class: 'forth-main-wrapper__box'} do |f|
         .field.main-content2
           .form-group
             %label{for:"card_number"} カード番号
