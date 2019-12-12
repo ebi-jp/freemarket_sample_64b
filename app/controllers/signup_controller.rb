@@ -13,6 +13,7 @@ class SignupController < ApplicationController
     session[:family_name_kana] = user_params[:family_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
     @user = User.new # 新規インスタンス作成
+    @user.build_address
   end
 
   def step3
@@ -54,6 +55,7 @@ class SignupController < ApplicationController
       # phone_number: session[:phone_number],
       # prefecture: session[:prefecture],
     )
+    @user.build_address(user_params[:address_attributes]) 
     if @user.save
       # ログインするための情報を保管
       session[:id] = @user.id
