@@ -54,7 +54,6 @@ class SignupController < ApplicationController
       # phone_number: session[:phone_number],
       # prefecture: session[:prefecture],
     )
-    binding.pry
     if @user.save
       # ログインするための情報を保管
       session[:id] = @user.id
