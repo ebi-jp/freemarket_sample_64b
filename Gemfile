@@ -65,6 +65,8 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem "pry-rails"
 gem 'payjp'
+gem 'active_hash'
+
 
 group :production do
   gem 'unicorn', '5.4.1'
