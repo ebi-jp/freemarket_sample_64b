@@ -66,7 +66,7 @@
             %label{for:"pin_number"} セキュリティコード
             %span.form-require 必須
             .field-input
-              = f.text_field_tag "cvc", "", class: "input-default", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+              = f.text_field "cvc", "", class: "input-default", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
           .card_info
             = link_to "カード裏面の番号とは？"
           .actions

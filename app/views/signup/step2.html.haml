@@ -30,7 +30,7 @@
             %label{for: "phone_number"} 携帯電話の番号
             %span.form-require 必須
             .field_input
-              = f.phone_field :phone_number,placeholder: "携帯電話の番号を入力", type:"phone_number", class:"login-input-phone_number"
+              = f.text_field :phone_number,placeholder: "携帯電話の番号を入力", type:"phone_number", class:"login-input-phone_number"
               .form-info_phone_number
                 本人確認のため、携帯電話のSMS(SMS(ショートメッセージサービス)を利用して認証を行います。
               .form-group
