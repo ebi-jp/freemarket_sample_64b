@@ -37,7 +37,7 @@
             .field-input
               = f.email_field :email, placeholder: "PC・携帯どちらでも可", type: "email", class: "login-input-text",required:"required"
           .form-group
-            %label{for:"encrypted_password"} パスワード
+            %label{for:"password"} パスワード
             %span.form-require 必須
             .field-input
               = f.password_field :password, placeholder: "6文字以上", type: "password", class: "login-input-text",required:"required"

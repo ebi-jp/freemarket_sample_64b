@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_one :address
+  has_one :address, dependent: :destroy
   accepts_nested_attributes_for :address
 
   has_one :card 
@@ -16,7 +16,7 @@ class User < ApplicationRecord
   validates :family_name_kana, presence: true
   validates :first_name_kana, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :encrypted_password, presence: true
+  # validates :encrypted_password, presence: true
   # validates :birth_year, presence: true
   # validates :birth_month, presence: true
   # validates :birth_day, presence: true
