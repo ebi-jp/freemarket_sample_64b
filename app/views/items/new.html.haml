@@ -10,11 +10,8 @@
             %div{"data-reactroot" => ""}
               .sell-container-inner
                 %h2.exhibit__single__head 商品の情報を入力
-                -# .identification__form__field--input.icon-relative
-                -#   = form_for '' do |f|
-                -#     = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'input'
-                -#     %i.fas.fa-chevron-down{class: "identification__form-icon"}
-                %form.sell-form
+              = form_for '#',class:'sell-form' do |f|
+                .sell-form
                   .sell-form__upload{style: "\n    height: 303px;\n"}
                     %h3.sell-form__upload__head
                       出品画像
@@ -100,9 +97,7 @@
                           発送元の地域
                           %span.sell-form__upload__head__require 必須
                         .select-wrap
-                          = form_for '' do |f|
-                            -# %i.fas.fa-chevron-down{class: "identification__form-icon"}
-                            = f.collection_select( :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'select-default'})
+                          = f.collection_select( :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'select-default'})
                       .form-group-l
                         %label.form-group-a
                           発送までの日数
@@ -114,13 +109,13 @@
                             %option{value: "1"} 1~2日で発送
                             %option{value: "2"} 2~3日で発送
                             %option{value: "3"} 4~7日で発送
-                  .exhibit-content-s.clearfix{style: "\n    height: 218px;\n"}
+                  .exhibit-content.clearfix{style: "\n    height: 298px;\n"}
                     %h3.sell-sub-head 販売価格(300〜9,999,999)
                     %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
                     .sell-form-box
-                      %ul.sell-price
-                        %li.form-group{style: "\n    height: 72px;\n"}
-                          .clearfix{style: "\n    height: 48px;\n"}
+                      .sell-price
+                        .form-group-y{style: "\n    height: 72px;\n"}
+                          .clearfix-f
                             %label.l-left
                               価格
                               %span.sell-form__upload__head__require 必須
@@ -128,16 +123,18 @@
                               ¥
                               .b-input-default
                                 %input.exhibit-input-default{placeholder: "例）300", style: "\n    width: 159px;\n    height: 47px;\n", value: ""}
-                        %li.clearfix-s{style: "\n    height: 62px;\n"}
-                          .l-left-s
-                            販売手数料 (10%)
-                          .l-right-f -
-                        %li.clearfix.bold{style: "\n    height: 82px;\n"}
-                          .l-left-t 販売利益
-                          .l-right-s -
+                        .form-group-x
+                          .clearfix-s
+                            .l-left-s
+                              販売手数料 (10%)
+                            .l-right-f -
+                        .form-group-z
+                          .clearfix-t{style: "\n    height: 82px;\n"}
+                            .l-left-t 販売利益
+                            .l-right-s -
                   .modal{role: "dialog", tabindex: "-1"}
                     .modal-inner
-                  .exhibit-content.sell-btn-box{style: "\n    height: 328px;\n"}
+                  .exhibit-content-s{style: "\n    height: 328px;\n"}
                     .caution
                       %p
                         = link_to("禁止されている出品","#",{class: "a"})
@@ -152,25 +149,24 @@
                         また、出品をもちまして
                         = link_to("加盟店規約","#",{class: "a"})
                         に同意したことになります。
-                    %button.btn-default-red{type: "submit"}
-                      出品する
+                    = f.submit '出品する', class: "btn-default-red"
                     %a.btn-default-gray もどる
 
 
-        %footer.single--footer
-          %nav.single--footer__nav
-            %ul.single--footer__nav__ul
-              %li.single--footer__nav__ul__li1
-                =link_to "#", class: '.single--footer__nav__ul__li1__a1' do
-                  プライバシーポリシー
-              %li.single--footer__nav__ul__li2
-                =link_to "#", class: '.single--footer__nav__ul__li2__a2' do
-                  メルカリ利用規約
-              %li.single--footer__nav__ul__li3
-                =link_to "#", class: '.single--footer__nav__ul__li3__a3' do
-                  特定商取引に関する表記
-          =link_to "#", class: '.single--footer--logo' do
-            %div.single--footer--logo__img
-              = link_to image_tag('logo_gray.svg',{class: "single--footer--logo__img", style: "\n    margin-top: 0px;\n"})
-          %p
-            %small © 2019 Mercari
+      %footer.single--footer
+        %nav.single--footer__nav
+          %ul.single--footer__nav__ul
+            %li.single--footer__nav__ul__li1
+              =link_to "#", class: '.single--footer__nav__ul__li1__a1' do
+                プライバシーポリシー
+            %li.single--footer__nav__ul__li2
+              =link_to "#", class: '.single--footer__nav__ul__li2__a2' do
+                メルカリ利用規約
+            %li.single--footer__nav__ul__li3
+              =link_to "#", class: '.single--footer__nav__ul__li3__a3' do
+                特定商取引に関する表記
+        =link_to "#", class: '.single--footer--logo' do
+          %div.single--footer--logo__img
+            = link_to image_tag('logo_gray.svg',{class: "single--footer--logo__img", style: "\n    margin-top: 0px;\n"})
+        %p
+          %small © 2019 Mercari
