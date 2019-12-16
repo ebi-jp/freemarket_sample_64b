@@ -1,43 +1,40 @@
-.dIKScy {
+.footer-links {
   background-color: gray;
   background-position: center center;
-  .fdRJU {
+  .footer-links-contents {
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
     width: 750px;
     margin: 0px auto;
-    .jshFbZ {
+    .links-nav {
       display: flex;
       flex-direction: column;
       -webkit-box-pack: center;
       justify-content: center;
-      .lmjtQL {
+      .links-nav1 {
         color: rgb(255, 255, 255);
         font-size: 24px;
         font-weight: 600;
         margin-bottom: 15px;
     }
-      .feyzWR {
+      .links-nav2 {
         color: rgb(255, 255, 255);
         font-size: 30px;
         margin-bottom: 20px;
     }
-    .sc-jqIZGH.lYxAQ{
+    .links-box {
       display: flex;
-      .coFGNj {
+      .links-logo {
         height: 68px;
         margin-right: 20px;
         width: 68px;
-        img {
-          vertical-align: middle;
-      }
-      .jmAUfl {
+      .links-apple {
         height: 40px;
         margin-right: 8px;
         width: 144px;
     }
-      .evFjFu {
+      .links-google {
         height: 40px;
         width: 144px;
     }
@@ -45,7 +42,7 @@
   }
   }
 }
-  .eTbLfZ {
+  .links-picture{
     height: 260px;
     width: 300px;
   }
