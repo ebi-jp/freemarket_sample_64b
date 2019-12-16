@@ -1,8 +1,32 @@
 Rails.application.routes.draw do
+  get 'card/new'
+
+  get 'card/show'
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "users#index"
   resources :users, only: [:index,:show]
-  resources :items, only: [:index]
+  resources :items, only: [:index,:new]
   resources :purchase, only: [:index]
+
+  resources :signup do
+    collection do
+      get 'step1'
+      get 'step2'
+      get 'step3'
+      get 'step4' # ここで、入力の全てが終了する
+      get 'done' # 登録完了後のページ
+    end
+  end
+
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
+  
+
 end
