@@ -5,17 +5,19 @@
         = image_tag "logo_red.svg", width: "134", height: "36"
       %form.header-top__search__form{action: ""}
         %input.header-top__search__input{name: "keyword",placeholder: "何かお探しですか？",type: "search",value: ""}
-        %i.icon-search
+          -# %i.fas.fa-search
 
 
     .header-lists
       %ul.header-lists__left
         %li.lists-menu__categories
           .lists-menu__categories__text{href: ""}
+            %i.fas.fa-list
             -# %svg.lists-menu__icon 
             カテゴリーから探す      
         %li.lists-menu__brands
           .lists-menu__brands__text{href: ""}
+            %i.fas.fa-tag
             -# %svg.lists-menu__icon
             ブランドから探す
       %ul.header-lists__right
