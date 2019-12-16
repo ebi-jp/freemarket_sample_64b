@@ -21,4 +21,13 @@ class User < ApplicationRecord
   # validates :birth_month, presence: true
   # validates :birth_day, presence: true
   # validates :phone_number, presence: true, uniqueness: true
+
+
+
+
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :birthyear 
+  belongs_to_active_hash :birthmonth
+  belongs_to_active_hash :birthday
 end

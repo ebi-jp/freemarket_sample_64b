@@ -13,6 +13,9 @@ class SignupController < ApplicationController
     session[:first_name] = user_params[:first_name]
     session[:family_name_kana] = user_params[:family_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
+    session[:birth_year] = user_params[:birth_year]
+    session[:birth_month] = user_params[:birth_month]
+    session[:birth_day] = user_params[:birth_day]
     @user = User.new # 新規インスタンス作成
 
   end
@@ -49,14 +52,10 @@ class SignupController < ApplicationController
       first_name: session[:first_name], 
       family_name_kana: session[:family_name_kana], 
       first_name_kana: session[:first_name_kana], 
-      phone_number: user_params[:phone_number]
-      # phone_number: session[:phone_number],
-      # postal_code: session[:postal_code],
-      # city: session[:city],
-      # address: session[:address],
-      # building: session[:building],
-      # phone_number: session[:phone_number],
-      # prefecture: session[:prefecture],
+      birth_year: session[:birth_year],
+      birth_month: session[:birth_month],
+      birth_day: session[:birth_day],
+      phone_number: session[:phone_number]
     )
     @user.build_address(user_params[:address_attributes]) 
     if @user.save
@@ -83,12 +82,10 @@ class SignupController < ApplicationController
       :family_name_kana, 
       :first_name_kana, 
       :phone_number,
-      # :postal_code,
-      # :city,
-      # :address,
-      # :building,
-      # :phone_number,
-      address_attributes: [:id,:postal_code, :city,:address,:building,:phone_number,:prefecture]
+      :birth_year,
+      :birth_month,
+      :birth_day,
+      address_attributes: [:id,:postal_code, :city,:address,:building,:phone_number,:prefecture_id]
     )
   end
 end
