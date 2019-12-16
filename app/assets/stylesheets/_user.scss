@@ -1,7 +1,7 @@
 
 
 //--------------会員情報入力ページ(海老原)--------------------------------------
-  .wrapper-member-info {
+.wrapper-member-info {
     height: 100%;
     background: #f5f5f5;
     
@@ -12,7 +12,8 @@
       height: 128px;
       text-align: center;
       .personal-entry__header {
-        display: inline-block;
+        display: flex;
+        justify-content: center;
         a {
           width: 185px;
           height: 49px;
@@ -24,92 +25,90 @@
           }  
         }
       }
-    .progress-bar {
-      display: inline-block;
-      vertical-align: top;
-      padding: 40px 0 0 44px;
-      border: 0;
-      .clearfix {
-        li {
-          margin: 0 40px 0 0;
-          position: relative;
-          z-index: 1;
-          display: inline-block;
-          min-width: 40px;
-          // margin: 0 5% 0 0;
-          font-size: 12px;
-          color: #888;
-        &.active {
-          font-weight: 600;
-          color: #ea352d;
-          //↑acitveの文字を赤くする
-        }
-        
-        &.through {
-          .progress-status:after{
-            &:last-of-type
-            {
-            content: none;
-            }
-          }
-        }
-          .progress-status {
-            width: 12px;
-            height: 12px;
-            margin: 8px auto 0;
-            background: #ccc;
-            border-radius: 50%;
-            &::before {
-              right: 50%;
-            }
-            &::after
-            {
-              left: 50%;
-            }
-            &::before, &::after{
-              position: absolute;
-              bottom: 5px;
-              z-index: -1;
-              // display: inline;
-              content: '';
-              width: 100%;
-              height: 2px;
-              background: #ccc;
-            }
-          }
-        }
+      // 
+      .progress{
+        margin-top: 45px;
       }
-    }
-    // throughの丸点
-    .progress-bar li.through .progress-status {
-      background: #ea352d;
-    }
-    // activeの丸点
-    .progress-bar li.active .progress-status {
-      background: #ea352d;
-    }
-    // throughの左の線
-    .progress-bar li.through .progress-status:before {
-      background: #ea352d;
-    }
-    // throughの左の線
-    .progress-bar li.through .progress-status:after {
-      background: #ea352d;
-    }
-    // activeの左の線
-    .progress-bar li.active .progress-status:before {
-      background: #ea352d;
-    }
-    .progress-bar li:last-child .progress-status:after {
-      background:#f5f5f5;
-    }
-    .progress-bar li:first-child .progress-status:before {
-      background:#f5f5f5;
-    } 
+
+      .progress-upper{
+        display: flex;
+        font-size: 12px;
+      }
+
+      .progress_upper_title{
+        margin-right: 40px;
+      }
+
+      .progress_upper_title__red{
+        color: #EA352D;
+        margin-right: 40px;
+      }
+
+      .progress_upper_title__long {
+        margin-right: 50px;
+      }
+
+      .progress_upper_title__long__red{
+        color: #EA352D;
+        margin-right: 50px;
+      }
+      .progress_upper_title__short{
+        margin-right: 30px;
+      }
+      .progress_upper_title__short__red{
+        color: #EA352D;
+        margin-right: 30px;
+      }
+
+      .progress_upper_title__longer{
+        margin-right:65px ;
+      }
+      .progress_upper_title__longer__red{
+        color: #EA352D;
+        margin-right: 65px;
+      }
+
+      .progress__lower{
+        display: flex;
+        margin-top: 5px;
+        padding-left: 18px;
+      }
+      .progress_lower_circle{
+        width: 12px;
+        height: 12px;
+        border-radius: 12px 12px 12px 12px ;
+        background-color:  #ccc;
+      }
+      .progress_lower_circle__red{
+        width: 12px;
+        height: 12px;
+        border-radius: 12px 12px 12px 12px ;
+        background-color: #EA352D;
+      }
+      .progress_lower_bar{
+        width: 100px;
+        height: 3px;
+        background-color:  #ccc;
+        margin-top: 5px;
+      }
+      .progress_lower_bar__red{
+        width: 100px;
+        height: 3px;
+        background-color: #EA352D;
+        margin-top: 5px;
+      }
+    
   }
   
-// -------------------------------------------------------------------------
 
+
+
+
+// -------------------------------------------------------------------------
+.forth-main-wrapper__box{
+  margin: 0 auto;
+  width: 350px;
+}
 .info-content{
   width: 700px;
   margin: 0 auto;
@@ -122,7 +121,7 @@
     border-bottom: #ccc inset thin;
   }
   .field.main-content2{
-    text-align:center;
+    // text-align:center;
     margin: 0 auto;
     .form-group{
       margin-top:30px;
@@ -136,8 +135,8 @@
         vertical-align: top;
       }
       .input-default{
-        height: 30px;
-        width: 300px;
+        height: 50px;
+        width: 350px;
         padding: 10px 16px 8px;
         border-radius: 4px;
         border: 1px solid #ccc;
@@ -146,8 +145,8 @@
         font-size: 16px;
       }
       .login-input-text{
-        height: 30px;
-        width: 300px;
+        height: 50px;
+        width: 350px;
         padding: 10px 16px 8px;
         border-radius: 4px;
         border: 1px solid #ccc;
@@ -173,9 +172,7 @@
 }
 
 
-.form-group__name{
-display: flex;
-}
+
 .login-input-text-content{
   height: 30px;
   width: 145px;
@@ -211,7 +208,7 @@ display: flex;
 
 .form-info-text{
   font-size:14px;
-  margin-top: 30px;
+  
   width: 330px;
   margin-left: auto;
   margin-right: auto;
@@ -219,7 +216,14 @@ display: flex;
 }
 
 .actions{
-
+  .btn-red-success{
+    background-color: #ea352d;
+    color: #fff;
+    line-height: 60px;
+    width: 350px;
+    margin-top:30px;
+    margin-bottom: 60px;
+  }
 }
 .btn-red{
   background-color: #ea352d;
@@ -231,14 +235,14 @@ display: flex;
 
 .div select{
   height: 50px;
-  width: 70px;
+  width: 80px;
   background-color: white;
 }
 
 
 .login-input-text-content-right{
-  height: 30px;
-  width: 130px;
+  height: 50px;
+  width: 170px;
   padding: 10px 16px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -246,12 +250,12 @@ display: flex;
   line-height: 1.5;
   font-size: 16px;
   display:inline-block;
-  margin-top: 24px;
+  
 }
 
 .login-input-text-content-left{
-  height: 30px;
-  width: 130px;
+  height: 50px;
+  width: 170px;
   padding: 10px 16px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -275,4 +279,103 @@ display: flex;
 .links{
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+// done
+.success-text{
+  text-align: center;
+  .success-top{
+    margin-top: 70px;
+  }
+  
+}
+.btn-red-success{
+  background-color: #ea352d;
+  color: #fff;
+  font-size: 20px;
+  line-height: 60px;
+  width: 350px;
+  padding: 18px 60px;
+  margin-top:30px;
+  margin-bottom: 60px;
+}
+.success-test{
+  margin-bottom: 50px;
+}
+.actions-space{
+  height: 60px;
+}
+
+
+.select-default-address{
+  height: 50px;
+  width: 350px;
+  background-color: #fff;
+}
+
+.progress{
+  float: right;
+  margin-top: 57px;
+  &__upper{
+    display: flex;
+    font-size: 12px;
+    &__title{
+      margin-right: 40px;
+      &__red{
+        color: #EA352D;
+        margin-right: 40px;
+      }
+      &__long{
+        margin-right: 50px;
+        &__red{
+          color: #EA352D;
+          margin-right: 50px;
+        }
+      }
+      &__short{
+        margin-right: 30px;
+        color: yellow;
+        &__red{
+          color: #EA352D;
+          margin-right: 30px;
+        }
+      }
+      &__longer{
+        margin-right:65px ;
+        &__red{
+          color: #EA352D;
+          margin-right: 65px;
+        }
+      }
+    }
+  }
+  &__lower{
+    display: flex;
+    margin-top: 15px;
+    padding-left: 18px;
+    &__circle{
+      width: 12px;
+      height: 12px;
+      border-radius: 12px 12px 12px 12px ;
+      background-color: #888888;
+      &__red{
+        width: 12px;
+        height: 12px;
+        border-radius: 12px 12px 12px 12px ;
+        background-color: #EA352D;
+      }
+    }
+      &__bar{
+        width: 100px;
+        height: 3px;
+        background-color: #888888;
+        margin-top: 5px;
+        &__red{
+          width: 100px;
+          height: 3px;
+          background-color: #EA352D;
+          margin-top: 5px;
+        }
+      }
+  }
 }
