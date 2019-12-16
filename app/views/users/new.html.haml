@@ -8,6 +8,6 @@
           メールアドレスで登録する
         .btn-default.btn-sns.btn-sns-facebook
           %i.icon-facebook
-          Facebookで登録する
+          = link_to "Facebookで登録する", user_facebook_omniauth_authorize_path
         .btn-default.btn-sns.btn-sns-google
-          Googleで登録する
+          = link_to "Googleで登録する", user_google_oauth2_omniauth_authorize_path
