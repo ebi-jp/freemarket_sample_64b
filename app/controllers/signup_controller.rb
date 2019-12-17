@@ -27,19 +27,9 @@ class SignupController < ApplicationController
     @user.build_address
   end
 
-  # def step4
-  #   session[:postal_code] = user_params[:postal_code]
-  #   session[:city] = user_params[:city]
-  #   session[:address] = user_params[:address]
-  #   session[:building] = user_params[:building]
-  #   session[:phone_number] = user_params[:phone_number]
 
-  #  @user = User.new
-  # end
 
-  def done
-    sign_in User.find(session[:id]) unless user_signed_in?
-  end
+
 
 
   def create
@@ -61,7 +51,8 @@ class SignupController < ApplicationController
     if @user.save
       # ログインするための情報を保管
       session[:id] = @user.id
-      redirect_to done_signup_index_path
+      sign_in User.find(session[:id]) unless user_signed_in?
+      redirect_to step4_signup_index_path
     else
       render '/signup/step1'
     end
