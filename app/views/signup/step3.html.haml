@@ -49,14 +49,14 @@
             
             .form-group
               %label{for:"building"} 建物名
-              %span.form-require 任意
+              %span.form-require-sub 任意
               .field-input
-                = a.text_field :building, placeholder: "例) 柳ビル103", type: "text", class: "login-input-text",required:"required"
+                = a.text_field :building, placeholder: "例) 柳ビル103", type: "text", class: "login-input-text"
             .form-group
               %label{for:"phone_number"} 電話番号
-              %span.form-require 任意
+              %span.form-require-sub 任意
               .field-input
-                = a.text_field :phone_number, placeholder: "例) 09012345678", type: "text", class: "login-input-text",required:"required"
+                = a.text_field :phone_number, placeholder: "例) 09012345678", type: "text", class: "login-input-text"
 
             .form-group
             .actions
