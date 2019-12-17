@@ -23,6 +23,10 @@
       padding: 0;
     }
     .header--categories__names {
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      
       .categories--name {
         text-align: center;
 
