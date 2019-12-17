@@ -2,11 +2,13 @@
   margin: 40px auto 0;
   padding: 24px 40px 40px;
   background-color: white;
+  height: 1004px;
 }
 
 .l-single-container {
   width: 700px;
   background-color: white;
+  height: 1004px;
 }
 
 .item-name {
@@ -174,6 +176,7 @@
   height: 20px;
   width: 230px;
   cursor : pointer;
+  color: #0099e8;
 }
 
 .item-button-container{
@@ -193,6 +196,8 @@
 .item-detail-message {
   width: 700px;
   margin: 8px auto;
+  height: 50px;
+  margin-top: 23px;
 }
 
 .nav-item-link-prev {
@@ -249,10 +254,6 @@ ul, ol {
   font-size: 0;
 }
 
-ul, ol {
-  list-style: none;
-}
-
 .social-media-box li {
   display: inline-block;
   margin: 0 8px 8px 0;
@@ -269,6 +270,7 @@ ul, ol {
   padding: 32px 0 24px;
   width: 700px;
   background-color: white;
+  text-align: center;
 }
 
 .fa-facebook-square {font-size: 50px; cursor : pointer;}
@@ -278,8 +280,8 @@ ul, ol {
 
 
 .items-in-user-profile {
-    width: 700px;
-    margin: 0 auto;
+  width: 700px;
+  margin: 0 auto;
 }
 
 .items-box-head {
@@ -291,12 +293,12 @@ ul, ol {
   margin: 0 auto;
 }
 
-.related-item-column .items-box {
+.related-item-column .y-items-box {
   width: 220px;
   margin: 0 20px 50px 0;
 }
 
-.items-box {
+.y-items-box {
   position: relative;
   float: left;
   height: 330px;
@@ -305,11 +307,11 @@ ul, ol {
   cursor: pointer;
 }
 
-.related-item-column .items-box:nth-child(3n) {
+.related-item-column .y-items-box:nth-child(3n) {
   margin-right: 0;
 }
 
-.items-box-photo {
+.y-items-box-photo {
   padding-bottom: 220px;
   width: 220px;
   height: 220px;
@@ -319,7 +321,35 @@ ul, ol {
   margin-bottom: 0px;
 }
 
-.items-box-body {
+.y-items-box-body {
+  padding: 16px;
+  height: 72px;
+  float: left;
+}
+
+.y-1.items-box-body {
+  width: 220px;
+  padding: 16px;
+  height: 72px;
+  float: left;
+}
+
+.y-2.items-box-body {
+  width: 220px;
+  padding: 16px;
+  height: 72px;
+  float: left;
+}
+
+.y-3.items-box-body {
+  width: 220px;
+  padding: 16px;
+  height: 72px;
+  float: left;
+}
+
+.y-4.items-box-body {
+  width: 220px;
   padding: 16px;
   height: 72px;
   float: left;
