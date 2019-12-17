@@ -67,6 +67,10 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
+gem "pry-rails"
+gem 'payjp'
+gem 'active_hash'
+
 
 group :production do
   gem 'unicorn', '5.4.1'

@@ -2,6 +2,19 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :sns_credentials, dependent: :destroy
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  has_one :address
+  accepts_nested_attributes_for :address
+
+  has_one :card 
+  accepts_nested_attributes_for :card
+
+  has_one :card 
+  accepts_nested_attributes_for :card
+
+  has_one :card 
+  accepts_nested_attributes_for :card
 
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable,
