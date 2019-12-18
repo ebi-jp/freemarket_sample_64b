@@ -10,9 +10,15 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string :delivery_source, null: false
       t.string :send_day,        null: false
       t.text :description,       null: false
-      t.integer :seller_id,      null: false, foreign_key: true
-      t.integer :buyer_id,       null: false, foreign_key: true
+      t.references :seller,      null: false
+      t.references :buyer,       null: false
+      t.references :category,    null: false
+      t.references :brand,       null: false
       t.timestamps
     end
+    add_foreign_key :items, :users, column: :seller_id
+    add_foreign_key :items, :users, column: :buyer_id
+    add_foreign_key :items, :categories, column: :category_id
+    add_foreign_key :items, :brands, column: :brand_id
   end
 end
