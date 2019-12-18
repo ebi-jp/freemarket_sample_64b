@@ -63,6 +63,14 @@ gem 'fog-aws'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'
+gem "pry-rails"
+gem 'payjp'
+gem 'active_hash'
+
 gem "pry-rails"
 gem 'payjp'
 gem 'active_hash'
