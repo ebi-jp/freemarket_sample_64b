@@ -10,35 +10,34 @@
             %div{"data-reactroot" => ""}
               .sell-container-inner
                 %h2.exhibit__single__head 商品の情報を入力
-              = form_for '#',class:'sell-form' do |f|
+              = form_for @item,url: items_path,class:'sell-form' do |f|
                 .sell-form
                   .sell-form__upload{style: "\n    height: 303px;\n"}
                     %h3.sell-form__upload__head
                       出品画像
                       %span.sell-form__upload__head__require 必須
                     %p.sell-form__upload__p 最大10枚までアップロードできます
-                    .sell-dropbox-container.clearfix.state-image-number-10
-                      .sell-upload-items-container
-                        .sell-upload-items.have-item-0
-                          %ul
-                      .sell-upload-drop-box.have-item-0{style: "\n    height: 161px;\n"}
-                        %input.sell-upload-drop-file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}/
-                        %pre.visible-pc
-                          :preserve
-                            ドラッグアンドドロップ
-                            またはクリックしてファイルをアップロード                  
+                    = f.fields_for :images do |image|
+                      .sell-dropbox-container.clearfix.state-image-number-10
+                        .sell-upload-items-container
+                          .sell-upload-items.have-item-0
+                            %ul
+                        .sell-upload-drop-box.have-item-0{style: "\n    height: 161px;\n"}
+                          ドラッグアンドドロップ
+                          またはクリックしてファイルをアップロード 
+                          = image.file_field :image, class: 'image-area__input--hidden fileField'                 
                   .exhibit-content
                     .form-group-h
                       %label.form-group-a
                         商品名
                         %span.sell-form__upload__head__require 必須
                       %div
-                        %input.sell-input-default{placeholder: "商品名（必須 40文字まで)", value: ""}/
+                        = f.text_field :name, class: "sell-input-default", placeholder: "商品名（必須 40文字まで)", value: "", type: "text"
                     .form-group-l
                       %label.form-group-a
                         商品の説明
                         %span.sell-form__upload__head__require 必須
-                      %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+                      = f.text_area :description, class: "textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
                   .exhibit-content.clearfix{style: "\n    height: 260px;\n"}
                     %h3.sell-sub-head 商品の詳細
                     .sell-form-box
@@ -97,7 +96,7 @@
                           発送元の地域
                           %span.sell-form__upload__head__require 必須
                         .select-wrap
-                          = f.collection_select( :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'select-default'})
+                          = f.collection_select( :delivery_source, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'select-default'})
                       .form-group-l
                         %label.form-group-a
                           発送までの日数
@@ -122,7 +121,7 @@
                             .l-right.sell-price-input
                               ¥
                               .b-input-default
-                                %input.exhibit-input-default{placeholder: "例）300", style: "\n    width: 159px;\n    height: 47px;\n", value: ""}
+                                = f.text_field :price, class: "exhibit-input-default", placeholder: "例）300", style: "\n    width: 159px;\n    height: 47px;\n", value: "", type: "text"
                         .form-group-x
                           .clearfix-s
                             .l-left-s
@@ -150,7 +149,8 @@
                         = link_to("加盟店規約","#",{class: "a"})
                         に同意したことになります。
                     = f.submit '出品する', class: "btn-default-red"
-                    %a.btn-default-gray もどる
+                    = link_to root_path do
+                      = f.submit "もどる",class:"btn-default-gray"
 
 
       %footer.single--footer

@@ -1,119 +1,119 @@
--# .wrapper-member-info
--#   .personal-entry
--#     .signup-page-header
--#       %header.personal-entry__header
--#         = link_to root_path do
--#           = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1204800476", class: "mercarilogo"
--#       %nav.progress-bar
--#         %ol.clearfix
--#           %li.active
--#             会員情報
--#             .progress-status
--#           %li
--#             電話番号認証 
--#             .progress-status
--#           %li
--#             お届け先住所入力
--#             .progress-status
--#           %li
--#             支払い方法
--#             .progress-status
--#           %li
--#             完了
--#             .progress-status
--#   .info-main
--#     .info-content
--#       %h2.info-content__head 会員情報入力
+.wrapper-member-info
+  .personal-entry
+    .signup-page-header
+      %header.personal-entry__header
+        = link_to root_path do
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1204800476", class: "mercarilogo"
+      %nav.progress-bar
+        %ol.clearfix
+          %li.active
+            会員情報
+            .progress-status
+          %li
+            電話番号認証 
+            .progress-status
+          %li
+            お届け先住所入力
+            .progress-status
+          %li
+            支払い方法
+            .progress-status
+          %li
+            完了
+            .progress-status
+  .info-main
+    .info-content
+      %h2.info-content__head 会員情報入力
 
--#       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
--#         .field.main-content2
--#           .form-group
--#             %label{for:"nickname"} ニックネーム
--#             %span.form-require 必須
--#             .field-input
--#               = f.text_field :nickname, placeholder: "例) メルカリ太郎", type: "text", class: "input-default",required:"required"
--#           .form-group
--#             %label{for: "email"} メールアドレス
--#             %span.form-require 必須
--#             .field-input
--#               = f.email_field :email, placeholder: "PC・携帯どちらでも可", type: "email", class: "login-input-text",required:"required"
--#           .form-group
--#             %label{for:"encrypted_password"} パスワード
--#             %span.form-require 必須
--#             .field-input
--#               = f.password_field :password, placeholder: "6文字以上", type: "password", class: "login-input-text",required:"required"
--#           .info ＊英字と数字の両方を含めて設定してください
--#           %input{name:"注意", type: "checkbox", calss:"checkbox"} パスワードを表示する
--#           .form-group
--#             %h3.text-left.sub-head 本人確認
--#             %p.l-single-text
--#               安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
--#           .form-group__name
--#             .aaa
--#               .form-group
--#                 %label{for: "family_name"} お名前 (全角)
--#                 %span.form-require 必須
--#                 .field-input
--#                   = f.text_field :family_name, placeholder: "例) 山田", type: "text", class: "login-input-text-content-left",required:"required"
--#               .form-group
--#                 %label{for: "first_name"}
--#                 .field-input
--#                   = f.text_field :first_name, placeholder: "例) 彩", type: "text", class: "login-input-text-content-right",required:"required"
--#           .form-group__name
--#             .aaa
--#               .form-group
--#                 %label{for:"family_name_kana"} お名前カナ (全角)
--#                 %span.form-require 必須
--#                 .field-input
--#                   = f.text_field :family_name_kana, placeholder: "例) ヤマダ", type: "text", class: "login-input-text-content-left",required:"required"
--#               .form-group
--#                 %label{for: "first_name_kana"}
--#                 .field-input
--#                   = f.text_field :first_name_kana, placeholder: "例) アヤ", type: "text", class: "login-input-text-content-right",required:"required"
--#           .form-group__birth
--#             %label{for:"birth"} 生年月日
--#             %span.form-require 必須
--#             .div
--#               %select{name: "year"}
--#                 %option{value: "--"}  --
--#                 %option{value:  "2019"} 2019
--#                 %option{value:  "2018"} 2018
--#                 %option{value:  "2017"} 2017
--#                 %option{value:  "2016"} 2016
--#               %a 年
--#               %select{name: "month"}
--#                 %option{value: "--"}  --
--#                 %option{value:  "jun"} 1
--#                 %option{value:  "feb"} 2
--#                 %option{value:  "mar"} 3
--#                 %option{value:  "apr"} 4
--#                 %option{value:  "may"} 5
--#                 %option{value:  "jun"} 6
--#                 %option{value:  "jul"} 7
--#                 %option{value:  "aug"} 8
--#                 %option{value:  "sep"} 9
--#                 %option{value:  "oct"} 10
--#                 %option{value:  "nov"} 11
--#                 %option{value:  "dec"} 12
--#               %a 月
--#               %select{name: "day"}
--#                 %option{value: "--"}  --
--#                 %option{value:  "1"} 1
--#                 %option{value:  "2"} 2
--#                 %option{value:  "3"} 3
--#                 %option{value:  "4"} 4
--#               %a 日
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .field.main-content2
+          .form-group
+            %label{for:"nickname"} ニックネーム
+            %span.form-require 必須
+            .field-input
+              = f.text_field :nickname, placeholder: "例) メルカリ太郎", type: "text", class: "input-default",required:"required"
+          .form-group
+            %label{for: "email"} メールアドレス
+            %span.form-require 必須
+            .field-input
+              = f.email_field :email, placeholder: "PC・携帯どちらでも可", type: "email", class: "login-input-text",required:"required"
+          .form-group
+            %label{for:"encrypted_password"} パスワード
+            %span.form-require 必須
+            .field-input
+              = f.password_field :password, placeholder: "6文字以上", type: "password", class: "login-input-text",required:"required"
+          .info ＊英字と数字の両方を含めて設定してください
+          %input{name:"注意", type: "checkbox", calss:"checkbox"} パスワードを表示する
+          .form-group
+            %h3.text-left.sub-head 本人確認
+            %p.l-single-text
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .form-group__name
+            .aaa
+              .form-group
+                %label{for: "family_name"} お名前 (全角)
+                %span.form-require 必須
+                .field-input
+                  = f.text_field :family_name, placeholder: "例) 山田", type: "text", class: "login-input-text-content-left",required:"required"
+              .form-group
+                %label{for: "first_name"}
+                .field-input
+                  = f.text_field :first_name, placeholder: "例) 彩", type: "text", class: "login-input-text-content-right",required:"required"
+          .form-group__name
+            .aaa
+              .form-group
+                %label{for:"family_name_kana"} お名前カナ (全角)
+                %span.form-require 必須
+                .field-input
+                  = f.text_field :family_name_kana, placeholder: "例) ヤマダ", type: "text", class: "login-input-text-content-left",required:"required"
+              .form-group
+                %label{for: "first_name_kana"}
+                .field-input
+                  = f.text_field :first_name_kana, placeholder: "例) アヤ", type: "text", class: "login-input-text-content-right",required:"required"
+          .form-group__birth
+            %label{for:"birth"} 生年月日
+            %span.form-require 必須
+            .div
+              %select{name: "year"}
+                %option{value: "--"}  --
+                %option{value:  "2019"} 2019
+                %option{value:  "2018"} 2018
+                %option{value:  "2017"} 2017
+                %option{value:  "2016"} 2016
+              %a 年
+              %select{name: "month"}
+                %option{value: "--"}  --
+                %option{value:  "jun"} 1
+                %option{value:  "feb"} 2
+                %option{value:  "mar"} 3
+                %option{value:  "apr"} 4
+                %option{value:  "may"} 5
+                %option{value:  "jun"} 6
+                %option{value:  "jul"} 7
+                %option{value:  "aug"} 8
+                %option{value:  "sep"} 9
+                %option{value:  "oct"} 10
+                %option{value:  "nov"} 11
+                %option{value:  "dec"} 12
+              %a 月
+              %select{name: "day"}
+                %option{value: "--"}  --
+                %option{value:  "1"} 1
+                %option{value:  "2"} 2
+                %option{value:  "3"} 3
+                %option{value:  "4"} 4
+              %a 日
 
--#           .form-info-text
--#             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
--#           .form-group
--#           .form-group
--#             %p.l-single-text.text-center
--#               「次へ進む」のボタンを押すことにより、
--#               = link_to "利用規約"
--#               に同意したものとみなします
--#           .actions
--#             = f.submit "次へ進む", class: "btn-red"  
--#           .links
--#             = link_to "本人情報の登録について＞", class: "user-link"
+          .form-info-text
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .form-group
+          .form-group
+            %p.l-single-text.text-center
+              「次へ進む」のボタンを押すことにより、
+              = link_to "利用規約"
+              に同意したものとみなします
+          .actions
+            = f.submit "次へ進む", class: "btn-red"  
+          .links
+            = link_to "本人情報の登録について＞", class: "user-link"
 
