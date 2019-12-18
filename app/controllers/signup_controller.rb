@@ -7,7 +7,6 @@ class SignupController < ApplicationController
     # step1で入力された値をsessionに保存
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
-    session[:encrypted_password] = user_params[:encrypted_password]
     session[:password] = user_params[:password]
     session[:password_confirmation] = user_params[:password]
     session[:family_name] = user_params[:family_name]
@@ -28,19 +27,6 @@ class SignupController < ApplicationController
     @user.build_address
   end
 
-  def step4
-    session[:postal_code] = user_params[:postal_code]
-    session[:city] = user_params[:city]
-    session[:address] = user_params[:address]
-    session[:building] = user_params[:building]
-    session[:phone_number] = user_params[:phone_number]
-
-   @user = User.new
-  end
-
-  def done
-    sign_in User.find(session[:id]) unless user_signed_in?
-  end
 
 
 
@@ -50,19 +36,6 @@ class SignupController < ApplicationController
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],
-      encrypted_password: session[:encrypted_password],
-      family_name: session[:family_name], 
-      first_name: session[:first_name], 
-      family_name_kana: session[:family_name_kana], 
-      first_name_kana: user_params[:first_name_kana], 
-      phone_number: user_params[:phone_number]
-      # phone_number: session[:phone_number],
-      # postal_code: session[:postal_code],
-      # city: session[:city],
-      # address: session[:address],
-      # building: session[:building],
-      # phone_number: session[:phone_number],
-      # prefecture: session[:prefecture],
       password: session[:password],
       password_confirmation: session[:password_confirmation],
       family_name: session[:family_name], 
@@ -78,7 +51,6 @@ class SignupController < ApplicationController
     if @user.save
       # ログインするための情報を保管
       session[:id] = @user.id
-      redirect_to done_signup_index_path
       sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to step4_signup_index_path
     else
@@ -94,7 +66,6 @@ class SignupController < ApplicationController
     params.require(:user).permit(
       :nickname, 
       :email, 
-      :encrypted_password, 
       :password,
       :password_confirmation, 
       :family_name, 
@@ -102,12 +73,6 @@ class SignupController < ApplicationController
       :family_name_kana, 
       :first_name_kana, 
       :phone_number,
-      :postal_code,
-      :city,
-      :address,
-      :building,
-      :phone_number,
-      address_attributes: [:postal_code, :city,:address,:buildeing,:phone_number,:prefecture]
       :birth_year,
       :birth_month,
       :birth_day,
