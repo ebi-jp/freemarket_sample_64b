@@ -9,7 +9,7 @@
 @import "modules/header";
 @import "modules/contents";
 @import "modules/footer";
-@import "./user";
+
 @import "./product_detail/index.scss";
 @import "users/show";
 @import "modules/footer";
@@ -19,3 +19,4 @@
 @import "exhibit/exhibit";
 @import "card/index.scss";
 
+@import "./user";

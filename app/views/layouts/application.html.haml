@@ -9,6 +9,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     -# = render 'shared/header' 
+
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+    -# = render 'shared/header' 
+
     = yield
     -# = render 'shared/footer'
 

@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 20191213074114) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.string   "phone_number"
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
@@ -31,6 +35,7 @@ ActiveRecord::Schema.define(version: 20191213074114) do
     t.string   "card_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+
   end
 
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -40,6 +45,7 @@ ActiveRecord::Schema.define(version: 20191213074114) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
+
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -58,7 +64,7 @@ ActiveRecord::Schema.define(version: 20191213074114) do
     t.integer  "birth_year"
     t.integer  "birth_month"
     t.integer  "birth_day"
-    t.integer  "phone_number"
+    t.string   "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

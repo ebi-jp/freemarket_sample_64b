@@ -71,3 +71,88 @@
             = link_to "カード裏面の番号とは？"
           .actions
             = f.submit "次へ進む", class: "btn-red" 
+        = link_to image_tag('logo_red.svg',{class: "mercarilogo"})
+        .progress
+          .progress__upper
+            .progress_upper_title__long 会員情報
+            .progress_upper_title__short 電話番号認証
+            .progress_upper_title お届け先住所入力
+            .progress_upper_title__longer__red 支払い方法
+            .progress_upper_title 完了
+          .progress__lower
+            .progress_lower_circle__red
+            .progress_lower_bar__red
+            .progress_lower_circle__red
+            .progress_lower_bar__red
+            .progress_lower_circle__red
+            .progress_lower_bar__red
+            .progress_lower_circle__red
+            .progress_lower_bar
+            .progress_lower_circle
+  .info-main
+    .info-content
+      %h2.info-content__head 支払い方法
+      = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm", class: 'forth-main-wrapper__box') do
+        .field.main-content2
+          .form-group
+            %label カード番号
+            %span.form-require 必須
+            = text_field_tag "number", "", class: "input-default", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+            .signup-card-list
+            %li{style: "margin-right: 5px;",} 
+              = image_tag 'credit-card_2@0.5.png', size: "49x25", class: "lazyloaded", alt: "", opacity: 1;
+            %li{style: "margin-right: 5px;"}
+              = image_tag 'credit-card_1@0.5.png', size: "34x25", class: "lazyloaded", alt: "", opacity: 1;
+            %li{style: "margin-right: 5px;"}
+              = image_tag 'credit-card_20@0.5.png', size: "30x25", class: "lazyloaded", alt: "", opacity: 1;
+            %li{style: "margin-right: 5px;"}
+              = image_tag 'credit-card_0@0.5.png', size: "32x25", class: "lazyloaded", alt: "", opacity: 1;
+            %li{style: "margin-right: 5px;"}
+              = image_tag 'credit-card_5@0.5.png', size: "21x25", class: "lazyloaded", alt: "", opacity: 1;
+            %li{style: "margin-right: 5px;"}
+              = image_tag 'credit-card_6@0.5.png', size: "32x25", class: "lazyloaded", alt: "", opacity: 1;
+            %li{style: "margin-right: 5px;"}
+              = image_tag 'credit-card_14@0.5.png', size: "32x25", class: "lazyloaded", alt: "", opacity: 1;
+            .form-group
+            %label 有効期限
+            %span.form-require 必須
+            .field-input
+            %select#exp_month{name: "exp_month", type: "text",class: 'select-default-credit'}
+              %option{value: ""} --
+              %option{value: "1"}01
+              %option{value: "2"}02
+              %option{value: "3"}03
+              %option{value: "4"}04
+              %option{value: "5"}05
+              %option{value: "6"}06
+              %option{value: "7"}07
+              %option{value: "8"}08
+              %option{value: "9"}09
+              %option{value: "10"}10
+              %option{value: "11"}11
+              %option{value: "12"}12
+            %span 月
+            .credit-right
+            %select#exp_year{name: "exp_year", type: "text",class: 'select-default-credit'}
+              %option{value: ""} --
+              %option{value: "2019"}19
+              %option{value: "2020"}20
+              %option{value: "2021"}21
+              %option{value: "2022"}22
+              %option{value: "2023"}23
+              %option{value: "2024"}24
+              %option{value: "2025"}25
+              %option{value: "2026"}26
+              %option{value: "2027"}27
+              %option{value: "2028"}28
+              %option{value: "2029"}29
+            %span 年
+            .form-group
+            %label セキュリティコード
+            %span.form-require 必須
+            = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc", class: "login-input-text"
+            .card_info
+            = link_to "カード裏面の番号とは？"
+            #card_token
+            = submit_tag "追加する", id: "token_submit", class: "btn-red"
+            .space
