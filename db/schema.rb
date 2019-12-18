@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20191217045840) do
-
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "postal_code"
@@ -33,7 +31,6 @@ ActiveRecord::Schema.define(version: 20191217045840) do
     t.string   "card_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-
   end
 
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -43,7 +40,6 @@ ActiveRecord::Schema.define(version: 20191217045840) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
-
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
