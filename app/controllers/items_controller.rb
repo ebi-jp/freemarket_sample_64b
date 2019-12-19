@@ -10,12 +10,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.images.build(item_params[:imeges_attributes])
-    # @item = current_user.items.build(item_params)
+    # @item = current_user.id
     @item.send_plan = "ヤマト"
-    @item.seller_id = 1
     @item.brand_id = "1"
-    # @item = current_user.items.build(item_params)
-    
     if @item.save
 
     else
@@ -41,12 +38,10 @@ class ItemsController < ApplicationController
                             :delivery_source,
                             :send_day,
                             :description,
-                            :seller_id,
-                            :buyer_id,
                             :category_id,
                             :brand_id, 
                             images_attributes: [:id, :image]
-                            )
+                            ).merge(seller_id: current_user.id)
   end
 
 end
