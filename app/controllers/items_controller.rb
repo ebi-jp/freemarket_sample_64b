@@ -11,20 +11,11 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.images.build(item_params[:imeges_attributes])
     # @item = current_user.items.build(item_params)
-    @item.id = "1"
-    @item.size = "1"
-    @item.status = "新品"
-    @item.send_burden = "送料込み"
     @item.send_plan = "ヤマト"
-    @item.send_day = "1~2日"
-    @item.seller_id = "5"
-    @item.buyer_id = "6"
-    @item.category_id = "7"
-    @item.brand_id = "8"
-    @item.created_at = "2019-12-20"
-    @item.updated_at = "2019-12-21"
+    @item.seller_id = 1
+    @item.brand_id = "1"
     # @item = current_user.items.build(item_params)
-    binding.pry
+    
     if @item.save
 
     else
@@ -35,7 +26,7 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(
-                            :name,
+                            :item,
                             :price,
                             :size,
                             :status,
