@@ -22,6 +22,9 @@
             ブランドから探す
       %ul.header-lists__right
         %li.lists-menu__signin
-          .lists-menu__signin__btn{href: ""} 新規会員登録
+          .lists-menu__signin__btn
+            %i.icon-mail
+            = link_to "新規会員登録", new_user_path
+
         %li.lists-menu__signup
           .lists-menu__signup__btn{href: ""} ログイン
