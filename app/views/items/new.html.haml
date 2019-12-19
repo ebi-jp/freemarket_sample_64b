@@ -89,16 +89,17 @@
                             .l-right.sell-price-input
                               ¥
                               .b-input-default
-                                = f.text_field :price, class: "exhibit-input-default", placeholder: "例）300", style: "\n    width: 159px;\n    height: 47px;\n", value: "", type: "text"
+                                %input#price_calc.exhibit-input-default{placeholder: "例）300", style: "\n    width: 159px;\n    height: 47px;\n", value: "", type: "text"}
                         .form-group-x
                           .clearfix-s
                             .l-left-s
                               販売手数料 (10%)
-                            .l-right-f -
+                            .l-right-f
                         .form-group-z
                           .clearfix-t{style: "\n    height: 82px;\n"}
                             .l-left-t 販売利益
-                            .l-right-s -
+                            = f.number_field :price, class: "after-price", style: "display: none", id: "price"
+                            .l-right-s
                   .modal{role: "dialog", tabindex: "-1"}
                     .modal-inner
                   .exhibit-content-s{style: "\n    height: 328px;\n"}
