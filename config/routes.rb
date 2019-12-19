@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   resources :users, only: [:index,:show]
   resources :items, only: [:index]
   resources :purchase, only: [:index]
-  resources :card, only: [:index]
+  # resources :card, only: [:index]
+  # get 'card', to: 'card#index'
+  get 'card', to: 'card#index'
+  post 'show', to: 'card#show'
+  post 'pay', to: 'card#pay'
+  post 'delete', to: 'card#delete'
 end
