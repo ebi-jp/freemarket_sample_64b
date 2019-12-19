@@ -24,6 +24,35 @@ ActiveRecord::Schema.define(version: 20191217045840) do
     t.string   "phone_number"
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
+  
+  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "brand"
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "category"
+    t.integer "parent_id"
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "image"
+    t.integer "item_id"
+  end
+
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "item"
+    t.string  "price"
+    t.string  "size"
+    t.string  "status"
+    t.string  "send_burden"
+    t.string  "send_plan"
+    t.string  "delivery_source"
+    t.string  "send_day"
+    t.text    "description",     limit: 65535
+    t.integer "seller_id"
+    t.integer "buyer_id"
+    t.integer "category_id"
+    t.integer "brand_id"
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",     null: false

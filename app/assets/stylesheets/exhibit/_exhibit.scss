@@ -99,20 +99,13 @@
                   font-style: inherit;
                   font-weight: inherit;
                 }
-                .visible-pc {
+                .image-area__input--hidden {
                   position: absolute;
                   top: 50%;
-                  left: 16px;
-                  right: 16px;
-                  text-align: center;
+                  left: 50%;
+                  margin: auto;
+                  transform: translate(-50%,-50%);
                   font-size: 14px;
-                  line-height: 1.5;
-                  -webkit-transform: translate(0, -50%);
-                  transform: translate(0, -50%);
-                  pointer-events: none;
-                  white-space: pre-wrap;
-                  word-wrap: break-word;
-                  font-weight: bold;
                 }
               }
             }
