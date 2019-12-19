@@ -66,8 +66,12 @@ gem 'devise-i18n-views'
 gem "pry-rails"
 gem 'payjp'
 gem 'active_hash'
-
-
+gem 'dotenv-rails'
+gem "jquery-rails"
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'
 group :production do
   gem 'unicorn', '5.4.1'
 end
