@@ -3,14 +3,11 @@
 @import "./font-awesome";
 @import "./items";
 @import "./user";
-@import "./product_detail/index.scss";
+@import "./product_detail/show.scss";
 @import "./purchase/index.scss";
 @import "mixins/mixin";
 @import "modules/header";
 @import "modules/contents";
-@import "modules/footer";
-
-@import "./product_detail/index.scss";
 @import "modules/footer";
 @import "modules/footer-picture";
 @import "./signup_step";
