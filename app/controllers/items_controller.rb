@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  def index
-  end
+  # def index
+  # end
 
   def new
     @item = Item.new
@@ -22,7 +22,13 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-
+  
+  def show
+    # @item = Items.find(params[:id])
+    # @user = Users.find(params[:id])
+  end
+  
+  
   private
   def item_params
     params.require(:item).permit(
@@ -42,4 +48,5 @@ class ItemsController < ApplicationController
                             images_attributes: [:id, :image]
                             )
   end
+
 end
