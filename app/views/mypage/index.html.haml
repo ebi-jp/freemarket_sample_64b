@@ -3,7 +3,7 @@
     = image_tag 'mypage__background.jpeg', size: "700x200"
   %section.mypage-user-icon
     %a.dog-icon
-      %figure{style: "margin-bottom: 0px; margin-top: 0px;"}
+      %figure
         = image_tag 'mypage__dog_1219042602.png', size: "60x60"
       %h2.bold yyyyy
       .mypage-number
@@ -17,7 +17,7 @@
     %ul.mypage-tabs
       %li.active
         %h3
-          .mypage-tabs__word{style: "background-color: white;"}
+          .mypage-tabs__word
             お知らせ
       %li
         %h3
@@ -84,12 +84,12 @@
     %ul.mypage-tabs2
       %li.active
         %h3
-          .mypage-tabs2__word3{style: "font-weight: bold;"}
+          .mypage-tabs2__word3
             取引中
       %li
         %h3
-          .mypage-tabs2__word4{ style: "background: #eee;"}
+          .mypage-tabs2__word4
             過去の取引
     .tab-content
-      %ul#mypage-tab-transaction-now.mypage-item-list2.tab-pane.active{style: "height: 236px; padding-top: 160px;"}
+      %ul#mypage-tab-transaction-now.mypage-item-list2.tab-pane.active
         %li.mypage-item-not-found.bold 取引中の商品がありません
