@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index,:show,:new]
   resources :items, only: [:index,:new,:create,:show]
   resources :purchase, only: [:index]
+  resources :mypage, only: [:index]
+  resources :card, only: [:index]
 
   resources :signup do
     collection do

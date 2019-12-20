@@ -1,0 +1,95 @@
+.l-content
+  .icon
+    = image_tag 'mypage__background.jpeg', size: "700x200"
+  %section.mypage__user-icon
+    %a.dog-icon
+      %figure
+        = image_tag 'mypage__dog_1219042602.png', size: "60x60"
+      %h2.bold yyyyy
+      .mypage__number
+        %div
+          評価
+          %span.bold 2
+        %div
+          出品数
+          %span.bold 0
+  %section.mypage-tab-container-notification-todo
+    %ul.mypage__tabs
+      %li.active
+        %h3
+          .mypage__tabs__word
+            お知らせ
+      %li
+        %h3
+          .mypage__tabs__word2
+            やることリスト
+    .tab-content
+      %ul#mypage-tab-notification.mypage__item__list.tab-pane.active
+        %li
+          .mypage__item__link
+            %figure
+              = image_tag 'mypage__box.png', size:"48x48", src: ""
+            .mypage__item__body
+              .mypage__item__text 《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
+              %time
+                %i.far.fa-clock
+                %span 4 日前
+            %i.fas.fa-angle-right
+        %li
+          .mypage__item__link
+            %figure
+              = image_tag 'mypage__box.png', size:"48x48", src: ""
+            .mypage__item__body
+              .mypage__item__text 【明日が最終日】2,000円分のポイントが必ずもらえるキャンペーンはまもなく終了！
+              %time
+                %i.far.fa-clock
+                %span 4 日前
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage__item__link
+            %figure
+              = image_tag 'mypage__box.png', size:"48x48", src: ""
+            .mypage__item__body
+              .mypage__item__text 《「メルクリ」でメルペイをはじめるとP1,000必ずもらえる》さらに抽選できゃりーぱみゅぱみゅに会えるチャンスも！？
+              %time
+                %i.far.fa-clock
+                %span 5 日前
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage__item__link
+            %figure
+              = image_tag 'mypage__box.png', size:"48x48", src: ""
+            .mypage__item__body
+              .mypage__itemtext 事務局から個別メッセージ「ログイン通知」
+              %time
+                %i.far.fa-clock
+                %span 7 日前
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage__item__link
+            %figure
+              = image_tag 'mypage__box.png', size:"48x48", src: ""
+            .mypage__item__body
+              .mypage__item__text 《あなたはどっちではじメル？》「メルクリ」でP1,000&amp;抽選でライブにご招待！「あけおめ」でP1,000&amp;全額ポイント還元のチャンス！
+              %time
+                %i.far.fa-clock
+                %span 8 日前
+            %i.fas.fa-angle-right
+        %li.mypage__go__list
+          .mypage__go__list2
+            %a 一覧を見る
+      %i.icon-close{"data-close" => "modal"}
+  %section.mypage__tab__container
+    %h2.mypage__tab__head 購入した商品
+    %ul.mypage__tabs2
+      %li.active
+        %h3
+          .mypage__tabs2__word3
+            取引中
+      %li
+        %h3
+          .mypage__tabs2__word4
+            過去の取引
+    .tab-content
+      %ul#mypage-tab-transaction-now.mypage__item__list2.tab-pane.active
+        %li.mypage__item__not-found.bold 取引中の商品がありません
