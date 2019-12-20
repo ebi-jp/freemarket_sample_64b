@@ -1,9 +1,9 @@
 %body
   .exhibit-body{style: "\n    padding-bottom: 200px;\n"}
     .exhibit__container{style: "\n    height: 2144px;\n"}
-      %header.exhibit__container__header
-        %h1.exhibit__container__header__h1
-          = link_to image_tag('logo_red.svg',{class: "container--header__h1"})
+
+      = render 'sell-header'
+      
       %main.exhibit__single
         %section.exhibit__single__container.buy-item-container
           #sell-container
@@ -89,16 +89,17 @@
                             .l-right.sell-price-input
                               ¥
                               .b-input-default
-                                = f.text_field :price, class: "exhibit-input-default", placeholder: "例）300", style: "\n    width: 159px;\n    height: 47px;\n", value: "", type: "text"
+                                %input#price_calc.exhibit-input-default{placeholder: "例）300", style: "\n    width: 159px;\n    height: 47px;\n", value: "", type: "text"}
                         .form-group-x
                           .clearfix-s
                             .l-left-s
                               販売手数料 (10%)
-                            .l-right-f -
+                            .l-right-f
                         .form-group-z
                           .clearfix-t{style: "\n    height: 82px;\n"}
                             .l-left-t 販売利益
-                            .l-right-s -
+                            = f.number_field :price, class: "after-price", style: "display: none", id: "price"
+                            .l-right-s
                   .modal{role: "dialog", tabindex: "-1"}
                     .modal-inner
                   .exhibit-content-s{style: "\n    height: 328px;\n"}
@@ -120,21 +121,4 @@
                     = link_to root_path do
                       = f.submit "もどる",class:"btn-default-gray"
 
-
-      %footer.single--footer
-        %nav.single--footer__nav
-          %ul.single--footer__nav__ul
-            %li.single--footer__nav__ul__li1
-              =link_to "#", class: '.single--footer__nav__ul__li1__a1' do
-                プライバシーポリシー
-            %li.single--footer__nav__ul__li2
-              =link_to "#", class: '.single--footer__nav__ul__li2__a2' do
-                メルカリ利用規約
-            %li.single--footer__nav__ul__li3
-              =link_to "#", class: '.single--footer__nav__ul__li3__a3' do
-                特定商取引に関する表記
-        =link_to "#", class: '.single--footer--logo' do
-          %div.single--footer--logo__img
-            = link_to image_tag('logo_gray.svg',{class: "single--footer--logo__img", style: "\n    margin-top: 0px;\n"})
-        %p
-          %small © 2019 Mercari
+      = render 'sell-footer'
