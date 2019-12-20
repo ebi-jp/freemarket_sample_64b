@@ -2,6 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :sns_credentials, dependent: :destroy
+  
+  has_many :buyer_items, class_name: 'Item', :foreign_key => 'buyer_id'
+  has_many :seller_items, class_name: 'Item', :foreign_key => 'seller_id'
 
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable,
@@ -23,7 +26,7 @@ class User < ApplicationRecord
   # validates :birth_year, presence: true
   # validates :birth_month, presence: true
   # validates :birth_day, presence: true
-  # validates :phone_number, presence: true, uniqueness: true
+  # validates :phone_nusmber, presence: true, uniqueness: true
   def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
 

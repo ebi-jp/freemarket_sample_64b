@@ -1,13 +1,11 @@
+= render 'shared/header' 
+
 %section.item-box-container.l-single-container
-  -# %h1.item-name = @item.name
+  %h1.item-name #{@item.item}
   %p.item-wording
-    『COACH  スエード  バッグ』は、187回の取引実績を持つ
-    = link_to 'niwa  本気で断捨離中！'
-    さんから出品されました。
-    = link_to 'コーチ'
-    （
-    = link_to 'ショルダーバッグ/レディース'
-    ）の商品で、兵庫県から1~2日で発送されます。
+    #{@item.item}が
+    #{@item.seller_id}
+    さんから出品されました。#{@item.name}から#{@item.period}されます。
   .item-main-content.clearfix
     .item-photo
       .carousel.loaded.drag
@@ -15,7 +13,7 @@
           .stage{style: "left: -300px; width: 2400px;"}
             .item{style: "width: 300px;"}
               .item-inner
-                = image_tag 'goods_main.jpeg', size: "300x300", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
+                = image_tag @item.images, size: "300x300", class: "lazy", alt: "@item.item", style: "opacity: 1"
             .item.active{style: "width: 300px;"}
               .item-inner
                 = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
@@ -45,7 +43,7 @@
         %tr
           %th 出品者
           %td
-            = link_to 'niwa  本気で断捨離中！'
+            #{@item.seller_id}
             %div
               .item-user-ratings
                 %i.far.fa-grin-beam
@@ -60,56 +58,46 @@
           %th カテゴリー
           %td            
             %div 
-            = link_to 'レディース'
-            %div 
-            = link_to class:"item-detail-table-sub-category" do
-              = icon('fas', 'angle-right')
-              バッグ
-            %div
-            = link_to class:"item-detail-table-sub-category" do
-              = icon('fas', 'angle-right')
-              ショルダーバッグ
+            #{@item.category}
+            -# %div 
+            -# = link_to class:"item-detail-table-sub-category" do
+            -#   = icon('fas', 'angle-right')
+            -#   バッグ
+            -# %div
+            -# = link_to class:"item-detail-table-sub-category" do
+            -#   = icon('fas', 'angle-right')
+            -#   ショルダーバッグ
         %tr
           %th ブランド
           %td
             %div
-              = link_to 'コーチ'
+            #{@item.brand_id}
         %tr
           %th 商品の状態
-          %td 目立った傷や汚れなし
+          %td #{@item.status}
         %tr
           %th 配送料の負担
-          %td 送料込み(出品者負担)
+          %td #{@item.burden}
         %tr
           %th 配送の方法
-          %td らくらくメルカリ便
+          %td #{@item.send_plan}
         %tr
           %th 配送元地域
-          %td
-            = link_to '兵庫県'
+          %td #{@item.name}
+            
         %tr
           %th 発送日の目安
-          %td 1~2日で発送
+          %td #{@item.period}
   .item-price-box.text-center
-    %span.item-price.bold ¥14,800
+    %span.item-price ￥#{@item.price}
     %span.item-tax (税込)
-    %span.item-shipping-fee 送料込み
+    %span.item-shipping-fee #{@item.burden}
   
     .item-buy-btn
       購入画面に進む
   .item-description.f14
     %p.item-description__inner
-      COACHのスエードのショルダーバッグです。
-      
-      十数年前にCOACH神戸店にて購入しました。
-      
-      特に気になるダメージはないかと思います。
-      
-      スエードですので、高級感があります。ショルダー部分が3段階に長さ調整できるようになっています。
-      
-      付属品  箱 保存袋  スエードのお手入れキット(袋にはシミがあります)
-      
-      中古品としてご理解頂ける方に。
+      #{@item.description}
       
   .item-button-container.clearfix
     .item-button-left
@@ -129,10 +117,10 @@
       %li.nav-item-link-prev
         = link_to class: "nav-item-link-prev" do
           = icon('fas', 'angle-left')
-          リトルツインスターズ   パスケース❗️新品未使用❗️
+          -# #{@item.previous.item}
       %li.nav-item-link-next
         = link_to class: "nav-item-link-next" do        
-          LOVE SONGS
+          -# #{@item.next.item}
           = icon('fas', 'angle-right')
 .item-social-media-box
   .text-center
@@ -267,3 +255,5 @@
       = link_to "メルカリ"
       %i.fas.fa-angle-right
         コーチ　2way ハンドバッグ
+
+= render 'shared/footer'
