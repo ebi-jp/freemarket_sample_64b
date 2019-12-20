@@ -10,6 +10,10 @@
   position: absolute;
 }
 
+.dog-icon {
+  cursor : pointer;
+}
+
 .bold {
   text-align: center;
   font-weight: 600;
@@ -20,7 +24,7 @@ h2 {
 }
 
 h3 {
-  font-weight: bold
+  font-weight: bold;
 }
 
 a {
@@ -28,58 +32,66 @@ a {
   text-decoration: none;
 }
 
-.mypage-tabs li.active a {
-  border-top: 2px solid #ea352d;
-}
-
-
 .mypage-tabs {
   border: 0;
   font-size: 0;
-}
 
-.mypage-tabs a {
+  li {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 50%;
+  }
+
+  &__word {
   position: relative;
   display: block;
   color: #333;
   font-size: 16px;
   line-height: 72px;
   background: #eee;
-}
-
-
-.mypage-tabs li {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  width: 50%;
-}
-
-.mypage-tabs2 {
-  border: 0;
-  font-size: 0;
-}
-
-.mypage-tabs2 li.active a {
   border-top: 2px solid #ea352d;
-}
+  cursor : pointer;
+  }
 
-.mypage-tabs2 a {
+  &__word2 {
   position: relative;
   display: block;
   color: #333;
   font-size: 16px;
   line-height: 72px;
+  background: #eee;
+  cursor : pointer;
+  }
 }
 
-.mypage-tabs2 li {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-}
+.mypage-tabs2 {
+  border: 0;
+  font-size: 0;
 
-.mypage-tabs2 li {
-  width: 50%;
+  li {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 50%;
+  }
+
+  &__word3 {
+    position: relative;
+    display: block;
+    color: #333;
+    font-size: 16px;
+    line-height: 72px;
+    border-top: 2px solid #ea352d;
+  }
+
+  &__word4 {
+    position: relative;
+    display: block;
+    color: #333;
+    font-size: 16px;
+    line-height: 72px;
+  }
 }
 
 .mypage-user-icon {
@@ -91,40 +103,40 @@ a {
   background-size: cover;
   text-align: center;
   position: relative;
-}
 
-.mypage-user-icon h2 {
-  margin: 8px 0 0;
-  font-size: 14px;
-}
+  h2 {
+    margin: 8px 0 0;
+    font-size: 14px;
+  }
 
-.mypage-user-icon>a {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  color: #333;
+  >a {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #333;
+  }
 }
 
 .mypage-number {
   margin: 8px 0 0;
   display: inline-flex;
-}
 
-.mypage-number div+div {
-  margin: 0 0 0 16px;
-}
+  div+div {
+    margin: 0 0 0 16px;
+  }
 
-.mypage-number div {
-  font-size: 14px;
-}
+  div {
+    font-size: 14px;
+  }
 
-.mypage-number span {
-  margin: 0 0 0 8px;
-  font-size: 16px;
+  span {
+    margin: 0 0 0 8px;
+    font-size: 16px;
+  }
 }
 
 .tab-content .tab-pane.active {
@@ -141,23 +153,38 @@ a {
 }
 
 .mypage-item-link {
+  border-bottom: 1px solid #eee;
   display: block;
   min-height: 80px;
   padding: 16px;
   color: #333;
   background-color: white;
+  cursor : pointer;
+
+  .fa-angle-right {
+    position: absolute;
+    top: 50px;
+    left: 670px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+
+  figure {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 48px;
+    height: 48px;
+  }
+
+  time {
+    display: inline-block;
+    color: #888;
+  }
 }
 
 .mypage-item-body {
   margin: 0 40px 0 68px;
-}
-
-.mypage-item-link figure {
-  position: relative;
-  overflow: hidden;
-  float: left;
-  width: 48px;
-  height: 48px;
 }
 
 .mypage-item-text {
@@ -170,24 +197,11 @@ a {
   line-height: 1.5;
 }
 
-.mypage-item-link time {
-  display: inline-block;
-  color: #888;
-}
-
 figure {
   margin-top: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
-}
-
-.mypage-item-link .fa-angle-right {
-  position: absolute;
-  top: 50px;
-  left: 670px;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
 }
 
 .fa-angle-right:before {
@@ -197,6 +211,7 @@ figure {
 .mypage-go-list2 {
   padding: 16px;
   background-color: white;
+  cursor : pointer;
 }
 
 .mypage-item-list li:last-child {
@@ -220,20 +235,13 @@ figure {
 
 .mypage-tab-head {
   padding: 0 16px;
-}
-
-.mypage-tab-head {
   background: #fafafa;
   font-size: 16px;
   line-height: 72px;
   font-weight: bold;
 }
 
-.mypage-item-link {
-  border-bottom: 1px solid #eee;
-}
-
-.mypage-tabs {
+.mypage-tabs  {
   border: 0;
   background: #eee;
   font-size: 0;
