@@ -1,6 +1,6 @@
 class PurchaseController < ApplicationController
   require 'payjp'
-
+before_action :set_item
   def index
     card = Card.find_by(user_id: current_user.id)
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
@@ -20,10 +20,19 @@ class PurchaseController < ApplicationController
     card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = 'sk_test_dc96a7044e1dc7f4ef27fc54'
     Payjp::Charge.create(
-    :amount => 13500, #支払金額を入力（itemテーブル等に紐づけても良い）
-    :customer => card.customer_id, #顧客ID
-    :currency => 'jpy', #日本円
+    amount: @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
+    customer: card.customer_id, #顧客ID
+    currency: 'jpy', #日本円
   )
+  @item.update(buyer_id: current_user.id)
   redirect_to action: 'done' #完了画面に移動
   end
+
+
+  private
+
+  def set_item
+    @item=Item.find(params[:item_id])
+  end
+
 end
