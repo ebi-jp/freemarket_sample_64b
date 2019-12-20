@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191217045840) do
+ActiveRecord::Schema.define(version: 20191220063606) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "postal_code"
@@ -24,9 +24,17 @@ ActiveRecord::Schema.define(version: 20191217045840) do
     t.string   "phone_number"
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
-  
+
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "brand"
+  end
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -43,23 +51,16 @@ ActiveRecord::Schema.define(version: 20191217045840) do
     t.string  "item"
     t.string  "price"
     t.string  "size"
-    t.string  "status"
-    t.string  "send_burden"
+    t.string  "condition_id"
+    t.string  "hutan_id"
     t.string  "send_plan"
-    t.string  "delivery_source"
-    t.string  "send_day"
-    t.text    "description",     limit: 65535
+    t.string  "prefecture_id"
+    t.string  "days_id"
+    t.text    "description",   limit: 65535
     t.integer "seller_id"
     t.integer "buyer_id"
-    t.integer "category_id"
+    t.integer "parent_id"
     t.integer "brand_id"
-
-  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",     null: false
-    t.string   "customer_id", null: false
-    t.string   "card_id",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

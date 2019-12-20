@@ -47,13 +47,13 @@
                           %span.sell-form__upload__head__require 必須
                         %div
                           .select-wrap
-                            = f.collection_select( :category_id, Parent.all, :id, :category, {prompt: "--"}, {class: 'select-default'})
+                            = f.collection_select( :parent_id, Parent.all, :id, :category, {prompt: "--"}, {class: 'select-default'})
                       .form-group-l
                         %label.form-group-a
                           商品の状態
                           %span.sell-form__upload__head__require 必須
                         .select-wrap
-                          = f.collection_select( :status, Condition.all, :id, :status, {prompt: "--"}, {class: 'select-default'})
+                          = f.collection_select( :condition_id, Condition.all, :id, :status, {prompt: "--"}, {class: 'select-default'})
                   .exhibit-content.clearfix{style: "\n    height: 370px;\n"}
                     %h3.sell-sub-head 配送について
                     = link_to("？","#",{class: "form-question"})
@@ -63,19 +63,19 @@
                           配送料の負担
                           %span.sell-form__upload__head__require 必須
                         .select-wrap
-                          = f.collection_select( :send_burden, Hutan.all, :id, :burden, {prompt: "--"}, {class: 'select-default'})
+                          = f.collection_select( :hutan_id, Hutan.all, :id, :burden, {prompt: "--"}, {class: 'select-default'})
                       .form-group-l
                         %label.form-group-a
                           発送元の地域
                           %span.sell-form__upload__head__require 必須
                         .select-wrap
-                          = f.collection_select( :delivery_source, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'select-default'})
+                          = f.collection_select( :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'select-default'})
                       .form-group-l
                         %label.form-group-a
                           発送までの日数
                           %span.sell-form__upload__head__require 必須
                         .select-wrap
-                          = f.collection_select( :send_day, Days.all, :id, :period, {prompt: "--"}, {class: 'select-default'})
+                          = f.collection_select( :days_id, Days.all, :id, :period, {prompt: "--"}, {class: 'select-default'})
                   .exhibit-content.clearfix{style: "\n    height: 298px;\n"}
                     %h3.sell-sub-head 販売価格(300〜9,999,999)
                     %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
