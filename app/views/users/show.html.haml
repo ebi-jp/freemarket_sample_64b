@@ -1,3 +1,4 @@
+= render 'shared/header'
 .default.container
   %main.u_container
     .content
@@ -39,9 +40,8 @@
               いいね！一覧
               %i.fas.fa-chevron-right
           %li
-            .mypage-nav-list-item{href: "/jp/sell/"}
-              出品する
-              %i.fas.fa-chevron-right
+            = link_to("出品する","/items/new/",{class: "mypage-nav-list-item"})
+            %i.fas.fa-chevron-right
           %li
             .mypage-nav-list-item{href: "/jp/mypage/listings/listing/"}
               出品した商品 - 出品中

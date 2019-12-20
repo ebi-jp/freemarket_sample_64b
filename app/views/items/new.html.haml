@@ -1,44 +1,43 @@
 %body
   .exhibit-body{style: "\n    padding-bottom: 200px;\n"}
     .exhibit__container{style: "\n    height: 2144px;\n"}
-      %header.exhibit__container__header
-        %h1.exhibit__container__header__h1
-          = link_to image_tag('logo_red.svg',{class: "container--header__h1"})
+
+      = render 'sell-header'
+      
       %main.exhibit__single
         %section.exhibit__single__container.buy-item-container
           #sell-container
             %div{"data-reactroot" => ""}
               .sell-container-inner
                 %h2.exhibit__single__head 商品の情報を入力
-              = form_for '#',class:'sell-form' do |f|
+              = form_for @item,url: items_path,class:'sell-form' do |f|
                 .sell-form
                   .sell-form__upload{style: "\n    height: 303px;\n"}
                     %h3.sell-form__upload__head
                       出品画像
                       %span.sell-form__upload__head__require 必須
                     %p.sell-form__upload__p 最大10枚までアップロードできます
-                    .sell-dropbox-container.clearfix.state-image-number-10
-                      .sell-upload-items-container
-                        .sell-upload-items.have-item-0
-                          %ul
-                      .sell-upload-drop-box.have-item-0{style: "\n    height: 161px;\n"}
-                        %input.sell-upload-drop-file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}/
-                        %pre.visible-pc
-                          :preserve
-                            ドラッグアンドドロップ
-                            またはクリックしてファイルをアップロード                  
+                    = f.fields_for :images do |image|
+                      .sell-dropbox-container.clearfix.state-image-number-10
+                        .sell-upload-items-container
+                          .sell-upload-items.have-item-0
+                            %ul
+                        .sell-upload-drop-box.have-item-0{style: "\n    height: 161px;\n"}
+                          ドラッグアンドドロップ
+                          またはクリックしてファイルをアップロード 
+                          = image.file_field :image, class: 'image-area__input--hidden fileField'                 
                   .exhibit-content
                     .form-group-h
                       %label.form-group-a
                         商品名
                         %span.sell-form__upload__head__require 必須
                       %div
-                        %input.sell-input-default{placeholder: "商品名（必須 40文字まで)", value: ""}/
+                        = f.text_field :item, class: "sell-input-default", placeholder: "商品名（必須 40文字まで)", value: "", type: "text"
                     .form-group-l
                       %label.form-group-a
                         商品の説明
                         %span.sell-form__upload__head__require 必須
-                      %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+                      = f.text_area :description, class: "textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
                   .exhibit-content.clearfix{style: "\n    height: 260px;\n"}
                     %h3.sell-sub-head 商品の詳細
                     .sell-form-box
@@ -48,36 +47,13 @@
                           %span.sell-form__upload__head__require 必須
                         %div
                           .select-wrap
-                            -# %i.icon-arrow-bottom
-                            %select.select-default
-                              %option{value: ""} ---
-                              %option{value: "1"} レディース
-                              %option{value: "2"} メンズ
-                              %option{value: "3"} ベビー・キッズ
-                              %option{value: "4"} インテリア・住まい・小物
-                              %option{value: "5"} 本・音楽・ゲーム
-                              %option{value: "1328"} おもちゃ・ホビー・グッズ
-                              %option{value: "6"} コスメ・香水・美容
-                              %option{value: "7"} 家電・スマホ・カメラ
-                              %option{value: "8"} スポーツ・レジャー
-                              %option{value: "9"} ハンドメイド
-                              %option{value: "1027"} チケット
-                              %option{value: "1318"} 自動車・オートバイ
-                              %option{value: "10"} その他
+                            = f.collection_select( :parent_id, Parent.all, :id, :category, {prompt: "--"}, {class: 'select-default'})
                       .form-group-l
                         %label.form-group-a
                           商品の状態
                           %span.sell-form__upload__head__require 必須
                         .select-wrap
-                          %i.icon-arrow-bottom
-                          %select.select-default
-                            %option{value: ""} ---
-                            %option{value: "1"} 新品、未使用
-                            %option{value: "2"} 未使用に近い
-                            %option{value: "3"} 目立った傷や汚れなし
-                            %option{value: "4"} やや傷や汚れあり
-                            %option{value: "5"} 傷や汚れあり
-                            %option{value: "6"} 全体的に状態が悪い
+                          = f.collection_select( :condition_id, Condition.all, :id, :status, {prompt: "--"}, {class: 'select-default'})
                   .exhibit-content.clearfix{style: "\n    height: 370px;\n"}
                     %h3.sell-sub-head 配送について
                     = link_to("？","#",{class: "form-question"})
@@ -87,11 +63,7 @@
                           配送料の負担
                           %span.sell-form__upload__head__require 必須
                         .select-wrap
-                          %i.icon-arrow-bottom
-                          %select.select-default
-                            %option{value: ""} ---
-                            %option{value: "2"} 送料込み(出品者負担)
-                            %option{value: "1"} 着払い(購入者負担)
+                          = f.collection_select( :hutan_id, Hutan.all, :id, :burden, {prompt: "--"}, {class: 'select-default'})
                       .form-group-l
                         %label.form-group-a
                           発送元の地域
@@ -103,12 +75,7 @@
                           発送までの日数
                           %span.sell-form__upload__head__require 必須
                         .select-wrap
-                          %i.icon-arrow-bottom
-                          %select.select-default
-                            %option{value: ""} ---
-                            %option{value: "1"} 1~2日で発送
-                            %option{value: "2"} 2~3日で発送
-                            %option{value: "3"} 4~7日で発送
+                          = f.collection_select( :days_id, Days.all, :id, :period, {prompt: "--"}, {class: 'select-default'})
                   .exhibit-content.clearfix{style: "\n    height: 298px;\n"}
                     %h3.sell-sub-head 販売価格(300〜9,999,999)
                     %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
@@ -122,16 +89,17 @@
                             .l-right.sell-price-input
                               ¥
                               .b-input-default
-                                %input.exhibit-input-default{placeholder: "例）300", style: "\n    width: 159px;\n    height: 47px;\n", value: ""}
+                                %input#price_calc.exhibit-input-default{placeholder: "例）300", style: "\n    width: 159px;\n    height: 47px;\n", value: "", type: "text"}
                         .form-group-x
                           .clearfix-s
                             .l-left-s
                               販売手数料 (10%)
-                            .l-right-f -
+                            .l-right-f
                         .form-group-z
                           .clearfix-t{style: "\n    height: 82px;\n"}
                             .l-left-t 販売利益
-                            .l-right-s -
+                            = f.number_field :price, class: "after-price", style: "display: none", id: "price"
+                            .l-right-s
                   .modal{role: "dialog", tabindex: "-1"}
                     .modal-inner
                   .exhibit-content-s{style: "\n    height: 328px;\n"}
@@ -150,23 +118,7 @@
                         = link_to("加盟店規約","#",{class: "a"})
                         に同意したことになります。
                     = f.submit '出品する', class: "btn-default-red"
-                    %a.btn-default-gray もどる
+                    = link_to root_path do
+                      = f.submit "もどる",class:"btn-default-gray"
 
-
-      %footer.single--footer
-        %nav.single--footer__nav
-          %ul.single--footer__nav__ul
-            %li.single--footer__nav__ul__li1
-              =link_to "#", class: '.single--footer__nav__ul__li1__a1' do
-                プライバシーポリシー
-            %li.single--footer__nav__ul__li2
-              =link_to "#", class: '.single--footer__nav__ul__li2__a2' do
-                メルカリ利用規約
-            %li.single--footer__nav__ul__li3
-              =link_to "#", class: '.single--footer__nav__ul__li3__a3' do
-                特定商取引に関する表記
-        =link_to "#", class: '.single--footer--logo' do
-          %div.single--footer--logo__img
-            = link_to image_tag('logo_gray.svg',{class: "single--footer--logo__img", style: "\n    margin-top: 0px;\n"})
-        %p
-          %small © 2019 Mercari
+      = render 'sell-footer'

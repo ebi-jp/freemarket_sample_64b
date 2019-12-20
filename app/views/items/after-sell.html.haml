@@ -1,0 +1,15 @@
+.wrapper-member-info
+  .exhibit-body{style: "\n    padding-bottom: 200px;\n"}
+    .exhibit__container{style: "\n    height: 2144px;\n"}
+      = render 'sell-header'
+      .info-main
+        .info-content
+          %h2.info-content__head 出品完了
+          .form-gorup
+          .success-text
+            .success-test
+              .success-top ありがとうございます。
+              .success-bottom 出品が完了しました。
+            .actions
+              =  link_to('トップページへ戻る',root_path, {class: "btn-red-success"})
+              .actions-space
