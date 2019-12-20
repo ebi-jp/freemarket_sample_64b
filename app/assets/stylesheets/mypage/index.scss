@@ -1,0 +1,257 @@
+.l-content {
+  float: right;
+  width: 700px;
+  margin-right: 107px;
+  margin-top: 33px;
+}
+
+.icon {
+  height: 200px;
+  position: absolute;
+}
+
+.bold {
+  text-align: center;
+  font-weight: 600;
+}
+
+h2 {
+  line-height: 1.4;
+}
+
+h3 {
+  font-weight: bold
+}
+
+a {
+  color: #0099e8;
+  text-decoration: none;
+}
+
+.mypage-tabs li.active a {
+  border-top: 2px solid #ea352d;
+}
+
+
+.mypage-tabs {
+  border: 0;
+  font-size: 0;
+}
+
+.mypage-tabs a {
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+  background: #eee;
+}
+
+
+.mypage-tabs li {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 50%;
+}
+
+.mypage-tabs2 {
+  border: 0;
+  font-size: 0;
+}
+
+.mypage-tabs2 li.active a {
+  border-top: 2px solid #ea352d;
+}
+
+.mypage-tabs2 a {
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+}
+
+.mypage-tabs2 li {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+}
+
+.mypage-tabs2 li {
+  width: 50%;
+}
+
+.mypage-user-icon {
+  height: 200px;
+  position: relative;
+  padding: 20px;
+  background: url(/jp/assets/img/mypage/user-bg.jpg?93931886);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+
+.mypage-user-icon h2 {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+.mypage-user-icon>a {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #333;
+}
+
+.mypage-number {
+  margin: 8px 0 0;
+  display: inline-flex;
+}
+
+.mypage-number div+div {
+  margin: 0 0 0 16px;
+}
+
+.mypage-number div {
+  font-size: 14px;
+}
+
+.mypage-number span {
+  margin: 0 0 0 8px;
+  font-size: 16px;
+}
+
+.tab-content .tab-pane.active {
+  display: block;
+}
+
+.mypage-item-list li:first-child {
+  border-bottom: 1px solid #eee;
+}
+
+.mypage-item-list li {
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+.mypage-item-link {
+  display: block;
+  min-height: 80px;
+  padding: 16px;
+  color: #333;
+  background-color: white;
+}
+
+.mypage-item-body {
+  margin: 0 40px 0 68px;
+}
+
+.mypage-item-link figure {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 48px;
+  height: 48px;
+}
+
+.mypage-item-text {
+  overflow: hidden;
+  display: -webkit-box;
+  max-height: 4.4em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+.mypage-item-link time {
+  display: inline-block;
+  color: #888;
+}
+
+figure {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.mypage-item-link .fa-angle-right {
+  position: absolute;
+  top: 50px;
+  left: 670px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.fa-angle-right:before {
+  font-size: x-large;
+}
+
+.mypage-go-list2 {
+  padding: 16px;
+  background-color: white;
+}
+
+.mypage-item-list li:last-child {
+  border: 0;
+}
+
+.mypage-go-list a {
+  display: block;
+  height: 56px;
+  margin: 0 auto;
+  background: #eee;
+  color: #333;
+  line-height: 56px;
+  text-align: center;
+}
+
+.mypage-tab-container {
+  margin: 40px 0 0;
+  background: #fff;
+}
+
+.mypage-tab-head {
+  padding: 0 16px;
+}
+
+.mypage-tab-head {
+  background: #fafafa;
+  font-size: 16px;
+  line-height: 72px;
+  font-weight: bold;
+}
+
+.mypage-item-link {
+  border-bottom: 1px solid #eee;
+}
+
+.mypage-tabs {
+  border: 0;
+  background: #eee;
+  font-size: 0;
+}
+
+.mypage-item-not-found {
+  background: url(/jp/assets/img/common/common/logo-gray-icon.svg?93931886);
+  background-repeat: no-repeat;
+  background-position: center 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.tab-content .tab-pane.active {
+  display: block;
+}
+
+.mypage-item-list2 {
+  text-align: center;
+}
