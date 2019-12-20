@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
     @item.send_plan = "ヤマト"
     @item.brand_id = "1"
     if @item.save
-
+      render template: "users/index"
     else
       render :new
     end
