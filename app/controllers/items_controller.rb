@@ -12,9 +12,9 @@ class ItemsController < ApplicationController
     @item.images.build(item_params[:imeges_attributes])
     # @item = current_user.id
     @item.send_plan = "ヤマト"
-    @item.brand_id = "1"
+    @item.brand_id = 1
     if @item.save
-      render template: "users/index"
+      render template: "items/after-sell"
     else
       render :new
     end
