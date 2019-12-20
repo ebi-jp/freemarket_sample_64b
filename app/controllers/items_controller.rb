@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only:[:show]
   # def index
   # end
 
@@ -21,7 +22,8 @@ class ItemsController < ApplicationController
   end
   
   def show
-    # @item = Items.find(params[:id])
+    @item = Item.find(params[:id])
+    
     # @user = Users.find(params[:id])
   end
   
@@ -32,16 +34,20 @@ class ItemsController < ApplicationController
                             :item,
                             :price,
                             :size,
-                            :status,
-                            :send_burden,
+                            :condition_id,
+                            :hutan_id,
                             :send_plan,
-                            :delivery_source,
-                            :send_day,
+                            :prefecture_id,
+                            :days_id,
                             :description,
                             :category_id,
                             :brand_id, 
                             images_attributes: [:id, :image]
                             ).merge(seller_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
