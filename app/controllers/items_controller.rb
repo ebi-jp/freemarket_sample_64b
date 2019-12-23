@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[:show]
+  before_action :set_item, only:[:show, :edit, :update]
   # def index
   # end
 
@@ -25,6 +25,19 @@ class ItemsController < ApplicationController
     
     # @user = Users.find(params[:id])
   end
+
+  def edit
+    # @items = Image.find(params[:id])
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   
   
   private
@@ -39,7 +52,7 @@ class ItemsController < ApplicationController
                             :prefecture_id,
                             :days_id,
                             :description,
-                            :category_id,
+                            :parent_id,
                             :brand_id, 
                             images_attributes: [:id, :image]
                             ).merge(seller_id: current_user.id)

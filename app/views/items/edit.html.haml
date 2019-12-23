@@ -1,0 +1,122 @@
+.exhibit-body{style: "\n    padding-bottom: 200px;\n"}
+  .exhibit__container{style: "\n    height: 2144px;\n"}
+
+    = render 'sell-header'
+    
+    %main.exhibit__single
+      %section.exhibit__single__container.buy-item-container
+        #sell-container
+          %div{"data-reactroot" => ""}
+            .sell-container-inner
+              %h2.exhibit__single__head 商品の情報を編集
+            = form_for @item,url: item_path(@item.id),method: :patch, class:'sell-form' do |f|
+              .sell-form
+                .sell-form__upload{style: "\n    height: 303px;\n"}
+                  %h3.sell-form__upload__head
+                    出品画像
+                    %span.sell-form__upload__head__require 必須
+                  %p.sell-form__upload__p 最大10枚までアップロードできます
+                  = f.fields_for :images do |image|
+                    .sell-dropbox-container.clearfix.state-image-number-10
+                      .sell-upload-items-container
+                        .sell-upload-items.have-item-0
+                          %ul
+                      .sell-upload-drop-box.have-item-0{style: "\n    height: 161px;\n"}
+                        -# ドラッグアンドドロップ
+                        -# またはクリックしてファイルをアップロード 
+                        = image.file_field :image, class: 'image-area__input--hidden fileField', value: @item.images[0]
+                .exhibit-content
+                  .form-group-h
+                    %label.form-group-a
+                      商品名
+                      %span.sell-form__upload__head__require 必須
+                    = f.text_field :item, class: "sell-input-default", placeholder: "商品名（必須 40文字まで)", type: "text"
+                  .form-group-l
+                    %label.form-group-a
+                      商品の説明
+                      %span.sell-form__upload__head__require 必須
+                    = f.text_area :description, class: "textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
+                .exhibit-content.clearfix{style: "\n    height: 260px;\n"}
+                  %h3.sell-sub-head 商品の詳細
+                  .sell-form-box
+                    .form-group-h
+                      %label.form-group-a
+                        カテゴリー
+                        %span.sell-form__upload__head__require 必須
+                      %div
+                        .select-wrap
+                          = f.collection_select( :parent_id, Parent.all, :id, :category, {prompt: "--"}, {class: 'select-default'})
+                    .form-group-l
+                      %label.form-group-a
+                        商品の状態
+                        %span.sell-form__upload__head__require 必須
+                      .select-wrap
+                        = f.collection_select( :condition_id, Condition.all, :id, :status, {prompt: "--"}, {class: 'select-default'})
+                .exhibit-content.clearfix{style: "\n    height: 370px;\n"}
+                  %h3.sell-sub-head 配送について
+                  = link_to("？","#",{class: "form-question"})
+                  .sell-form-box
+                    .form-group-h
+                      %label.form-group-a
+                        配送料の負担
+                        %span.sell-form__upload__head__require 必須
+                      .select-wrap
+                        = f.collection_select( :hutan_id, Hutan.all, :id, :burden, {prompt: "--"}, {class: 'select-default'})
+                    .form-group-l
+                      %label.form-group-a
+                        発送元の地域
+                        %span.sell-form__upload__head__require 必須
+                      .select-wrap
+                        = f.collection_select( :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'select-default'})
+                    .form-group-l
+                      %label.form-group-a
+                        発送までの日数
+                        %span.sell-form__upload__head__require 必須
+                      .select-wrap
+                        = f.collection_select( :days_id, Days.all, :id, :period, {prompt: "--"}, {class: 'select-default'})
+                .exhibit-content.clearfix{style: "\n    height: 298px;\n"}
+                  %h3.sell-sub-head 販売価格(300〜9,999,999)
+                  %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
+                  .sell-form-box
+                    .sell-price
+                      .form-group-y{style: "\n    height: 72px;\n"}
+                        .clearfix-f
+                          %label.l-left
+                            価格
+                            %span.sell-form__upload__head__require 必須
+                          .l-right.sell-price-input
+                            ¥
+                            .b-input-default
+                              %input#price_calc.exhibit-input-default{placeholder: "例）300", style: "\n    width: 159px;\n    height: 47px;\n", type: "text"}
+                      .form-group-x
+                        .clearfix-s
+                          .l-left-s
+                            販売手数料 (10%)
+                          .l-right-f
+                      .form-group-z
+                        .clearfix-t{style: "\n    height: 82px;\n"}
+                          .l-left-t 販売利益
+                          = f.number_field :price, class: "after-price", style: "display: none", id: "price"
+                          .l-right-s
+                .modal{role: "dialog", tabindex: "-1"}
+                  .modal-inner
+                .exhibit-content-s{style: "\n    height: 328px;\n"}
+                  .caution
+                    %p
+                      = link_to("禁止されている出品","#",{class: "a"})
+                      、
+                      = link_to("行為","#",{class: "a"})
+                      を必ずご確認ください。
+                    %p
+                      またブランド品でシリアルナンバー等がある場合はご記載ください。
+                      = link_to("偽ブランドの販売","#",{class: "a"})
+                      は犯罪であり処罰される可能性があります。
+                    %p
+                      また、出品をもちまして
+                      = link_to("加盟店規約","#",{class: "a"})
+                      に同意したことになります。
+                  = f.submit '編集完了', class: "btn-default-red"
+                  = link_to root_path do
+                    = f.submit "もどる",class:"btn-default-gray"
+
+    = render 'sell-footer'
