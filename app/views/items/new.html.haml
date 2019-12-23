@@ -20,8 +20,8 @@
                     = f.fields_for :images do |image|
                       .sell-dropbox-container.clearfix.state-image-number-10
                         .sell-upload-items-container
-                          .sell-upload-items.have-item-0
-                            %ul
+                          -# .sell-upload-items.have-item-0
+                          -#   %ul
                         .sell-upload-drop-box.have-item-0{style: "\n    height: 161px;\n"}
                           ドラッグアンドドロップ
                           またはクリックしてファイルをアップロード 
@@ -32,7 +32,7 @@
                         商品名
                         %span.sell-form__upload__head__require 必須
                       %div
-                        = f.text_field :item, class: "sell-input-default", placeholder: "商品名（必須 40文字まで)", value: "", type: "text"
+                        = f.text_field :item, class: "sell-input-default", placeholder: "商品名（必須 40文字まで)", type: "text"
                     .form-group-l
                       %label.form-group-a
                         商品の説明
@@ -94,12 +94,12 @@
                           .clearfix-s
                             .l-left-s
                               販売手数料 (10%)
-                            .l-right-f
+                            .l-right-f -
                         .form-group-z
                           .clearfix-t{style: "\n    height: 82px;\n"}
                             .l-left-t 販売利益
                             = f.number_field :price, class: "after-price", style: "display: none", id: "price"
-                            .l-right-s
+                            .l-right-s -
                   .modal{role: "dialog", tabindex: "-1"}
                     .modal-inner
                   .exhibit-content-s{style: "\n    height: 328px;\n"}
