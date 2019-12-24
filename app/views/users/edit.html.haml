@@ -5,7 +5,7 @@
       %section.chapter-container
         %h2.chapter-head 本人情報の登録
         .setting-mypage
-          = form_for @user, url: root_path, method: :post, html: {class: 'setting-mypage-form'} do |f|
+          = form_for @user, method: :post, html: {class: 'setting-mypage-form'} do |f|
             =f.fields_for :address do |a|
               .mypage-info
                 %p.mypage-info__1 お客さまの本人情報をご登録ください。
@@ -26,18 +26,20 @@
                 %label 生年月日
                 %p
                 =@user.birthyear.name 
+                %a /
                 =@user.birthmonth.name
+                %a /
                 =@user.birthday.name
               .mypage-form
-                %label{for:"postal_code"} 建物名
+                %label{for:"postal_code"} 郵便番号
                 %span.form-require-sub 任意
                 .field-input
                   = a.text_field :postal_code, placeholder: "例) 123-4567", type: "text", class: "mypage-input-text"
               .mypage-form
-              %label{for: "prefecture_id"} 都道府県
-              %span.form-require-sub 必須
-              .field-input
-                = a.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'mypage-input-address'}
+                %label{for: "prefecture_id"} 都道府県
+                %span.form-require-sub 必須
+                .field-input
+                  = a.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'mypage-input-address'}
               .mypage-form
                 %label{for:"city"} 市区町村
                 %span.form-require-sub 任意
@@ -54,7 +56,7 @@
                 .field-input
                   = a.text_field :building, placeholder: "例) 柳ビル103", type: "text", class: "mypage-input-text"
               .mypage-form
-              = f.submit "次へ進む", class: "btn-red"
+                .mypage-form-submit 登録する
     
     .side
       %nav.mypage-nav
