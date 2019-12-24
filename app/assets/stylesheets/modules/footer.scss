@@ -1,52 +1,57 @@
 .footer {
-  padding: 60px 0;
+  padding-top: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
   background: #212121;
   color: white;
   text-align: center;
   &__nav {
-    margin: 0 auto;
+    height: 296px;
+    margin-left: 80px;
+    margin-right: 80px;
     width: 1020px;
-    .footer-container {
-      .footer-menu {
+    .footer-menu {
+      padding-right: 40px;
+      text-align: left;
+      margin-top: 19px;
+      display: inline-block;
+      width: 23%;
+      vertical-align: top;
+      &:last-child {
         display: inline-block;
         width: 23%;
-        margin: 0 2% 0 0;
+        margin: 0;
         vertical-align: top;
-        &:last-child {
-          display: inline-block;
-          width: 23%;
-          margin: 0;
-          vertical-align: top;
+      }
+      &__title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      a {
+        color: white;
+      }
+      &__list {
+        margin: 16px 0 0;
+        font-size: 13px;
+        &:first-child {
+          margin: 24px 0 0;
+          font-size: 13px;
         }
-        &__title {
-          font-size: 16px;
-          font-weight: bold;
+        .lang-menu-non-active {
+          opacity: 0.3;
+        }
+        .lang-menu-icon {
+          width: 22px;
         }
         a {
-          color: white;
+          display: block;
         }
-        &__list {
-          margin: 16px 0 0;
-          font-size: 13px;
-          &:first-child {
-            margin: 24px 0 0;
-            font-size: 13px;
-          }
-          .lang-menu-non-active {
-            opacity: 0.3;
-          }
-          .lang-menu-icon {
-            width: 22px;
-          }
-          a {
-            display: block;
-          }
-          a:hover {
-            text-decoration: underline;
-          }
-          img {
-            margin: 0 3px 0 0;
-          }
+        a:hover {
+          text-decoration: underline;
+        }
+        img {
+          margin: 0 3px 0 0;
         }
       }
     }
@@ -64,6 +69,15 @@
     margin: 8px 0 0;
     text-align: center;
     line-height: 1;
-    font-size: 12px;
+    float: right;
+    font-size: 18px;
+    margin-top: 7px;
+    width: 600px;
   }
+}
+
+.sc-ghsgMZ.eGYuqF {
+    width: 1020px;
+    height: 31px;
+    margin: 30px 80px 20px;
 }

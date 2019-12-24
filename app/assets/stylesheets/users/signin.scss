@@ -1,0 +1,99 @@
+.s-single-main {
+  display: block;
+  .login-panel{
+    background: #fff;
+    margin: 0 auto;
+    max-width: none;
+    width: 456px;
+    .login-no-account{
+      padding: 40px 64px;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: center;
+      display: block;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      .login-signup{
+        display: block;
+        margin: 8px 0 0;
+        border: 1px solid #0099e8;
+        background: white;
+        color: #fff;
+        line-height: 40px;
+      }
+    }
+    .login-form-inner {
+      padding: 32px 64px;
+      border-top: 1px solid #f5f5f5;
+      .w-btn-default {
+          max-width: 343px;
+          border-radius: 4px;
+          position: relative;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+        .w-btn-mail {
+          color: #fff;
+          background-color: #ea352d;
+          position: relative;
+        }
+  
+      }
+    }
+  }
+  }
+  .w-btn-sns-facebook {
+    margin: 16px 0 0;
+    background: #385185;
+    color: #fff;
+    position: relative;
+  }
+  .w-btn-sns-google {
+    margin: 16px 0 0;
+    background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
+    border: #979797 solid 1px;
+    color: #333;
+  }
+
+.w-form-group{
+  margin: 0;
+  input[type="email"] {
+    width: 100%;
+    height: 45px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px; 
+} 
+input[type="password"] {
+    margin: 16px 0 0;
+    width: 100%;
+    height: 45px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px; 
+  } 
+} 
+.r-form-group{
+  margin: 16px 0 0;
+}
+.s-actions{
+  margin: 16px 0 0;
+.s-btn-red-success{
+  background-color: #ea352d;
+  color: #fff;
+  width: 100%;
+  padding: 18px 60px;
+  margin-top:30px;
+  margin-bottom: 60px;
+}
+}

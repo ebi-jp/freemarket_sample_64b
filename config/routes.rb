@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'card/show'
 
+  get "users/logout"
+
   devise_for :users,
   controllers: {
     sessions: 'users/sessions',
@@ -11,7 +13,8 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "users#index"
-  resources :users, only: [:index,:show,:new]
+
+  resources :users, only: [:index,:show,:new,:edit,:update,:destroy]
 
   resources :items, only: [:index,:new,:create,:show,:edit,:update,:destroy]do
     resources :purchase, only: [:index] do

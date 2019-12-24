@@ -1,0 +1,163 @@
+= render 'shared/header'
+.default.container
+  %main.u_container
+    .content
+      %section.chapter-container
+        %h2.chapter-head 本人情報の登録
+        .setting-mypage
+          = form_for @user, method: :post, html: {class: 'setting-mypage-form'} do |f|
+            =f.fields_for :address do |a|
+              .mypage-info
+                %p.mypage-info__1 お客さまの本人情報をご登録ください。
+                %p.mypage-info__2 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+                %p.mypage-info__3
+                = link_to "本人確認書類のアップロードアップロードについて＞",class: "mypage-info__4"
+              .mypage-form
+                %label お名前
+                %p
+                =@user.family_name
+                =@user.first_name 
+              .mypage-form
+                %label お名前カナ
+                %p
+                =@user.family_name_kana
+                =@user.first_name_kana
+              .mypage-form
+                %label 生年月日
+                %p
+                =@user.birthyear.name 
+                %a /
+                =@user.birthmonth.name
+                %a /
+                =@user.birthday.name
+              .mypage-form
+                %label{for:"postal_code"} 郵便番号
+                %span.form-require-sub 任意
+                .field-input
+                  = a.text_field :postal_code, placeholder: "例) 123-4567", type: "text", class: "mypage-input-text"
+              .mypage-form
+                %label{for: "prefecture_id"} 都道府県
+                %span.form-require-sub 必須
+                .field-input
+                  = a.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'mypage-input-address'}
+              .mypage-form
+                %label{for:"city"} 市区町村
+                %span.form-require-sub 任意
+                .field-input
+                  = a.text_field :city, placeholder: "例) 横浜市緑区", type: "text", class: "mypage-input-text"
+              .mypage-form
+                %label{for:"address"} 番地
+                %span.form-require-sub 任意
+                .field-input
+                  = a.text_field :address, placeholder: "例) 青山1-1-1", type: "text", class: "mypage-input-text"
+              .mypage-form
+                %label{for:"building"} 建物名
+                %span.form-require-sub 任意
+                .field-input
+                  = a.text_field :building, placeholder: "例) 柳ビル103", type: "text", class: "mypage-input-text"
+              .mypage-form
+                .mypage-form-submit 登録する
+    
+    .side
+      %nav.mypage-nav
+        %ul.mypage-nav-list
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/"}
+              マイページ
+              %i.fas.fa-chevron-right
+
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/notification/"}
+              お知らせ
+              %span.mypage-nav-number
+                3
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/todo/"}
+              やることリスト
+              %span.mypage-nav-number
+                2
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/like/history/"}
+              いいね！一覧
+              %i.fas.fa-chevron-right
+          %li
+            = link_to("出品する","/items/new/",{class: "mypage-nav-list-item"})
+            %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/listings/listing/"}
+              出品した商品 - 出品中
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/listings/in_progress/"}
+              出品した商品 - 取引中
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/listings/completed/"}
+              出品した商品 - 売却済み
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/purchase/"}
+              購入した商品 - 取引中
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/purchased/"}
+              購入した商品 - 過去の取引
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/news/"}
+              ニュース一覧
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/review/history/"}
+              評価一覧
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/help_center/"}
+              ガイド
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/support/"}
+              お問い合わせ
+              %i.fas.fa-chevron-right
+        %h3.mypage-nav-head メルペイ
+        %ul.mypage-nav-list
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/sales/"}
+              残高・振込申請
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/point/"}
+              ポイント
+              %i.fas.fa-chevron-right
+        %h3.mypage-nav-head 設定
+        %ul.mypage-nav-list
+          %li
+            .mypage-nav-list-item.active{href:"/jp/mypage/profile/"}
+              プロフィール
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/deliver_address/"}
+              発送元・お届け先住所変更
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/card/"}
+              支払い方法
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/email_password/"}
+              メール/パスワード
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/identification/"}
+              本人情報
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/mypage/sms_confirmation/"}
+              電話番号の確認
+              %i.fas.fa-chevron-right
+          %li
+            .mypage-nav-list-item{href: "/jp/logout/"}
+              ログアウト
+              %i.fas.fa-chevron-right

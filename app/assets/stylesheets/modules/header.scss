@@ -94,44 +94,197 @@
             white-space: nowrap;
           }
           }
+      .header-lists__right {
+      display: flex;
+      .lists-menu__signin {
+       text-align: center;
+       .lists-menu__signin__btn {
+        background-color: rgb(234, 53, 45);
+        color: rgb(255, 255, 255);
+        display: block;
+        font-size: 14px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(234, 53, 45);
+        border-image: initial;
+        border-radius: 4px;
+        padding: 8px 10px;
+       }
       }
-      &__right {
-        display: flex;
-        .lists-menu__signin {
-         text-align: center;
-         .lists-menu__signin__btn {
-          background-color: rgb(234, 53, 45);
-          color: rgb(255, 255, 255);
-          display: block;
-          font-size: 14px;
-          border-width: 1px;
-          border-style: solid;
-          border-color: rgb(234, 53, 45);
-          border-image: initial;
-          border-radius: 4px;
-          padding: 8px 10px;
-         }
-        }
-        .lists-menu__signup{
-         text-align: center;
-         margin-left: 11px;
-         .lists-menu__signup__btn{
-          background-color: rgb(255, 255, 255);
-          color: rgb(0, 149, 238);
-          display: block;
-          font-size: 14px;
-          border-width: 1px;
-          border-style: solid;
-          border-color: rgb(0, 149, 238);
-          border-image: initial;
-          border-radius: 4px;
-          padding: 8px 10px;
-          transition: all 0.3s ease-out 0s;
-         }
-        }              
+      .lists-menu__signup{
+       text-align: center;
+       margin-left: 11px;
+       .lists-menu__signup__btn{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 149, 238);
+        display: block;
+        font-size: 14px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(0, 149, 238);
+        border-image: initial;
+        border-radius: 4px;
+        padding: 8px 10px;
+        transition: all 0.3s ease-out 0s;
+       }
+      }              
+    }
       }
+      .header_box__userbox{
+        display: inline-block;
+        right: 0px;
+        top: 50px;
+        &_user{
+          display: flex;
+          &__mypage{
+            display: inline;
+            color: black;
+            margin: 0 0 0 16px;
+            line-height: 32px;
+            & span{
+              font-size: 14px;
+              margin: 0 0 0 6px;
+            }
+            // &:hover{
+            //   color: link-color;
+            // }
+            &__icon{
+              width: 16px;
+            
+            }
+          }
+          &__notice{
+            position: relative;
+            display: inline;
+            font-size: 14px;
+            margin: 0 0 0 16px;
+            color: black;
+            line-height: 32px;
+            & span {
+              font-size: 14px;
+              margin: 0 0 0 6px;
+            }
+            // &:hover{
+            //   color: $link-color;
+            // }
+            &__icon {
+              font-size: 16px;
+            }
+            &__budge {
+              position: absolute;
+              top: -12px;
+              left: 10px;
+              width: 20px;
+              height: 20px;
+              line-height: 20px;
+              border-radius: 50%;
+              background-color: red;
+              color: white;
+              font-size: 10px;
+              text-align: center;
+            }
+          }
+          &__todo {
+            display: inline;
+            font-size: 1px;
+            color: black;
+            margin: 0 0 0 16px;
+            line-height: 32px;
+            & span {
+              font-size: 14px;
+              margin: 0 0 0 6px;
+            }
+            // &:hover {
+            //   color: $link-color;
+            // }
+            &__icon {
+              font-size: 20px;
+            }
+          }
+      // &__right {
+      //   display: flex;
+      //   .lists-menu__signin {
+      //    text-align: center;
+      //    .lists-menu__signin__btn {
+      //     background-color: rgb(234, 53, 45);
+      //     color: rgb(255, 255, 255);
+      //     display: block;
+      //     font-size: 14px;
+      //     border-width: 1px;
+      //     border-style: solid;
+      //     border-color: rgb(234, 53, 45);
+      //     border-image: initial;
+      //     border-radius: 4px;
+      //     padding: 8px 10px;
+      //    }
+      //   }
+      //   .lists-menu__signup{
+      //    text-align: center;
+      //    margin-left: 11px;
+      //    .lists-menu__signup__btn{
+      //     background-color: rgb(255, 255, 255);
+      //     color: rgb(0, 149, 238);
+      //     display: block;
+      //     font-size: 14px;
+      //     border-width: 1px;
+      //     border-style: solid;
+      //     border-color: rgb(0, 149, 238);
+      //     border-image: initial;
+      //     border-radius: 4px;
+      //     padding: 8px 10px;
+      //     transition: all 0.3s ease-out 0s;
+      //    }
+      //   }              
+      // }
           }
         }
+      }
+    }
+    .header-lists__right {
+      display: flex;
+      .lists-menu__signin {
+       text-align: center;
+       .lists-menu__signin__btn {
+        background-color: rgb(234, 53, 45);
+        color: rgb(255, 255, 255);
+        display: block;
+        font-size: 14px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(234, 53, 45);
+        border-image: initial;
+        border-radius: 4px;
+        padding: 8px 10px;
+       }
+      }
+      .lists-menu__signup{
+       text-align: center;
+       margin-left: 11px;
+       .lists-menu__signup__btn{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 149, 238);
+        display: block;
+        font-size: 14px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(0, 149, 238);
+        border-image: initial;
+        border-radius: 4px;
+        padding: 8px 10px;
+        transition: all 0.3s ease-out 0s;
+       }
+      }              
+    }
         // .fas {
         //   color: red;
         // }
+
+// .fa-user-circle {
+//   position: fixed;
+//   bottom: 33px; 
+//   right: 30px;
+//   font-size: 160px;
+//   z-index: 1;
+//   padding: 0px;
+//   color:rgb(234, 53, 45);
+// }
