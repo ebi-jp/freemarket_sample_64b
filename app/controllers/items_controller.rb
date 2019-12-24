@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
                             :prefecture_id,
                             :days_id,
                             :description,
-                            :category_id,
+                            :parent_id,
                             :brand_id, 
                             images_attributes: [:id, :image]
                             ).merge(seller_id: current_user.id)
