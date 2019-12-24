@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[:show]
+  before_action :set_item, only:[:show, :edit, :update]
   # def index
   # end
 
@@ -10,8 +10,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    # @item.images.build(item_params[:imeges_attributes])
-    # @item = current_user.id
     @item.send_plan = "ヤマト"
     @item.brand_id = 1
     if @item.save
@@ -26,6 +24,19 @@ class ItemsController < ApplicationController
     
     # @user = Users.find(params[:id])
   end
+
+  def edit
+    # @items = Image.find(params[:id])
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   
   
   private

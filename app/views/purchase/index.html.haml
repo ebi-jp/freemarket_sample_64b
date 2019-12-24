@@ -5,12 +5,15 @@
       .buy-content__inner
         .buy-item__box
           %h3.buy-item__image
-            = image_tag 'goods_main.jpeg', size: "80x60", class: "lazyloaded", alt: "", opacity: 1;
-          .buy-item__detail
-            %p.buy-item__name ナノユニバース　ボディバッグ
-            %p.buy-price-ja.bold
-              %span ¥1,600
-              %span.item-shipping-fee （税込）送料込み
+            = @item.images
+        %ul.buy-item__detail
+          %li.buy-item__name
+            %span
+            =@item.item
+          %li.buy-price-ja.bold
+            %span ¥
+            =@item.price
+            %span.item-shipping-fee （税込）送料込み
     %section.buy-content.buy-item
       .buy-content__inner
         .buy-form{action: "", method: "POST", novalidate: "novalidate"}
@@ -18,7 +21,8 @@
             %li.buy-price-row.buy-you-pay.bold
               .buy-price-cell.buy-price-cell-label 支払い金額
               .buy-price-cell
-                %span{"data-buy-pay" => "1600", style: "margin-left: 110px;"} ¥1,600
+                %span ¥
+                =@item.price
           %ul.buy-accordion.buy-not-have-point
             %li.accordion-parent
               .checkbox-default.buy-use-point

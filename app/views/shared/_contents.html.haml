@@ -1,19 +1,13 @@
 .header-slide{style: "height: 290px;"}
   .first-slide
-  = image_tag "slidecamp.png", height:"290", width: "800"
 
+  = image_tag "slidecamp.png", height:"290", width: "800"
 
 -#   .second-slide
 -# .slide-button-prev
 -# .slide-button-next
 -# .slide-paginate
 
--# %button.fixed_btn
--# ボタン
-
--# %ul.sc-cqCuEk.jKltcZ  
--#   %span.sc-hzDkRC.cEMgYD{style: "width: 300px;"}
--#     %i.fas.fa-user-circle
 
 .sc-ebFjAB.dxJnjc
   .sc-jKVCRD.cIdceG
@@ -156,4 +150,9 @@
 
                                     .items-box-body
                                       %h3.items-box-name.font-2
-                                        = item.item                                                                                             
+                                        = item.item            
+                                        
+                             = link_to "/items/new/", class: "fixed_btn" do
+                              出品
+                              .aaa
+                                %i.fa.fa-camera     

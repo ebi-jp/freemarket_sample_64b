@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'card/show'
 
+  get "users/logout"
+
   devise_for :users,
   controllers: {
     sessions: 'users/sessions',
@@ -11,11 +13,24 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "users#index"
-  resources :users, only: [:index,:show,:new]
-  resources :items, only: [:index,:new,:create,:show]
-  resources :purchase, only: [:index]
+
+  resources :users, only: [:index,:show,:new,:edit,:update,:destroy]
+
+  resources :items, only: [:index,:new,:create,:show,:edit,:update]do
+    resources :purchase, only: [:index] do
+      collection do
+        get 'index', to: 'purchase#index'
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+    end
+  end
+end
+
+  
+  
   resources :mypage, only: [:index]
-  resources :card, only: [:index]
+  
+
 
   resources :signup do
     collection do
@@ -27,7 +42,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :card, only: [:new, :show] do
+  resources :card, only: [:new, :show,:index] do
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
@@ -35,13 +50,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :purchase, only: [:index] do
-    collection do
-      get 'index', to: 'purchase#index'
-      post 'pay', to: 'purchase#pay'
-      get 'done', to: 'purchase#done'
-    end
-  end
-  
+
 
 end
