@@ -1,0 +1,102 @@
+.side
+  %nav.mypage-nav
+    %ul.mypage-nav-list
+      %li
+        = link_to("マイページ","/mypage",{class: "mypage-nav-list-item"})
+        %i.fas.fa-chevron-right
+
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/notification/"}
+          お知らせ
+          %span.mypage-nav-number
+            3
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/todo/"}
+          やることリスト
+          %span.mypage-nav-number
+            2
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/like/history/"}
+          いいね！一覧
+          %i.fas.fa-chevron-right
+      %li
+        = link_to("出品する","/items/new/",{class: "mypage-nav-list-item"})
+        %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/listings/listing/"}
+          出品した商品 - 出品中
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/listings/in_progress/"}
+          出品した商品 - 取引中
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/listings/completed/"}
+          出品した商品 - 売却済み
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/purchase/"}
+          購入した商品 - 取引中
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/purchased/"}
+          購入した商品 - 過去の取引
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/news/"}
+          ニュース一覧
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/review/history/"}
+          評価一覧
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/help_center/"}
+          ガイド
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/support/"}
+          お問い合わせ
+          %i.fas.fa-chevron-right
+    %h3.mypage-nav-head メルペイ
+    %ul.mypage-nav-list
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/sales/"}
+          残高・振込申請
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/point/"}
+          ポイント
+          %i.fas.fa-chevron-right
+    %h3.mypage-nav-head 設定
+    %ul.mypage-nav-list
+      %li
+        = link_to("プロフィール","/users/show",{class: "mypage-nav-list-item"})
+        -# .mypage-nav-list-item.active{href:"/jp/mypage/profile/"}
+        -#   プロフィール
+        %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/deliver_address/"}
+          発送元・お届け先住所変更
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/card/"}
+          支払い方法
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/email_password/"}
+          メール/パスワード
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/identification/"}
+          本人情報
+          %i.fas.fa-chevron-right
+      %li
+        .mypage-nav-list-item{href: "/jp/mypage/sms_confirmation/"}
+          電話番号の確認
+          %i.fas.fa-chevron-right
+      %li
+        = link_to("ログアウト","/users/logout/",{class: "mypage-nav-list-item"})
+        %i.fas.fa-chevron-right
