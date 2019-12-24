@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   root to: "users#index"
   resources :users, only: [:index,:show,:new]
 
-  resources :items, only: [:index,:new,:create,:show,:edit,:update]do
+  resources :items, only: [:index,:new,:create,:show,:edit,:update,:destroy]do
     resources :purchase, only: [:index] do
       collection do
         get 'index', to: 'purchase#index'
