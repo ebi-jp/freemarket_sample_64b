@@ -63,15 +63,15 @@
                 .field-input
                   = f.text_field :family_name_kana, placeholder: "例) ヤマダ", type: "text", class: "login-input-text-content-left",required:"required"
                   = f.text_field :first_name_kana, placeholder: "例) アヤ", type: "text", class: "login-input-text-content-right",required:"required" 
-          .form-group__birth
+          .form-group
             %label{for:"birth"} 生年月日
             %span.form-require 必須
             .div
-              = f.collection_select :birth_year, Birthyear.all, :id, :name, {prompt: "--"}, {class: 'select-default'}
+              = f.collection_select :birthyear_id, Birthyear.all, :id, :name, {prompt: "--"}, {class: 'select-default'}
               %a 年
-              = f.collection_select :birth_month, Birthmonth.all, :id, :name, {prompt: "--"}, {class: 'select-default'}
+              = f.collection_select :birthmonth_id, Birthmonth.all, :id, :name, {prompt: "--"}, {class: 'select-default'}
               %a 月
-              = f.collection_select :birth_day, Birthday.all, :id, :name, {prompt: "--"}, {class: 'select-default'}
+              = f.collection_select :birthday_id, Birthday.all, :id, :name, {prompt: "--"}, {class: 'select-default'}
               %a 日
 
           .form-info-text
