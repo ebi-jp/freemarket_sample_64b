@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    # @item = current_user.id
     @item.send_plan = "ヤマト"
     @item.brand_id = 1
     if @item.save
