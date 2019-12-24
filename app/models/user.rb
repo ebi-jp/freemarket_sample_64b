@@ -80,6 +80,9 @@ class User < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :birthyear 
+  delegate :name, to: :birthyear
   belongs_to_active_hash :birthmonth
+  delegate :name, to: :birthmonth
   belongs_to_active_hash :birthday
+  delegate :name, to: :birthday
 end

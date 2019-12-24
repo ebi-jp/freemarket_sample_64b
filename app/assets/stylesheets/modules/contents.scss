@@ -415,7 +415,23 @@
       background-color: white;
       cursor: pointer;
     }
-    
+    .fixed_btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 180px;
+      height: 180px;
+      font-size: 22px;
+      border-radius: 50%;
+      background: #ea352d;
+      color: #fff;
+      text-align: center;
+      padding-top: 30px;
+    }
+    .fa.fa-camera {
+      margin: 8px 57px 0;
+      font-size: 65px;
+    }
     .related-item-column .items-box:nth-child(3n) {
       margin-right: 0;
     }
