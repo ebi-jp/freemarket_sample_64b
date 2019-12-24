@@ -1,17 +1,43 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+%body
+  .exhibit-body{style: "\n    padding-bottom: 200px;\n"}
+    .exhibit__container{style: "\n    height: 2144px;\n"}
+
+      = render 'items/sell-header'
+
+
+
+      %main.s-single-main
+        .login-panel
+          .login-no-account
+            %p アカウントをお持ちでない方はこちら
+            .login-signup
+              %i.icon-signup
+              = link_to "新規会員登録", step1_signup_index_path
+          .login-form-inner
+            .w-btn-default.w-btn-sns-facebook
+              %i.icon-facebook
+              = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path
+            .w-btn-default.w-btn-sns-google
+              %i.icon-google
+              = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path
+
+          .login-form-inner
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .w-form-group
+                -# = f.label :email
+                %br/
+                = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "メールアドレス"
+              .w-form-group
+                -# = f.label :password
+                %br/
+                = f.password_field :password, autocomplete: "current-password",placeholder: "パスワード"
+              .r-form-group
+                .g-recaptcha.login-captcha{"data-sitekey" => ""}
+                  %div{style: "width: 304px; height: 78px;"}
+                    %div
+                      %iframe{:frameborder => "0", :height => "78", :name => "a-z9q9ddsmktaz", :role => "presentation", :sandbox => "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", :scrolling => "no", :src => "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=mhgGrlTs_PbFQOW4ejlxlxZn&size=normal&cb=s6zv43vytm", :width => "304"}
+                    %textarea#g-recaptcha-response.g-recaptcha-response{:name => "g-recaptcha-response", :style => "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
+              .s-actions
+                = f.submit "ログイン",class: "s-btn-red-success"
+
+      = render 'items/sell-footer'

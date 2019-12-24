@@ -13,7 +13,7 @@
           .stage{style: "left: -300px; width: 2400px;"}
             .item{style: "width: 300px;"}
               .item-inner
-                = image_tag @item.images, size: "300x300", class: "lazy", alt: "@item.item", style: "opacity: 1"
+                = image_tag @item.images[0].image.url, size: "300x300", class: "lazy", alt: "@item.item", style: "opacity: 1"
             .item.active{style: "width: 300px;"}
               .item-inner
                 = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
