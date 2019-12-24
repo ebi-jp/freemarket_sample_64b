@@ -9,15 +9,15 @@
             .buy-content__inner
               .buy-item__box
                 %h3.buy-item__image
-                  = @item.images
-              %ul.buy-item__detail
-                %li.buy-item__name
-                  %span
-                  =@item.item
-                %li.buy-price-ja.bold
-                  %span ¥
-                  =@item.price
-                  %span.item-shipping-fee （税込）送料込み
+                  = image_tag @item.images[0].image.url,class:'image_tag'
+                .buy-item__detail
+                  .buy-item__name
+                    %span
+                    =@item.item
+                  .buy-price-ja
+                    %span ¥
+                    =@item.price
+                    %span.item-shipping-fee （税込）送料込み
           %section.buy-content.buy-item
             .buy-content__inner
               .buy-form{action: "", method: "POST", novalidate: "novalidate"}
