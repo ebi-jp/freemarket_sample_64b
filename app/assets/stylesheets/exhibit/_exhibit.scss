@@ -107,6 +107,16 @@
                   transform: translate(-50%,-50%);
                   font-size: 14px;
                 }
+                .image-area__input--hidden-edit {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  margin: auto;
+                  transform: translate(-50%,-50%);
+                  font-size: 14px;
+                  height: 150;
+                  width: 150;
+                }
               }
             }
           }
@@ -403,13 +413,14 @@
               display: block;
               width: 100%;
               line-height: 48px;
-              font-size: 14px;
+              font-size: 20px;
               transition: all ease-out .3s;
               text-align: center;
               background: #ea352d;
               border: 1px solid #ea352d;
               color: #fff;
               margin: 40px 0 0;
+              font-weight: bold;
             }
             .btn-default-gray {
               width: 45%;

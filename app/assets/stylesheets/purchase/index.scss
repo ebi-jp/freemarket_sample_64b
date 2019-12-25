@@ -32,7 +32,10 @@
 .buy-content:first-of-type {
   margin: 0;
 }
-
+.image_tag{
+  width: 80px;
+  height: 80px;
+}
 .buy-item {
   text-align: center;
   &__image {
@@ -52,7 +55,6 @@
   }
   &__detail {
   width: 193px;
-  height: 80px;
   float: right;
   margin-left: 0px;
   }
@@ -73,6 +75,15 @@
 
 h3 {
   font-size: 14px;
+}
+
+.buy-price-ja{
+  font-weight: 540;
+  font-size: 13px;
+  margin-left: 10px;
+  margin-top: 5px;
+  text-align: left;
+  font-weight: bolder;
 }
 
 .bold {
@@ -116,6 +127,8 @@ h3 {
 
 .buy-use-point {
   padding-left: 10px;
+  margin-top: 15px;
+  margin-bottom: 25px;
 }
 
 .buy-user-info {

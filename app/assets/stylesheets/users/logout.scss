@@ -1,0 +1,90 @@
+.default.container{
+  background-color:  rgb(239, 239, 239);
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+}
+
+.mypage-container{
+  @include clearfix;
+    margin: 40px auto 0;
+    width: 1020px;
+    padding: 0 0 40px;
+    .mypage-content{
+      float: right;
+      width: 700px;
+      .mypage-content__logout {
+        background: #fff;
+        margin: 0;
+        .mypage-content__logout-form{
+          padding: 64px;
+          .mypage-content__logout-form__content{
+            max-width: 320px;
+            margin: 0 auto;
+          }
+        }
+
+
+    }
+  }
+}
+
+
+
+
+
+
+.side{
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+  .mypage-nav-list-item {
+    position: relative;
+    display: block;
+    min-height: 48px;
+    padding: 16px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    .fa-chevron-right {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      color: #ccc;
+      transform: translate(0, -50%);
+      transition: all ease-out .2s;
+      float: right;
+    }
+    .mypage-nav-number {
+      position: absolute;
+      top: 50%;
+      right: 32px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #ea352d;
+      text-align: center;
+      line-height: 24px;
+      color: #fff;
+      transform: translate(0, -50%);
+    }
+  }
+  .fa-chevron-right {
+    top: 50%;
+    right: 16px;
+    color: #ccc;
+    transform: translate(-16px, -35px);
+    transition: all ease-out .2s;
+    float: right;
+    z-index: 1;
+  }
+  .mypage-nav-head {
+    margin: 40px 4% 0;
+    font-size: 16px;
+    display: block;
+    margin-block-start: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+}
