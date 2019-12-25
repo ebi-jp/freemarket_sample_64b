@@ -1,14 +1,14 @@
 .items-box
   .items-box2
     .items-box-photo
-      -# = image_tag @items.each do |item|
-      -#   puts item
-      -#   = image_tag item.images.first.image.url,width: “187”,height: “200”
+      = image_tag @items.each do |item|
+        puts item
+        = image_tag item.images.first.image.url,width: “187”,height: “200”
       .price
-        -# = @items.price 
+        = @items.price 
 
-      -# images[0].image.url
-      -# = image_tag 'itemomage.jpeg', size: "188x188", class: "lazyloaded", alt: "ワンオク ボディバッグ"
+      images[0].image.url
+      = image_tag 'itemomage.jpeg', size: "188x188", class: "lazyloaded", alt: "ワンオク ボディバッグ"
     .items-box-body
       %h3.items-box-name.font-2 ワンオク ボディバッグ
 

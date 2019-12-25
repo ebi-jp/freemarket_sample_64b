@@ -46,22 +46,15 @@
                       %li.items-box
                         .items-box2
                           .items-box-photo
-                            -# = image_tag item.images.first.image.url
-
-                            = image_tag @items.each do |item|
-                              puts item
-                              = image_tag item.images.first.image.url,width: “187”,height: “200”
-                          
-                            -# images[0].image.url
-                            -# = image_tag 'itemomage.jpeg', size: "188x188", class: "lazyloaded", alt: "ワンオク ボディバッグ"
+                            = image_tag item.images[0].image.url
                             .price
                               %span ¥
-                              = item.price 
-
+                              = item.price
                           .items-box-body
                             %h3.items-box-name.font-2
                               = item.item
-                    
+
+
         .sc-clNaTc.iniLfl
           .contents
             .contents2
@@ -78,14 +71,7 @@
                             %li.items-box
                               .items-box2
                                 .items-box-photo
-                                  -# = image_tag item.images.first.image.url
-
-                                  -# = image_tag @items.each do |item|
-                                  -#   puts item
-                                  -#   = image_tag item.images.first.image.url,width: “187”,height: “200”
-                                
-                                  -# images[0].image.url
-                                  -# = image_tag 'itemomage.jpeg', size: "188x188", class: "lazyloaded", alt: "ワンオク ボディバッグ"
+                                  = image_tag item.images[0].image.url
                                   .price
                                     %span ¥
                                     = item.price 
@@ -110,14 +96,7 @@
                                 %li.items-box
                                   .items-box2
                                     .items-box-photo
-                                      -# = image_tag item.images.first.image.url
-
-                                      -# = image_tag @items.each do |item|
-                                      -#   puts item
-                                      -#   = image_tag item.images.first.image.url,width: “187”,height: “200”
-                                    
-                                      -# images[0].image.url
-                                      -# = image_tag 'itemomage.jpeg', size: "188x188", class: "lazyloaded", alt: "ワンオク ボディバッグ"
+                                      = image_tag item.images[0].image.url
                                       .price
                                         %span ¥
                                         = item.price
@@ -142,14 +121,7 @@
                                 %li.items-box
                                   .items-box2
                                     .items-box-photo
-                                      -# = image_tag item.images.first.image.url
-
-                                      -# = image_tag @items.each do |item|
-                                      -#   puts item
-                                      -#   = image_tag item.images.first.image.url,width: “187”,height: “200”
-                                    
-                                      -# images[0].image.url
-                                      -# = image_tag 'itemomage.jpeg', size: "188x188", class: "lazyloaded", alt: "ワンオク ボディバッグ"
+                                      = image_tag item.images[0].image.url
                                       .price
                                         %span ¥
                                         = item.price
