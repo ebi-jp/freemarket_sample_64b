@@ -1,3 +1,9 @@
+.oooo {
+  height: 188px;
+  width: 188px;
+  object-fit: cover;
+}
+
 .items-box-photo::before {
   content: "";
   top: 0;
@@ -524,7 +530,7 @@
       position: relative;
       .price{
         height: 20px;
-        width: 70px;
+        width: 80px;
         background-color: rgba(0,0,0,0.5);
         color: white;
         border-radius: 0px 10px 10px 0px;
