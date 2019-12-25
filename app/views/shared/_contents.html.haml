@@ -40,14 +40,13 @@
                       %li.items-box
                         .items-box2
                           .items-box-photo
-                            = image_tag item.images[0].image.url
+                            = image_tag item.images[0].image.url,class: "oooo"
                             .price
                               %span ¥
                               = item.price
                           .items-box-body
                             %h3.items-box-name.font-2
                               = item.item
-
 
         .sc-clNaTc.iniLfl
           .contents
@@ -65,7 +64,7 @@
                             %li.items-box
                               .items-box2
                                 .items-box-photo
-                                  = image_tag item.images[0].image.url
+                                  = image_tag item.images[0].image.url,class: "oooo"
                                   .price
                                     %span ¥
                                     = item.price 
@@ -90,7 +89,7 @@
                                 %li.items-box
                                   .items-box2
                                     .items-box-photo
-                                      = image_tag item.images[0].image.url
+                                      = image_tag item.images[0].image.url,class: "oooo"
                                       .price
                                         %span ¥
                                         = item.price
@@ -115,7 +114,7 @@
                                 %li.items-box
                                   .items-box2
                                     .items-box-photo
-                                      = image_tag item.images[0].image.url
+                                      = image_tag item.images[0].image.url,class: "oooo"
                                       .price
                                         %span ¥
                                         = item.price
@@ -124,7 +123,7 @@
                                       %h3.items-box-name.font-2
                                         = item.item            
                                         
-                             = link_to "/items/new/", class: "fixed_btn" do
-                              出品
-                              .aaa
-                                %i.fa.fa-camera     
+                                  = link_to "/items/new/", class: "fixed_btn" do
+                                    出品
+                                    .aaa
+                                      %i.fa.fa-camera     

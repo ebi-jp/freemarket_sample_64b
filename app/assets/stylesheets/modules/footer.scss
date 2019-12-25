@@ -1,15 +1,16 @@
 .footer {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
   padding-top: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 20px;
   background: #212121;
   color: white;
   text-align: center;
   &__nav {
     height: 296px;
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: 100px;
+    // margin-left: 80px;
+    // margin-right: 80px;
     width: 1020px;
     .footer-menu {
       padding-right: 40px;
