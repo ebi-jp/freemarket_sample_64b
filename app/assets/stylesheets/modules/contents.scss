@@ -42,6 +42,17 @@
   font-weight: bold;
 }
 
+.item-all{
+  position: absolute;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 103;
+}
+
 .items-box-photo::before {
   content: "";
   top: 0;

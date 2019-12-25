@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @items = Item.limit(10).order('id DESC')
+    # @user = User.find_by(id: @item.seller_id)
+    
   end
 
   def edit

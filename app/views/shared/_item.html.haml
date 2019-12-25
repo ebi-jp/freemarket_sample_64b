@@ -2,6 +2,7 @@
   - if item.buyer_id != nil
     %li.items-box
       .items-box2
+        = link_to "", item_path(item.id), class: "item-all"
         .items-box-photo
           = image_tag item.images[0].image.url,class: "oooo"
           .price
@@ -14,6 +15,7 @@
   - else
     %li.items-box
       .items-box2
+        = link_to "", item_path(item.id), class: "item-all"
         .items-box-photo-b
           = image_tag item.images[0].image.url,class: "oooo"
           .price
