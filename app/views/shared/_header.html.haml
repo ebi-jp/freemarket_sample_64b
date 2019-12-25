@@ -35,7 +35,7 @@
                 %span.header_box__userbox_user__todo__text
                   やることリスト
             %li
-              = link_to mypage_index_path(current_user), class: "header_box__userbox_user__mypage" do
+              = link_to mypage_user_path(current_user), class: "header_box__userbox_user__mypage" do
                 -# %figure.header_box__userbox_user__mypage__icon
                 -#   = image_tag("", size: "32x32")
                 = icon "far", "meh-blank", class: "header_box__userbox_user__mypage__icon"
