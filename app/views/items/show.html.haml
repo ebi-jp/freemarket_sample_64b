@@ -71,8 +71,11 @@
     %span.item-tax (税込)
     %span.item-shipping-fee #{@item.burden}
   
+  - if @item.seller_id == nil
     .item-buy-btn
     = link_to "購入画面に進む", item_purchase_index_path(@item.id), class: "item-buy-btn"
+  - elsif @item.buyer_id != nil
+    .item-buy-btn 売り切れました
   - if user_signed_in? && current_user.id == @item.seller_id
     .item-edit-btn
     = link_to "商品を編集する", edit_item_path(@item.id), class: "item-edit-btn"
