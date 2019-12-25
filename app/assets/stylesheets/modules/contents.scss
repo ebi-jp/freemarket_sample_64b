@@ -1,3 +1,32 @@
+.items-box-photo::before {
+  content: "";
+  top: 0;
+  left: 0;
+  border-bottom: 80px solid transparent;
+  border-left: 80px solid #ea352d; /* ラベルの色はここで変更 */
+  position: absolute;
+  z-index: 100;
+  }
+
+  .items-box-photo::after {
+    content: "SOLD";
+    display: block;
+    top: 5px;
+    transform: rotate(-45deg);
+    color: #fff; /* 文字色はここで変更 */
+    left: 0;
+    position: absolute;
+    z-index: 101;
+    top: 18px;
+    font-size: 17px;
+    left: 7px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    bottom: 136px;
+    }
+    
+  
+
 .header-slide {
   text-align: center;
   box-shadow: rgba(0,0,0,0.18) 0px 2px 4px;
