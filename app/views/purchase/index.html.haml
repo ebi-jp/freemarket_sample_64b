@@ -1,73 +1,78 @@
-%main.single-main
-  %section.l-single-container.buy-item-container
-    %h2.l-single-head.buy-head 購入内容の確認
-    %section.buy-content.buy-item
-      .buy-content__inner
-        .buy-item__box
-          %h3.buy-item__image
-            = @item.images
-        %ul.buy-item__detail
-          %li.buy-item__name
-            %span
-            =@item.item
-          %li.buy-price-ja.bold
-            %span ¥
-            =@item.price
-            %span.item-shipping-fee （税込）送料込み
-    %section.buy-content.buy-item
-      .buy-content__inner
-        .buy-form{action: "", method: "POST", novalidate: "novalidate"}
-          %ul.buy-price-table
-            %li.buy-price-row.buy-you-pay.bold
-              .buy-price-cell.buy-price-cell-label 支払い金額
-              .buy-price-cell
-                %span ¥
-                =@item.price
-          %ul.buy-accordion.buy-not-have-point
-            %li.accordion-parent
-              .checkbox-default.buy-use-point
-                %input{disabled: "disabled", type: "checkbox", style: "width: 18px; height: 16px;"}/
-                %label ポイントを使用 (所持ポイント: P0)
-          %section.buy-content.buy-user-info{"data-buy" => "pay-method"}
-            .buy-content__inner__pay
-              .clearfix
-                %h3.l-left 支払い方法
-                .l-right.buy-user-info__fix
-                  %span
-                    = link_to '変更する'
-              %p.buy-user-info__text
-                クレジットカード
-                %br/
-                - if @default_card_information.blank?
-                - else
-                = "**** **** **** " + @default_card_information.last4
-                %br/      
-                - exp_month = @default_card_information.exp_month.to_s
-                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-                = exp_month + " / " + exp_year
-              %figure.buy-card-logo
-                %i.fab.fa-cc-jcb.fa-lg
-              %p
-          %section.buy-content.buy-user-info__adress
+%body
+  .exhibit-body
+    .exhibit__container
+      = render 'items/sell-header'
+      %main.single-main
+        %section.l-single-container.buy-item-container
+          %h2.l-single-head.buy-head 購入内容の確認
+          %section.buy-content.buy-item
             .buy-content__inner
-              .p.clearfix
-                %h3.l-left 配送先
-                .l-right.buy-user-info__fix
-                  %span
-                    = link_to '変更する'
-              %address.buy-user-info__text
-                %p
-                -if user_signed_in?
-                  = current_user.address.postal_code
-                  %br/
-                  = current_user.address.name
-                  = current_user.address.city
-                  = current_user.address.address
-                  = current_user.address.building
-                  %br/
-                  = current_user.family_name
-                  = current_user.first_name
-          %section.buy-content.buy-user-info__purchase
-          = form_tag(action: :pay, method: :post) do
-            %button.btn-default.btn-red.bold{type: "submit"} 購入する
-      %section
+              .buy-item__box
+                %h3.buy-item__image
+                  = image_tag @item.images[0].image.url,class:'image_tag'
+                .buy-item__detail
+                  .buy-item__name
+                    %span
+                    =@item.item
+                  .buy-price-ja
+                    %span ¥
+                    =@item.price
+                    %span.item-shipping-fee （税込）送料込み
+          %section.buy-content.buy-item
+            .buy-content__inner
+              .buy-form{action: "", method: "POST", novalidate: "novalidate"}
+                %ul.buy-price-table
+                  %li.buy-price-row.buy-you-pay.bold
+                    .buy-price-cell.buy-price-cell-label 支払い金額
+                    .buy-price-cell
+                      %span ¥
+                      =@item.price
+                %ul.buy-accordion.buy-not-have-point
+                  %li.accordion-parent
+                    .checkbox-default.buy-use-point
+                      %input{disabled: "disabled", type: "checkbox", style: "width: 18px; height: 16px;"}/
+                      %label ポイントを使用 (所持ポイント: P0)
+                %section.buy-content.buy-user-info{"data-buy" => "pay-method"}
+                  .buy-content__inner__pay
+                    .clearfix
+                      %h3.l-left 支払い方法
+                      .l-right.buy-user-info__fix
+                        %span
+                          = link_to '変更する'
+                    %p.buy-user-info__text
+                      クレジットカード
+                      %br/
+                      - if @default_card_information.blank?
+                      - else
+                      = "**** **** **** " + @default_card_information.last4
+                      %br/      
+                      - exp_month = @default_card_information.exp_month.to_s
+                      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                      = exp_month + " / " + exp_year
+                    %figure.buy-card-logo
+                      %i.fab.fa-cc-jcb.fa-lg
+                    %p
+                %section.buy-content.buy-user-info__adress
+                  .buy-content__inner
+                    .p.clearfix
+                      %h3.l-left 配送先
+                      .l-right.buy-user-info__fix
+                        %span
+                          = link_to '変更する'
+                    %address.buy-user-info__text
+                      %p
+                      -if user_signed_in?
+                        = current_user.address.postal_code
+                        %br/
+                        = current_user.address.name
+                        = current_user.address.city
+                        = current_user.address.address
+                        = current_user.address.building
+                        %br/
+                        = current_user.family_name
+                        = current_user.first_name
+                %section.buy-content.buy-user-info__purchase
+                = form_tag(action: :pay, method: :post) do
+                  %button.btn-default.btn-red.bold{type: "submit"} 購入する
+            %section
+      = render partial: 'items/sell-footer'
