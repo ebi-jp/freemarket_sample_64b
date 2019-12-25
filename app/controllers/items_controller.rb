@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
   before_action :set_item, only:[:show, :edit, :update]
-  # def index
-  # end
 
   def new
     unless user_signed_in?
@@ -26,8 +24,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user = User.find_by(id: @item.seller_id)
     @brand = Brand.find_by(id: @item.brand_id)
-    # @item.users.build
-    # @user = User.all(:id)
   end
 
   def edit
