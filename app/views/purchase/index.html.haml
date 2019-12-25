@@ -39,7 +39,7 @@
                       .l-right.buy-user-info__fix
                         %span
                           = link_to '変更する'
-                    %p.buy-user-info__text
+                    .buy-user-info__text
                       クレジットカード
                       %br/
                       - if @default_card_information.blank?
@@ -59,7 +59,7 @@
                       .l-right.buy-user-info__fix
                         %span
                           = link_to '変更する'
-                    %address.buy-user-info__text
+                    %address.buy-user-info__text--address
                       %p
                       -if user_signed_in?
                         = current_user.address.postal_code
