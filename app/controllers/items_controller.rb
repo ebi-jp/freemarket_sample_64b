@@ -4,6 +4,9 @@ class ItemsController < ApplicationController
   # end
 
   def new
+    unless user_signed_in?
+      redirect_to new_user_path
+    end
     @item = Item.new
     @item.images.build
   end
@@ -21,12 +24,13 @@ class ItemsController < ApplicationController
   
   def show
     @item = Item.find(params[:id])
-    
-    # @user = Users.find(params[:id])
+    @user = User.find_by(id: @item.seller_id)
+    @brand = Brand.find_by(id: @item.brand_id)
+    # @item.users.build
+    # @user = User.all(:id)
   end
 
   def edit
-    # @items = Image.find(params[:id])
   end
 
   def update
@@ -35,6 +39,12 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy if @item.seller_id === current_user.id
+    redirect_to root_path
   end
 
   

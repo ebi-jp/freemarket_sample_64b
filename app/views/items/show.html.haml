@@ -1,49 +1,27 @@
 = render 'shared/header' 
 
-%section.item-box-container.l-single-container
+%section.item-box-container.l-single-container-show
   %h1.item-name #{@item.item}
   %p.item-wording
-    #{@item.item}が
-    #{@item.seller_id}
+    = @item.item
+    が
+    = @user.nickname
     さんから出品されました。#{@item.name}から#{@item.period}されます。
   .item-main-content.clearfix
     .item-photo
       .carousel.loaded.drag
         .stage-outer
-          .stage{style: "left: -300px; width: 2400px;"}
-            .item{style: "width: 300px;"}
+          .stage
+            .item
               .item-inner
-                = image_tag @item.images[0].image.url, size: "300x300", class: "lazy", alt: "@item.item", style: "opacity: 1"
-            .item.active{style: "width: 300px;"}
-              .item-inner
-                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
-            .item{style: "width: 300px;"}
-              .item-inner
-                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
-            .item{style: "width: 300px;"}
-              .item-inner
-                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
-            .item{style: "width: 300px;"}
-              .item-inner
-                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
-            .item{style: "width: 300px;"}
-              .tem-inner
-                = image_tag 'bag_sub2.jpeg', size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
-            .item{style: "width: 300px;"}
-              .item-inner
-                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
-            .item{style: "width: 300px;"}
-              .item-inner
-                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
-            .item{style: "width: 300px;"}  
-              .item-inner
-                = image_tag 'bag_sub2.jpeg', align: "left", size: "60x60", class: "lazy", alt: "COACH  スエード  バッグ", style: "opacity: 1"
+                = image_tag @item.images[0].image.url, class: "edit-image"
+
     %table.item-detail-table
       %tbody
         %tr
           %th 出品者
           %td
-            #{@item.seller_id}
+            = @user.nickname
             %div
               .item-user-ratings
                 %i.far.fa-grin-beam
@@ -71,7 +49,7 @@
           %th ブランド
           %td
             %div
-            #{@item.brand_id}
+            -# = @brand.brand
         %tr
           %th 商品の状態
           %td #{@item.status}
@@ -93,8 +71,16 @@
     %span.item-tax (税込)
     %span.item-shipping-fee #{@item.burden}
   
+  - if @item.seller_id == nil
     .item-buy-btn
-      購入画面に進む
+    = link_to "購入画面に進む", item_purchase_index_path(@item.id), class: "item-buy-btn"
+  - elsif @item.buyer_id != nil
+    .item-bought-btn 売り切れました
+  - if user_signed_in? && current_user.id == @item.seller_id
+    .item-edit-btn
+    = link_to "商品を編集する", edit_item_path(@item.id), class: "item-edit-btn"
+    .item-destroy-btn
+      = link_to "出品を取り消す", item_path(@item.id), method: :delete, class: "item-destroy-btn" 
   .item-description.f14
     %p.item-description__inner
       #{@item.description}

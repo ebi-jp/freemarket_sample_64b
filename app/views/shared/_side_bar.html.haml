@@ -2,7 +2,7 @@
   %nav.mypage-nav
     %ul.mypage-nav-list
       %li
-        = link_to("マイページ","/mypage",{class: "mypage-nav-list-item"})
+        = link_to("マイページ",user_mypage_index_path(@user),{class: "mypage-nav-list-item"})
         %i.fas.fa-chevron-right
 
       %li
@@ -73,7 +73,7 @@
     %h3.mypage-nav-head 設定
     %ul.mypage-nav-list
       %li
-        = link_to("プロフィール","/users/show",{class: "mypage-nav-list-item"})
+        = link_to("プロフィール",user_path(@user),{class: "mypage-nav-list-item"})
         -# .mypage-nav-list-item.active{href:"/jp/mypage/profile/"}
         -#   プロフィール
         %i.fas.fa-chevron-right
@@ -90,13 +90,12 @@
           メール/パスワード
           %i.fas.fa-chevron-right
       %li
-        .mypage-nav-list-item{href: "/jp/mypage/identification/"}
-          本人情報
-          %i.fas.fa-chevron-right
+        = link_to("本人情報",edit_user_path,{class: "mypage-nav-list-item"})
+        %i.fas.fa-chevron-right
       %li
         .mypage-nav-list-item{href: "/jp/mypage/sms_confirmation/"}
           電話番号の確認
           %i.fas.fa-chevron-right
       %li
-        = link_to("ログアウト","/users/logout/",{class: "mypage-nav-list-item"})
+        = link_to("ログアウト",logout_user_path(@user),{class: "mypage-nav-list-item"})
         %i.fas.fa-chevron-right
