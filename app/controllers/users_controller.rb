@@ -2,9 +2,9 @@ class UsersController < ApplicationController
 
 
   def index
-    # binding.pry
-    # @item = Item.find(params[:item_id])
     @items = Item.limit(10).order('id DESC')
+    # @user = User.find_by(id: @item.seller_id)
+    
   end
 
   def edit
@@ -23,12 +23,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # def edit
-  #   @user = User.find(params[:id])
-  # end
 
-  # def mypage
-  #   @user = User.find(params[:id])
-  # end
 
 end
