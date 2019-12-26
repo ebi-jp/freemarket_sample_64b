@@ -518,11 +518,11 @@
     .items-box {
       height: 272px; 
       margin-right: 10px; 
-      margin-bottom: 0px; 
-      right: 10px;
-      position: relative;
-      float: left;
       margin-left: 10px;
+      margin-bottom: 0px; 
+      position: relative;
+      right: 10px;
+      float: left;
       cursor: pointer;
     }
 
@@ -563,9 +563,9 @@
       margin: 0 auto;
       font-size: 60px;
     }
-    .related-item-column .items-box:nth-child(3n) {
-      margin-right: 0;
-    }
+    // .related-item-column .items-box:nth-child(3n) {
+    //   margin-right: 0;
+    // }
     
     .items-box-photo-b {
       width: 188px; 

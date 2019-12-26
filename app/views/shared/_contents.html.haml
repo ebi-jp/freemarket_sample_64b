@@ -32,46 +32,43 @@
                   .items-box-content
                     = render 'shared/item'
 
-        .sc-clNaTc.iniLfl
-          .contents
-            .contents2
-              .items
-                .sc-eXNvrr.fbfdVP
-                  .items--contents__a.related-item-column
-                    .a--box
-                      %h3.box__title メンズ新着アイテム
-                      .button もっと見る>
-                    .sc-iQtOjA
-                      %ul
-                        = render 'shared/item'
 
-            .sc-clNaTc.iniLfl
-              .contents
-                .contents2
-                  .items
-                    .sc-eXNvrr.fbfdVP
-                      .items--contents__a.related-item-column
-                        .a--box
-                          %h3.box__title 家電・スマホ・カメラ新着アイテム
-                          .button もっと見る>
-                        .sc-iQtOjA
-                          %ul
-                            = render 'shared/item'                                         
+        .items
+          .sc-eXNvrr.fbfdVP
+            .items--contents__a.related-item-column
+              .a--box
+                %h3.box__title メンズ新着アイテム
+                .button もっと見る>
+              .sc-iQtOjA
+                %ul
+                  .items-box-content
+                    = render 'shared/item'
 
-              .sc-clNaTc.iniLfl
-                .contents
-                  .contents2
-                    .items
-                      .sc-eXNvrr.fbfdVPP
-                        .items--contents__a.related-item-column
-                          .a--box
-                            %h3.box__title おもちゃ・ホビー・グッズ新着アイテム
-                            .button もっと見る>
-                          .sc-iQtOjA
-                            %ul
-                            = render 'shared/item'           
-                                        
-                            = link_to "/items/new/", class: "fixed_btn" do
-                              出品
-                              .aaa
-                                %i.fa.fa-camera     
+            
+        .items
+          .sc-eXNvrr.fbfdVP
+            .items--contents__a.related-item-column
+              .a--box
+                %h3.box__title 家電・スマホ・カメラ新着アイテム
+                .button もっと見る>
+              .sc-iQtOjA
+                %ul
+                  .items-box-content
+                    = render 'shared/item'                                         
+
+              
+        .items
+          .sc-eXNvrr.fbfdVPP
+            .items--contents__a.related-item-column
+              .a--box
+                %h3.box__title おもちゃ・ホビー・グッズ新着アイテム
+                .button もっと見る>
+              .sc-iQtOjA
+                %ul
+                  .items-box-content
+                    = render 'shared/item'           
+                              
+                  = link_to "/items/new/", class: "fixed_btn" do
+                    出品
+                    .aaa
+                      %i.fa.fa-camera     
