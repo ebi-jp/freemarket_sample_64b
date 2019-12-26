@@ -70,20 +70,28 @@
     %span.item-price ￥#{@item.price}
     %span.item-tax (税込)
     %span.item-shipping-fee #{@item.burden}
-  
-  - if @item.buyer_id == nil
+
+  - if user_signed_in? && current_user.id == @item.seller_id
+    - if @item.buyer_id != nil
+      .item-bought-btn 売り切れました 
+    - else
+      .item-edit-btn
+      = link_to "商品を編集する", edit_item_path(@item.id), class: "item-edit-btn"
+      .item-destroy-btn
+      = link_to "出品を取り消す", item_path(@item.id), method: :delete, class: "item-destroy-btn"
+  - elsif @item.buyer_id == nil
     .item-buy-btn
-    = link_to "購入画面に進む", item_purchase_index_path(@item.id), class: "item-buy-btn"
+    -if user_signed_in? 
+      = link_to "購入画面に進む", item_purchase_index_path(@item.id), class: "item-buy-btn"
+    -else 
+      = link_to "購入画面に進む", new_user_session_path, class: "item-buy-btn"
   - else
     .item-bought-btn 売り切れました
-  - if user_signed_in? && current_user.id == @item.seller_id
-    .item-edit-btn
-    = link_to "商品を編集する", edit_item_path(@item.id), class: "item-edit-btn"
-    .item-destroy-btn
-      = link_to "出品を取り消す", item_path(@item.id), method: :delete, class: "item-destroy-btn" 
+  
   .item-description.f14
     %p.item-description__inner
       #{@item.description}
+    
       
   .item-button-container.clearfix
     .item-button-left
